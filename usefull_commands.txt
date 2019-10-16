@@ -1,0 +1,11 @@
+Usefull commands
+
+//installs pygame library. This is needed for the tetris implementation
+pip3 install --user pygame
+
+// activate the TF version of python
+source /bin/activate
+
+// deactivate the TF version of python
+deactivate
+

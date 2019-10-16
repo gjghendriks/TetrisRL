@@ -23,6 +23,8 @@ import random
 import math
 import block
 import constants
+import representation
+
 
 class Tetris(object):
     """
@@ -72,6 +74,8 @@ class Tetris(object):
         self.speed = 1
         # The score level threshold
         self.score_level = constants.SCORE_LEVEL
+        # make new repesentation
+        self.representation = representation.Representation()
 
     def apply_action(self):
         """
@@ -145,6 +149,8 @@ class Tetris(object):
             self.get_block()
             self.game_logic()
             self.draw_game()
+            self.representation.update(self.blk_list)
+            self.representation.print()
         # Display the game_over and wait for a keypress
         if self.game_over:
             self.print_game_over()
@@ -340,4 +346,4 @@ class Tetris(object):
         pygame.display.flip()
 
 if __name__ == "__main__":
-    Tetris(16,30).run()
+    Tetris(constants.HORZBLOCKS,constants.VERTBLOCKS).run()

@@ -19,6 +19,12 @@
 
 from pygame.locals import *
 
+# number of blocks that the game can fit vertically
+VERTBLOCKS = 30
+# number of block that the game can fit horizontally
+HORZBLOCKS = 10
+
+
 # Configuration of building shape block
 # Width of the shape block
 BWIDTH     = 20

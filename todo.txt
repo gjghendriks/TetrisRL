@@ -1,0 +1,9 @@
+TODO:
+
+other
+Set meeting with marco about how to proceed
+
+
+
+programming
+get tetris working
