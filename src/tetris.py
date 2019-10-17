@@ -75,7 +75,7 @@ class Tetris(object):
         # The score level threshold
         self.score_level = constants.SCORE_LEVEL
         # make new repesentation
-        self.representation = representation.Representation()
+        self.representation = representation.Representation(constants.HORZBLOCKS)
 
     def apply_action(self):
         """
@@ -149,7 +149,9 @@ class Tetris(object):
             self.get_block()
             self.game_logic()
             self.draw_game()
-            self.representation.update(self.blk_list)
+            for blk in self.blk_list:
+                if blk != self.active_block:
+                    self.representation.update(blk)
             self.representation.print()
         # Display the game_over and wait for a keypress
         if self.game_over:
@@ -326,7 +328,8 @@ class Tetris(object):
         """
         if self.new_block:
             # Get the block and add it into the block list(static for now)
-            tmp = random.randint(0,len(self.block_data)-1)
+            #tmp = random.randint(0,len(self.block_data)-1)
+            tmp = 3
             data = self.block_data[tmp]
             self.active_block = block.Block(data[0],self.start_x,self.start_y,self.screen,data[1],data[2])
             self.blk_list.append(self.active_block)

@@ -24,6 +24,7 @@ VERTBLOCKS = 30
 # number of block that the game can fit horizontally
 HORZBLOCKS = 10
 
+#### DONT CHANGE ####
 
 # Configuration of building shape block
 # Width of the shape block
