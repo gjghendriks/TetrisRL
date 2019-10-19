@@ -18,12 +18,18 @@
 
 import pygame
 import pdb
-
 import random
 import math
+import copy
+
 import block
 import constants
 import representation
+
+
+def log(string):
+    if constants.DEBUG:
+        print(string)
 
 
 class Tetris(object):
@@ -62,8 +68,9 @@ class Tetris(object):
             ([[0,0],[0,1],[1,0],[1,1]],constants.ORANGE,False), # O block
             ([[-1,0],[0,0],[0,1],[1,1]],constants.GOLD,True),   # Z block
             ([[0,0],[1,0],[2,0],[1,1]],constants.PURPLE,True),  # T block
-            ([[0,0],[1,0],[2,0],[0,1]],constants.CYAN,True),    # J block
+            ([[0,0],[1,0],[2,0],[0,1]],constants.CYAN,True),    # L block
         )
+        self.letter_data = ["I", "S", "J", "O", "Z", "T", "L"]
         # Compute the number of blocks. When the number of blocks is even, we can use it directly but 
         # we have to decrese the number of blocks in line by one when the number is odd (because of the used margin).
         self.blocks_in_line = bx if bx%2 == 0 else bx-1
@@ -126,6 +133,123 @@ class Tetris(object):
         speed = max(1,speed)
         pygame.time.set_timer(constants.TIMER_MOVE_EVENT,speed)
  
+
+    def select_random_state(self):
+        #log(self.blk_list)
+        states = []
+        # make a copy of the current state to restore later
+        board_state = []
+        blk = self.active_block
+        log("blk = ")
+        log(blk.shape)
+        log("cpy = ")
+        shape_copy = copy.deepcopy(blk.shape)
+        log(shape_copy)
+
+        for blk in self.blk_list:
+            board_state.append(block.Block(copy.deepcopy(blk.shape),blk.x,blk.y,blk.screen,blk.color,blk.rotate_en,blk.letter))
+        
+        if(self.active_block.letter == "O"):
+            # 1 rotation available
+            rot = 1
+        elif (self.active_block.letter == "Z"):
+            #two rotataions available 
+            rot = 2
+        else:
+            rot = 4
+
+        #for every rotation
+        for r in range(rot):
+
+            # first move the block all the way to the left
+            while(self.try_action("LEFT")):
+                log("Trying to move left")
+                self.draw_game()
+
+
+            # for every x position
+            for x in range(constants.HORZBLOCKS - self.active_block.get_width()):
+                
+                # move the block to the right
+                if x:
+                    self.try_action("RIGHT")
+                    log("trying to move the block to the right")
+
+                # try to move the block all the way down
+                while(self.try_action("DOWN")):
+                    log("try action down")
+                    #log(self.active_block.shape)
+                    self.draw_game()
+                    pygame.time.wait(10)
+                    
+ 
+
+                log("check if copy is changed")
+                log(shape_copy)
+                # final position is found
+                # save the state and reset
+                temp = []
+                for blk in self.blk_list:
+                    temp.append(block.Block(copy.deepcopy(blk.shape),blk.x,blk.y,blk.screen,blk.color,blk.rotate_en,blk.letter))
+                states.append(temp)
+                # reset to the initial state
+
+                self.blk_list = board_state
+                self.active_block.shape = shape_copy
+                self.draw_game()
+                log("Stage finished and saved")
+                log("blocks in list : " + str(len(self.blk_list)))
+                log("states found so far: " + str(len(states)))
+                log("Active block reset to")
+                log(shape_copy)
+                self.draw_game()
+
+
+            # try rotate the block
+            # if it fails, break from the loop, this won't result in another state
+            if not self.try_action("ROTATE"):
+                log("trying to rotate")
+                break
+
+
+
+        ## select random entry from available states
+        print(states)
+        log("finished random state selection")
+
+    def update_representation(self, r):
+        for blk in self.blk_list:
+                if blk != self.active_block:
+                    r.update(blk)
+        return 
+
+    def try_action(self, action):
+        # make backup
+        self.active_block.backup()
+        
+        # execute action
+        if action == "DOWN":
+            self.active_block.move(0,constants.BHEIGHT)
+        if action == "LEFT":
+            self.active_block.move(-constants.BWIDTH,0)
+        if action == "RIGHT":
+            self.active_block.move(constants.BWIDTH,0)
+        if action == "ROTATE":
+            self.active_block.rotate()
+        if action == "PAUSE":
+            self.pause()
+
+        # if action is not valid, restore
+        if(not self.valid_state()):
+            self.active_block.restore()
+            log("Block restored")
+            pygame.time.wait(1000)
+            self.draw_game
+            #log(self.active_block.shape)
+            return False
+
+        return True
+
     def run(self):
         # Initialize the game (pygame, fonts)
         pygame.init()
@@ -147,11 +271,9 @@ class Tetris(object):
         while not(self.done) and not(self.game_over):
             # Get the block and run the game logic
             self.get_block()
-            self.game_logic()
             self.draw_game()
-            for blk in self.blk_list:
-                if blk != self.active_block:
-                    self.representation.update(blk)
+            self.select_random_state()
+            self.update_representation(self.representation)
             self.representation.print()
         # Display the game_over and wait for a keypress
         if self.game_over:
@@ -222,6 +344,7 @@ class Tetris(object):
                 return True
         return False
 
+
     def game_logic(self):
         """
         Implementation of the main game logic. This function detects colisions
@@ -257,6 +380,31 @@ class Tetris(object):
             # screen.
             self.detect_line()   
  
+
+    # Returns false if invalid state
+    # Returns true otherwise
+    def valid_state(self):
+        down_board  = self.active_block.check_collision([self.board_down])
+        any_border  = self.active_block.check_collision([self.board_left,self.board_up,self.board_right])
+        block_any   = self.block_colides()
+        # Restore the configuration if any collision was detected
+        if down_board or any_border or block_any:
+            log("Found a collision")
+            return False
+        # So far so good, sample the previous state and try to move down (to detect the colision with other block). 
+        # After that, detect the the insertion of new block. The block new block is inserted if we reached the boarder
+        # or we cannot move down.
+        self.active_block.backup()
+        self.active_block.move(0,constants.BHEIGHT)
+        can_move_down = not self.block_colides()  
+        self.active_block.restore()
+        # We end the game if we are on the respawn and we cannot move --> bang!
+        if not can_move_down and (self.start_x == self.active_block.x and self.start_y == self.active_block.y):
+            self.game_over = True
+            return False
+        self.detect_line()
+        return True
+
     def detect_line(self):
         """
         Detect if the line is filled. If yes, remove the line and
@@ -328,10 +476,9 @@ class Tetris(object):
         """
         if self.new_block:
             # Get the block and add it into the block list(static for now)
-            #tmp = random.randint(0,len(self.block_data)-1)
-            tmp = 3
+            tmp = random.randint(0,len(self.block_data)-1)
             data = self.block_data[tmp]
-            self.active_block = block.Block(data[0],self.start_x,self.start_y,self.screen,data[1],data[2])
+            self.active_block = block.Block(data[0],self.start_x,self.start_y,self.screen,data[1],data[2], self.letter_data[tmp])
             self.blk_list.append(self.active_block)
             self.new_block = False
 

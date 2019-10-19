@@ -1,0 +1,144 @@
+pygame 1.9.6
+Hello from the pygame community. https://www.pygame.org/contribute.html
+blk = 
+[<rect(108, 49, 20, 20)>, <rect(128, 49, 20, 20)>, <rect(148, 49, 20, 20)>, <rect(128, 69, 20, 20)>]
+cpy = 
+[<rect(108, 49, 20, 20)>, <rect(128, 49, 20, 20)>, <rect(148, 49, 20, 20)>, <rect(128, 69, 20, 20)>]
+Trying to move left
+Trying to move left
+Trying to move left
+Trying to move left
+Trying to move left
+Found a collision
+Block restored
+try action down
+try action down
+try action down
+try action down
+try action down
+try action down
+try action down
+try action down
+try action down
+try action down
+try action down
+try action down
+try action down
+try action down
+try action down
+try action down
+try action down
+try action down
+try action down
+try action down
+try action down
+try action down
+try action down
+try action down
+try action down
+try action down
+Found a collision
+Block restored
+check if copy is changed
+[<rect(108, 49, 20, 20)>, <rect(128, 49, 20, 20)>, <rect(148, 49, 20, 20)>, <rect(128, 69, 20, 20)>]
+Stage finished and saved
+blocks in list : 1
+states found so far: 1
+Active block reset to
+[<rect(108, 49, 20, 20)>, <rect(128, 49, 20, 20)>, <rect(148, 49, 20, 20)>, <rect(128, 69, 20, 20)>]
+trying to move the block to the right
+try action down
+try action down
+try action down
+try action down
+try action down
+try action down
+try action down
+try action down
+try action down
+try action down
+try action down
+try action down
+try action down
+try action down
+try action down
+try action down
+try action down
+try action down
+try action down
+try action down
+try action down
+try action down
+try action down
+try action down
+try action down
+try action down
+Found a collision
+Block restored
+check if copy is changed
+[<rect(128, 69, 20, 20)>, <rect(148, 69, 20, 20)>, <rect(168, 69, 20, 20)>, <rect(148, 89, 20, 20)>]
+Stage finished and saved
+blocks in list : 1
+states found so far: 2
+Active block reset to
+[<rect(128, 69, 20, 20)>, <rect(148, 69, 20, 20)>, <rect(168, 69, 20, 20)>, <rect(148, 89, 20, 20)>]
+trying to move the block to the right
+try action down
+try action down
+try action down
+try action down
+try action down
+try action down
+try action down
+try action down
+try action down
+try action down
+try action down
+try action down
+try action down
+try action down
+try action down
+try action down
+try action down
+try action down
+try action down
+try action down
+try action down
+try action down
+try action down
+try action down
+try action down
+Found a collision
+Block restored
+check if copy is changed
+[<rect(148, 89, 20, 20)>, <rect(168, 89, 20, 20)>, <rect(188, 89, 20, 20)>, <rect(168, 109, 20, 20)>]
+Stage finished and saved
+blocks in list : 1
+states found so far: 3
+Active block reset to
+[<rect(148, 89, 20, 20)>, <rect(168, 89, 20, 20)>, <rect(188, 89, 20, 20)>, <rect(168, 109, 20, 20)>]
+Found a collision
+Block restored
+trying to move the block to the right
+try action down
+try action down
+try action down
+try action down
+try action down
+try action down
+try action down
+try action down
+try action down
+try action down
+try action down
+try action down
+try action down
+try action down
+try action down
+try action down
+try action down
+try action down
+try action down
+try action down
+try action down
+try action down

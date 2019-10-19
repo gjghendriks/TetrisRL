@@ -29,7 +29,7 @@ class Block(object):
     Class for handling of tetris block
     """    
 
-    def __init__(self,shape,x,y,screen,color,rotate_en):
+    def __init__(self,shape,x,y,screen,color,rotate_en,letter):
         """
         Initialize the tetris block class
 
@@ -62,6 +62,7 @@ class Block(object):
         self.color = color
         # Rotation of the screen
         self.diff_rotation = 0
+        self.letter = letter
 
     def draw(self):
         """
@@ -200,3 +201,14 @@ class Block(object):
                 return True
         return False
 
+
+    def get_width(self):
+        min_x = 0
+        max_x = -100000
+        for bl in self.shape:
+            relative = (bl[0] - 8) / constants.BWIDTH
+            if min_x > relative:
+                min_x = relative
+            elif max_x < relative:
+                max_x = relative
+        return int(max_x - min_x + 1)

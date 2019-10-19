@@ -18,11 +18,15 @@ class Representation(object):
 		for shape in blocklist.shape:
 				x = int((shape[0] - 8) / 20)
 				y = int(constants.VERTBLOCKS-2-((shape[1] - 49) / 20))
+				print("x = ")
+				print(x)
+				print(shape[0])
 				if(self.arr[x] < y):
 					self.arr[x] = y
 
 
 	def print(self):
+		print("Printing representation")
 		print(self.arr)
 
 
