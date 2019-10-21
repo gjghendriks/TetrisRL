@@ -88,7 +88,10 @@ class Block(object):
         rads = self.diff_rotation * (math.pi / 180.0)
         newx = x*math.cos(rads) - y*math.sin(rads)
         newy = y*math.cos(rads) + x*math.sin(rads)
-        return (newx,newy)        
+        #if rads:
+        #    print("Get rotated called with x " + str(x) + " y " + str(y))
+        #    print("new : " + str(newx) + " " + str(newy))
+        return (newx,newy)
 
     def move(self,x,y):
         """
@@ -138,6 +141,8 @@ class Block(object):
         """
         # Setup the rotation and update coordinates of all shape blocks.
         # The block is rotated iff the rotation is enabled
+        #print("Inside rotate shape is ")
+        #print(self.shape)
         if self.rotate_en:
             self.diff_rotation = 90
             self._update()
@@ -203,12 +208,19 @@ class Block(object):
 
 
     def get_width(self):
-        min_x = 0
-        max_x = -100000
+        min_x = self.shape[0].x
+        max_x = self.shape[0].x
+        
+        #print(self.shape)
         for bl in self.shape:
-            relative = (bl[0] - 8) / constants.BWIDTH
-            if min_x > relative:
-                min_x = relative
-            elif max_x < relative:
-                max_x = relative
-        return int(max_x - min_x + 1)
+            if bl.x < min_x:
+                min_x = bl.x
+            elif bl.x > max_x:
+                max_x = bl.x
+
+
+        #print("max_x = " + str(max_x))
+        #print("min = " + str(min_x))
+        width = int(((max_x - min_x)/constants.BWIDTH) + 1)
+        #print("width = " + str(width))
+        return width

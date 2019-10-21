@@ -83,6 +83,9 @@ class Tetris(object):
         self.score_level = constants.SCORE_LEVEL
         # make new repesentation
         self.representation = representation.Representation(constants.HORZBLOCKS)
+        self.shape_copy = 0
+        self.org_x_copy = 0
+        self.org_y_copy = 0
 
     def apply_action(self):
         """
@@ -136,19 +139,12 @@ class Tetris(object):
 
     def select_random_state(self):
         #log(self.blk_list)
+        #initalize list to store states in
         states = []
-        # make a copy of the current state to restore later
-        board_state = []
-        blk = self.active_block
-        log("blk = ")
-        log(blk.shape)
-        log("cpy = ")
-        shape_copy = copy.deepcopy(blk.shape)
-        log(shape_copy)
-
-        for blk in self.blk_list:
-            board_state.append(block.Block(copy.deepcopy(blk.shape),blk.x,blk.y,blk.screen,blk.color,blk.rotate_en,blk.letter))
-        
+        # make a copy of the active block
+        self.backup_active_block()
+        log(self.shape_copy)
+     
         if(self.active_block.letter == "O"):
             # 1 rotation available
             rot = 1
@@ -158,70 +154,104 @@ class Tetris(object):
         else:
             rot = 4
 
+        log("going to rotate " + str(rot) + " times.")
+        log("Width of block = " + str(self.active_block.get_width()))
+        log("number of expected loops = " + str(rot * (constants.HORZBLOCKS - self.active_block.get_width())))
         #for every rotation
         for r in range(rot):
 
-            # first move the block all the way to the left
-            while(self.try_action("LEFT")):
-                log("Trying to move left")
-                self.draw_game()
-
-
+            log("Starting new rotation")
             # for every x position
-            for x in range(constants.HORZBLOCKS - self.active_block.get_width()):
+            for x in range(constants.HORZBLOCKS - self.active_block.get_width() + 1):
+
+
+                # first move the block all the way to the left
+                while(self.try_action("LEFT")):
+                    log("Trying to move left")
+                    self.draw_game()
                 
-                # move the block to the right
-                if x:
+                # move the block to the right x amount of times
+                for right in range(x):
                     self.try_action("RIGHT")
                     log("trying to move the block to the right")
 
                 # try to move the block all the way down
                 while(self.try_action("DOWN")):
                     log("try action down")
-                    #log(self.active_block.shape)
                     self.draw_game()
                     pygame.time.wait(10)
                     
  
-
-                log("check if copy is changed")
-                log(shape_copy)
                 # final position is found
                 # save the state and reset
-                temp = []
+                temp_blocklist = []
+                # copy every block
                 for blk in self.blk_list:
-                    temp.append(block.Block(copy.deepcopy(blk.shape),blk.x,blk.y,blk.screen,blk.color,blk.rotate_en,blk.letter))
-                states.append(temp)
-                # reset to the initial state
+                    temp_blocklist.append(block.Block(copy.deepcopy(blk.shape),blk.x,blk.y,blk.screen,blk.color,blk.rotate_en,blk.letter))
+                # save the block list
+                states.append(temp_blocklist)
 
-                self.blk_list = board_state
-                self.active_block.shape = shape_copy
-                self.draw_game()
+                # reset to the initial state
+                self.restore_active_block()
                 log("Stage finished and saved")
                 log("blocks in list : " + str(len(self.blk_list)))
                 log("states found so far: " + str(len(states)))
                 log("Active block reset to")
-                log(shape_copy)
+                log(self.shape_copy)
                 self.draw_game()
+                pygame.time.wait(50)
 
 
             # try rotate the block
             # if it fails, break from the loop, this won't result in another state
+            log(self.active_block.shape)
+            log("trying to rotate")
             if not self.try_action("ROTATE"):
-                log("trying to rotate")
+                log("breaking bc rotate failed")
                 break
 
+            # back up active block, or it doesnt retain rotation
+            self.backup_active_block()
+            log(self.active_block.shape)
+            log("rotate succesfull")
 
 
         ## select random entry from available states
-        print(states)
+        #log(states)
+        log("blk list before")
+        for blk in self.blk_list:
+            log(blk.shape)
+        choice = random.choice(states)
+        self.blk_list.clear()
+        for blk in choice:
+            log("appending")
+            self.blk_list.append(block.Block(copy.deepcopy(blk.shape),blk.x,blk.y,blk.screen,blk.color,blk.rotate_en,blk.letter))
+        log("choice:" + str(type(choice)) + str(choice))
+        log("blk list after")
+        log("blk_list:" + str(type(self.blk_list)))
+        log(self.blk_list)
+        for blk in self.blk_list:
+            log(blk.shape)
         log("finished random state selection")
 
     def update_representation(self, r):
+        r.clear()
         for blk in self.blk_list:
                 if blk != self.active_block:
-                    r.update(blk)
-        return 
+                    r.add(blk)
+        return
+
+
+    def restore_active_block(self):
+        self.active_block.shape = copy.deepcopy(self.shape_copy)
+        self.active_block.x = self.org_x_copy
+        self.active_block.y = self.org_y_copy
+
+    def backup_active_block(self):
+        self.shape_copy = copy.deepcopy(self.active_block.shape)
+        self.org_x_copy = self.active_block.x
+        self.org_y_copy = self.active_block.y
+
 
     def try_action(self, action):
         # make backup
@@ -230,21 +260,23 @@ class Tetris(object):
         # execute action
         if action == "DOWN":
             self.active_block.move(0,constants.BHEIGHT)
-        if action == "LEFT":
+        elif action == "LEFT":
             self.active_block.move(-constants.BWIDTH,0)
-        if action == "RIGHT":
+        elif action == "RIGHT":
             self.active_block.move(constants.BWIDTH,0)
-        if action == "ROTATE":
+        elif action == "ROTATE":
             self.active_block.rotate()
-        if action == "PAUSE":
+        elif action == "PAUSE":
             self.pause()
+        else:
+            print("INVALID MOVE")
 
         # if action is not valid, restore
         if(not self.valid_state()):
             self.active_block.restore()
             log("Block restored")
-            pygame.time.wait(1000)
             self.draw_game
+            pygame.time.wait(100)
             #log(self.active_block.shape)
             return False
 
@@ -270,6 +302,7 @@ class Tetris(object):
         self.print_status_line()
         while not(self.done) and not(self.game_over):
             # Get the block and run the game logic
+            log("Getting new block")
             self.get_block()
             self.draw_game()
             self.select_random_state()

@@ -13,16 +13,20 @@ class Representation(object):
 		for x in range(len):
 			self.arr.append(0)
 
-	# updates the representation on the basis of the given blocklist
-	def update(self, blocklist):
-		for shape in blocklist.shape:
-				x = int((shape[0] - 8) / 20)
-				y = int(constants.VERTBLOCKS-2-((shape[1] - 49) / 20))
-				print("x = ")
-				print(x)
-				print(shape[0])
-				if(self.arr[x] < y):
-					self.arr[x] = y
+	def clear(self):
+		self.arr.clear()
+
+	# add to the representation on the basis of the given blocklist
+	def add(self, block):
+		print(block.shape)
+		for rect in block.shape:
+			x = int((rect.x - 8) / 20)
+			y = int(constants.VERTBLOCKS-2-((rect.y - 49) / 20))
+			print("x = ")
+			print(x)
+			print(rect.x)
+			if(self.arr[x] < y):
+				self.arr[x] = y
 
 
 	def print(self):
