@@ -50,6 +50,7 @@ class Tetris(object):
         self.resy = by*constants.BHEIGHT+2*constants.BOARD_HEIGHT+constants.BOARD_MARGIN
         # Prepare the pygame board objects (white lines)
         self.board_up    = pygame.Rect(0,constants.BOARD_UP_MARGIN,self.resx,constants.BOARD_HEIGHT)
+        log(self.board_up)
         self.board_down  = pygame.Rect(0,self.resy-constants.BOARD_HEIGHT,self.resx,constants.BOARD_HEIGHT)
         self.board_left  = pygame.Rect(0,constants.BOARD_UP_MARGIN,constants.BOARD_HEIGHT,self.resy)
         self.board_right = pygame.Rect(self.resx-constants.BOARD_HEIGHT,constants.BOARD_UP_MARGIN,constants.BOARD_HEIGHT,self.resy)
@@ -143,18 +144,17 @@ class Tetris(object):
         states = []
         # make a copy of the active block
         self.backup_active_block()
-        log(self.shape_copy)
      
         if(self.active_block.letter == "O"):
             # 1 rotation available
             rot = 1
-        elif (self.active_block.letter == "Z"):
+        elif (self.active_block.letter == "Z" or self.active_block.letter == "S"):
             #two rotataions available 
             rot = 2
         else:
             rot = 4
 
-        log("going to rotate " + str(rot) + " times.")
+        log(self.active_block.letter + " block generated, going to rotate " + str(rot) + " times.")
         log("Width of block = " + str(self.active_block.get_width()))
         log("number of expected loops = " + str(rot * (constants.HORZBLOCKS - self.active_block.get_width())))
         #for every rotation
@@ -167,39 +167,40 @@ class Tetris(object):
 
                 # first move the block all the way to the left
                 while(self.try_action("LEFT")):
-                    log("Trying to move left")
                     self.draw_game()
                 
                 # move the block to the right x amount of times
                 for right in range(x):
                     self.try_action("RIGHT")
-                    log("trying to move the block to the right")
+                    self.draw_game()
 
                 # try to move the block all the way down
                 while(self.try_action("DOWN")):
-                    log("try action down")
                     self.draw_game()
-                    pygame.time.wait(10)
                     
  
                 # final position is found
                 # save the state and reset
-                temp_blocklist = []
-                # copy every block
+
+                new_block_list = []
                 for blk in self.blk_list:
-                    temp_blocklist.append(block.Block(copy.deepcopy(blk.shape),blk.x,blk.y,blk.screen,blk.color,blk.rotate_en,blk.letter))
-                # save the block list
-                states.append(temp_blocklist)
+                    # copy block
+                    b = block.Block(copy.deepcopy(blk.shape), blk.x, blk.y, blk.screen,blk.color,blk.rotate_en,blk.letter,True)
+                    log(b.shape)
+                    # add copy to list
+                    new_block_list.append(b)
+
+                # append state to list
+                states.append(new_block_list)
 
                 # reset to the initial state
                 self.restore_active_block()
                 log("Stage finished and saved")
                 log("blocks in list : " + str(len(self.blk_list)))
                 log("states found so far: " + str(len(states)))
-                log("Active block reset to")
-                log(self.shape_copy)
+
                 self.draw_game()
-                pygame.time.wait(50)
+                pygame.time.wait(200)
 
 
             # try rotate the block
@@ -218,14 +219,20 @@ class Tetris(object):
 
         ## select random entry from available states
         #log(states)
-        log("blk list before")
-        for blk in self.blk_list:
-            log(blk.shape)
+        log("\n\nGenerated the following states:")
+        for state in states:
+            for blk in state:
+                log(blk.shape)
+
+
         choice = random.choice(states)
+        log("After choice")
+
         self.blk_list.clear()
         for blk in choice:
             log("appending")
-            self.blk_list.append(block.Block(copy.deepcopy(blk.shape),blk.x,blk.y,blk.screen,blk.color,blk.rotate_en,blk.letter))
+            log(blk.shape)
+            self.blk_list.append(block.Block(copy.deepcopy(blk.shape),blk.x,blk.y,blk.screen,blk.color,blk.rotate_en,blk.letter, True))
         log("choice:" + str(type(choice)) + str(choice))
         log("blk list after")
         log("blk_list:" + str(type(self.blk_list)))
@@ -276,7 +283,7 @@ class Tetris(object):
             self.active_block.restore()
             log("Block restored")
             self.draw_game
-            pygame.time.wait(100)
+            pygame.time.wait(10)
             #log(self.active_block.shape)
             return False
 
@@ -422,7 +429,12 @@ class Tetris(object):
         block_any   = self.block_colides()
         # Restore the configuration if any collision was detected
         if down_board or any_border or block_any:
-            log("Found a collision")
+            if down_board:
+                log("Found a collision with bottom")
+            if any_border:
+                log("Found a collision with border")
+            if block_any:
+                log("Found a collision with other block")
             return False
         # So far so good, sample the previous state and try to move down (to detect the colision with other block). 
         # After that, detect the the insertion of new block. The block new block is inserted if we reached the boarder
@@ -511,7 +523,7 @@ class Tetris(object):
             # Get the block and add it into the block list(static for now)
             tmp = random.randint(0,len(self.block_data)-1)
             data = self.block_data[tmp]
-            self.active_block = block.Block(data[0],self.start_x,self.start_y,self.screen,data[1],data[2], self.letter_data[tmp])
+            self.active_block = block.Block(data[0],self.start_x,self.start_y,self.screen,data[1],data[2], self.letter_data[tmp], False)
             self.blk_list.append(self.active_block)
             self.new_block = False
 

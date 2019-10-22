@@ -29,7 +29,7 @@ class Block(object):
     Class for handling of tetris block
     """    
 
-    def __init__(self,shape,x,y,screen,color,rotate_en,letter):
+    def __init__(self,shape,x,y,screen,color,rotate_en,letter, absolute):
         """
         Initialize the tetris block class
 
@@ -45,9 +45,12 @@ class Block(object):
         # The initial shape (convert all to Rect objects)
         self.shape = []
         for sh in shape:
-            bx = sh[0]*constants.BWIDTH + x
-            by = sh[1]*constants.BHEIGHT + y
-            block = pygame.Rect(bx,by,constants.BWIDTH,constants.BHEIGHT)
+            if not absolute:
+                bx = sh[0]*constants.BWIDTH + x
+                by = sh[1]*constants.BHEIGHT + y
+                block = pygame.Rect(bx,by,constants.BWIDTH,constants.BHEIGHT)
+            else:
+                block = pygame.Rect(sh[0],sh[1],constants.BWIDTH,constants.BHEIGHT)
             self.shape.append(block)     
         # Setup the rotation attribute
         self.rotate_en = rotate_en
@@ -63,6 +66,7 @@ class Block(object):
         # Rotation of the screen
         self.diff_rotation = 0
         self.letter = letter
+
 
     def draw(self):
         """

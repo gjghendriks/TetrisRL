@@ -1,9 +1,11 @@
 TODO:
 
 other
-Set meeting with marco about how to proceed
+prepare meeting with marco
+Read more papers
+Read sutton
 
 
 
 programming
-get tetris working
+collision with top when rotating

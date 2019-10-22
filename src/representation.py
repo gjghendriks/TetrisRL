@@ -8,23 +8,28 @@ if __name__ == "__main__":
 
 class Representation(object):
 
-	def __init__(self, len):
+	def __init__(self, length):
 		self.arr = []
-		for x in range(len):
+		for x in range(length):
 			self.arr.append(0)
 
-	def clear(self):
-		self.arr.clear()
 
-	# add to the representation on the basis of the given blocklist
+	def clear(self):
+		"""
+		Resets the representation
+		"""
+		for x in self.arr:
+			self.arr[x] = 0
+
+
 	def add(self, block):
+		"""
+		add the given block to the representation
+		"""
 		print(block.shape)
 		for rect in block.shape:
 			x = int((rect.x - 8) / 20)
 			y = int(constants.VERTBLOCKS-2-((rect.y - 49) / 20))
-			print("x = ")
-			print(x)
-			print(rect.x)
 			if(self.arr[x] < y):
 				self.arr[x] = y
 

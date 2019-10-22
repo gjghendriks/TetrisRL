@@ -20,7 +20,7 @@
 from pygame.locals import *
 
 # number of blocks that the game can fit vertically
-VERTBLOCKS = 30
+VERTBLOCKS = 20
 # number of block that the game can fit horizontally
 HORZBLOCKS = 10
 
