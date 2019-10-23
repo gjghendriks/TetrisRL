@@ -148,7 +148,9 @@ class Tetris(object):
         if(self.active_block.letter == "O"):
             # 1 rotation available
             rot = 1
-        elif (self.active_block.letter == "Z" or self.active_block.letter == "S"):
+        elif (self.active_block.letter == "Z" 
+            or self.active_block.letter == "S" 
+            or self.active_block.letter == "I"):
             #two rotataions available 
             rot = 2
         else:
@@ -220,25 +222,16 @@ class Tetris(object):
         ## select random entry from available states
         #log(states)
         log("\n\nGenerated the following states:")
-        for state in states:
-            for blk in state:
-                log(blk.shape)
+        #for state in states:
+        #    for blk in state:
+        #        log(blk.shape)
 
 
         choice = random.choice(states)
-        log("After choice")
 
         self.blk_list.clear()
         for blk in choice:
-            log("appending")
-            log(blk.shape)
             self.blk_list.append(block.Block(copy.deepcopy(blk.shape),blk.x,blk.y,blk.screen,blk.color,blk.rotate_en,blk.letter, True))
-        log("choice:" + str(type(choice)) + str(choice))
-        log("blk list after")
-        log("blk_list:" + str(type(self.blk_list)))
-        log(self.blk_list)
-        for blk in self.blk_list:
-            log(blk.shape)
         log("finished random state selection")
 
     def update_representation(self, r):
@@ -310,6 +303,7 @@ class Tetris(object):
         while not(self.done) and not(self.game_over):
             # Get the block and run the game logic
             log("Getting new block")
+            self.new_block = True
             self.get_block()
             self.draw_game()
             self.select_random_state()
@@ -385,41 +379,6 @@ class Tetris(object):
         return False
 
 
-    def game_logic(self):
-        """
-        Implementation of the main game logic. This function detects colisions
-        and insertion of new tetris blocks.
-        """
-        # Remember the current configuration and try to 
-        # apply the action
-        self.active_block.backup()
-        self.apply_action()
-        # Border logic, check if we colide with down border or any
-        # other border. This check also includes the detection with other tetris blocks. 
-        down_board  = self.active_block.check_collision([self.board_down])
-        any_border  = self.active_block.check_collision([self.board_left,self.board_up,self.board_right])
-        block_any   = self.block_colides()
-        # Restore the configuration if any collision was detected
-        if down_board or any_border or block_any:
-            self.active_block.restore()
-        # So far so good, sample the previous state and try to move down (to detect the colision with other block). 
-        # After that, detect the the insertion of new block. The block new block is inserted if we reached the boarder
-        # or we cannot move down.
-        self.active_block.backup()
-        self.active_block.move(0,constants.BHEIGHT)
-        can_move_down = not self.block_colides()  
-        self.active_block.restore()
-        # We end the game if we are on the respawn and we cannot move --> bang!
-        if not can_move_down and (self.start_x == self.active_block.x and self.start_y == self.active_block.y):
-            self.game_over = True
-        # The new block is inserted if we reached down board or we cannot move down.
-        if down_board or not can_move_down:     
-            # Request new block
-            self.new_block = True
-            # Detect the filled line and possibly remove the line from the 
-            # screen.
-            self.detect_line()   
- 
 
     # Returns false if invalid state
     # Returns true otherwise
@@ -527,6 +486,7 @@ class Tetris(object):
             data = self.block_data[tmp]
             self.active_block = block.Block(data[0],self.start_x,self.start_y,self.screen,data[1],data[2], self.letter_data[tmp], False)
             self.blk_list.append(self.active_block)
+            log("generated new block: " + self.active_block.letter + " length = " + str(len(self.blk_list)))
             self.new_block = False
 
     def draw_game(self):

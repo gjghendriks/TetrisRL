@@ -2,15 +2,16 @@ pygame 1.9.6
 Hello from the pygame community. https://www.pygame.org/contribute.html
 <rect(0, 40, 216, 7)>
 Getting new block
-O block generated, going to rotate 1 times.
-Width of block = 2
-number of expected loops = 8
+generated new block: L length = 1
+L block generated, going to rotate 4 times.
+Width of block = 3
+number of expected loops = 28
 Starting new rotation
 Found a collision with border
 Block restored
 Found a collision with bottom
 Block restored
-[<rect(8, 369, 20, 20)>, <rect(8, 389, 20, 20)>, <rect(28, 369, 20, 20)>, <rect(28, 389, 20, 20)>]
+[<rect(8, 369, 20, 20)>, <rect(28, 369, 20, 20)>, <rect(48, 369, 20, 20)>, <rect(8, 389, 20, 20)>]
 Stage finished and saved
 blocks in list : 1
 states found so far: 1
@@ -18,7 +19,7 @@ Found a collision with border
 Block restored
 Found a collision with bottom
 Block restored
-[<rect(28, 369, 20, 20)>, <rect(28, 389, 20, 20)>, <rect(48, 369, 20, 20)>, <rect(48, 389, 20, 20)>]
+[<rect(28, 369, 20, 20)>, <rect(48, 369, 20, 20)>, <rect(68, 369, 20, 20)>, <rect(28, 389, 20, 20)>]
 Stage finished and saved
 blocks in list : 1
 states found so far: 2
@@ -26,7 +27,7 @@ Found a collision with border
 Block restored
 Found a collision with bottom
 Block restored
-[<rect(48, 369, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(68, 369, 20, 20)>, <rect(68, 389, 20, 20)>]
+[<rect(48, 369, 20, 20)>, <rect(68, 369, 20, 20)>, <rect(88, 369, 20, 20)>, <rect(48, 389, 20, 20)>]
 Stage finished and saved
 blocks in list : 1
 states found so far: 3
@@ -34,7 +35,7 @@ Found a collision with border
 Block restored
 Found a collision with bottom
 Block restored
-[<rect(68, 369, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(88, 369, 20, 20)>, <rect(88, 389, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(88, 369, 20, 20)>, <rect(108, 369, 20, 20)>, <rect(68, 389, 20, 20)>]
 Stage finished and saved
 blocks in list : 1
 states found so far: 4
@@ -42,7 +43,7 @@ Found a collision with border
 Block restored
 Found a collision with bottom
 Block restored
-[<rect(88, 369, 20, 20)>, <rect(88, 389, 20, 20)>, <rect(108, 369, 20, 20)>, <rect(108, 389, 20, 20)>]
+[<rect(88, 369, 20, 20)>, <rect(108, 369, 20, 20)>, <rect(128, 369, 20, 20)>, <rect(88, 389, 20, 20)>]
 Stage finished and saved
 blocks in list : 1
 states found so far: 5
@@ -50,7 +51,7 @@ Found a collision with border
 Block restored
 Found a collision with bottom
 Block restored
-[<rect(108, 369, 20, 20)>, <rect(108, 389, 20, 20)>, <rect(128, 369, 20, 20)>, <rect(128, 389, 20, 20)>]
+[<rect(108, 369, 20, 20)>, <rect(128, 369, 20, 20)>, <rect(148, 369, 20, 20)>, <rect(108, 389, 20, 20)>]
 Stage finished and saved
 blocks in list : 1
 states found so far: 6
@@ -58,7 +59,7 @@ Found a collision with border
 Block restored
 Found a collision with bottom
 Block restored
-[<rect(128, 369, 20, 20)>, <rect(128, 389, 20, 20)>, <rect(148, 369, 20, 20)>, <rect(148, 389, 20, 20)>]
+[<rect(128, 369, 20, 20)>, <rect(148, 369, 20, 20)>, <rect(168, 369, 20, 20)>, <rect(128, 389, 20, 20)>]
 Stage finished and saved
 blocks in list : 1
 states found so far: 7
@@ -66,88 +67,3461 @@ Found a collision with border
 Block restored
 Found a collision with bottom
 Block restored
-[<rect(148, 369, 20, 20)>, <rect(148, 389, 20, 20)>, <rect(168, 369, 20, 20)>, <rect(168, 389, 20, 20)>]
+[<rect(148, 369, 20, 20)>, <rect(168, 369, 20, 20)>, <rect(188, 369, 20, 20)>, <rect(148, 389, 20, 20)>]
 Stage finished and saved
 blocks in list : 1
 states found so far: 8
-Found a collision with border
-Block restored
-Found a collision with bottom
-Block restored
-[<rect(168, 369, 20, 20)>, <rect(168, 389, 20, 20)>, <rect(188, 369, 20, 20)>, <rect(188, 389, 20, 20)>]
-Stage finished and saved
-blocks in list : 1
-states found so far: 9
-[<rect(108, 49, 20, 20)>, <rect(108, 69, 20, 20)>, <rect(128, 49, 20, 20)>, <rect(128, 69, 20, 20)>]
+[<rect(108, 49, 20, 20)>, <rect(128, 49, 20, 20)>, <rect(148, 49, 20, 20)>, <rect(108, 69, 20, 20)>]
 trying to rotate
-[<rect(108, 49, 20, 20)>, <rect(108, 69, 20, 20)>, <rect(128, 49, 20, 20)>, <rect(128, 69, 20, 20)>]
+[<rect(108, 49, 20, 20)>, <rect(108, 69, 20, 20)>, <rect(108, 89, 20, 20)>, <rect(88, 49, 20, 20)>]
 rotate succesfull
-
-
-Generated the following states:
-[<rect(8, 369, 20, 20)>, <rect(8, 389, 20, 20)>, <rect(28, 369, 20, 20)>, <rect(28, 389, 20, 20)>]
-[<rect(28, 369, 20, 20)>, <rect(28, 389, 20, 20)>, <rect(48, 369, 20, 20)>, <rect(48, 389, 20, 20)>]
-[<rect(48, 369, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(68, 369, 20, 20)>, <rect(68, 389, 20, 20)>]
-[<rect(68, 369, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(88, 369, 20, 20)>, <rect(88, 389, 20, 20)>]
-[<rect(88, 369, 20, 20)>, <rect(88, 389, 20, 20)>, <rect(108, 369, 20, 20)>, <rect(108, 389, 20, 20)>]
-[<rect(108, 369, 20, 20)>, <rect(108, 389, 20, 20)>, <rect(128, 369, 20, 20)>, <rect(128, 389, 20, 20)>]
-[<rect(128, 369, 20, 20)>, <rect(128, 389, 20, 20)>, <rect(148, 369, 20, 20)>, <rect(148, 389, 20, 20)>]
-[<rect(148, 369, 20, 20)>, <rect(148, 389, 20, 20)>, <rect(168, 369, 20, 20)>, <rect(168, 389, 20, 20)>]
-[<rect(168, 369, 20, 20)>, <rect(168, 389, 20, 20)>, <rect(188, 369, 20, 20)>, <rect(188, 389, 20, 20)>]
-After choice
-appending
-[<rect(168, 369, 20, 20)>, <rect(168, 389, 20, 20)>, <rect(188, 369, 20, 20)>, <rect(188, 389, 20, 20)>]
-choice:<class 'list'>[<block.Block object at 0x7f05a0b087f0>]
-blk list after
-blk_list:<class 'list'>
-[<block.Block object at 0x7f05a0b11160>]
-[<rect(168, 369, 20, 20)>, <rect(168, 389, 20, 20)>, <rect(188, 369, 20, 20)>, <rect(188, 389, 20, 20)>]
-finished random state selection
-[<rect(168, 369, 20, 20)>, <rect(168, 389, 20, 20)>, <rect(188, 369, 20, 20)>, <rect(188, 389, 20, 20)>]
-Printing representation
-[0, 0, 0, 0, 0, 0, 0, 0, 2, 2]
-Getting new block
-O block generated, going to rotate 1 times.
-Width of block = 2
-number of expected loops = 8
 Starting new rotation
 Found a collision with border
 Block restored
 Found a collision with bottom
 Block restored
-[<rect(168, 369, 20, 20)>, <rect(168, 389, 20, 20)>, <rect(188, 369, 20, 20)>, <rect(188, 389, 20, 20)>]
+[<rect(28, 349, 20, 20)>, <rect(28, 369, 20, 20)>, <rect(28, 389, 20, 20)>, <rect(8, 349, 20, 20)>]
 Stage finished and saved
 blocks in list : 1
+states found so far: 9
+Found a collision with border
+Block restored
+Found a collision with bottom
+Block restored
+[<rect(48, 349, 20, 20)>, <rect(48, 369, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(28, 349, 20, 20)>]
+Stage finished and saved
+blocks in list : 1
+states found so far: 10
+Found a collision with border
+Block restored
+Found a collision with bottom
+Block restored
+[<rect(68, 349, 20, 20)>, <rect(68, 369, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 349, 20, 20)>]
+Stage finished and saved
+blocks in list : 1
+states found so far: 11
+Found a collision with border
+Block restored
+Found a collision with bottom
+Block restored
+[<rect(88, 349, 20, 20)>, <rect(88, 369, 20, 20)>, <rect(88, 389, 20, 20)>, <rect(68, 349, 20, 20)>]
+Stage finished and saved
+blocks in list : 1
+states found so far: 12
+Found a collision with border
+Block restored
+Found a collision with bottom
+Block restored
+[<rect(108, 349, 20, 20)>, <rect(108, 369, 20, 20)>, <rect(108, 389, 20, 20)>, <rect(88, 349, 20, 20)>]
+Stage finished and saved
+blocks in list : 1
+states found so far: 13
+Found a collision with border
+Block restored
+Found a collision with bottom
+Block restored
+[<rect(128, 349, 20, 20)>, <rect(128, 369, 20, 20)>, <rect(128, 389, 20, 20)>, <rect(108, 349, 20, 20)>]
+Stage finished and saved
+blocks in list : 1
+states found so far: 14
+Found a collision with border
+Block restored
+Found a collision with bottom
+Block restored
+[<rect(148, 349, 20, 20)>, <rect(148, 369, 20, 20)>, <rect(148, 389, 20, 20)>, <rect(128, 349, 20, 20)>]
+Stage finished and saved
+blocks in list : 1
+states found so far: 15
+Found a collision with border
+Block restored
+Found a collision with bottom
+Block restored
+[<rect(168, 349, 20, 20)>, <rect(168, 369, 20, 20)>, <rect(168, 389, 20, 20)>, <rect(148, 349, 20, 20)>]
+Stage finished and saved
+blocks in list : 1
+states found so far: 16
+Found a collision with border
+Block restored
+Found a collision with bottom
+Block restored
+[<rect(188, 349, 20, 20)>, <rect(188, 369, 20, 20)>, <rect(188, 389, 20, 20)>, <rect(168, 349, 20, 20)>]
+Stage finished and saved
+blocks in list : 1
+states found so far: 17
+[<rect(108, 49, 20, 20)>, <rect(108, 69, 20, 20)>, <rect(108, 89, 20, 20)>, <rect(88, 49, 20, 20)>]
+trying to rotate
+[<rect(108, 49, 20, 20)>, <rect(88, 49, 20, 20)>, <rect(68, 49, 20, 20)>, <rect(108, 29, 20, 20)>]
+rotate succesfull
+Starting new rotation
+Found a collision with border
+Block restored
+Found a collision with bottom
+Block restored
+[<rect(48, 389, 20, 20)>, <rect(28, 389, 20, 20)>, <rect(8, 389, 20, 20)>, <rect(48, 369, 20, 20)>]
+Stage finished and saved
+blocks in list : 1
+states found so far: 18
+Found a collision with border
+Block restored
+Found a collision with bottom
+Block restored
+[<rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(28, 389, 20, 20)>, <rect(68, 369, 20, 20)>]
+Stage finished and saved
+blocks in list : 1
+states found so far: 19
+Found a collision with border
+Block restored
+Found a collision with bottom
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+Stage finished and saved
+blocks in list : 1
+states found so far: 20
+Found a collision with border
+Block restored
+Found a collision with bottom
+Block restored
+[<rect(108, 389, 20, 20)>, <rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(108, 369, 20, 20)>]
+Stage finished and saved
+blocks in list : 1
+states found so far: 21
+Found a collision with border
+Block restored
+Found a collision with bottom
+Block restored
+[<rect(128, 389, 20, 20)>, <rect(108, 389, 20, 20)>, <rect(88, 389, 20, 20)>, <rect(128, 369, 20, 20)>]
+Stage finished and saved
+blocks in list : 1
+states found so far: 22
+Found a collision with border
+Block restored
+Found a collision with bottom
+Block restored
+[<rect(148, 389, 20, 20)>, <rect(128, 389, 20, 20)>, <rect(108, 389, 20, 20)>, <rect(148, 369, 20, 20)>]
+Stage finished and saved
+blocks in list : 1
+states found so far: 23
+Found a collision with border
+Block restored
+Found a collision with bottom
+Block restored
+[<rect(168, 389, 20, 20)>, <rect(148, 389, 20, 20)>, <rect(128, 389, 20, 20)>, <rect(168, 369, 20, 20)>]
+Stage finished and saved
+blocks in list : 1
+states found so far: 24
+Found a collision with border
+Block restored
+Found a collision with bottom
+Block restored
+[<rect(188, 389, 20, 20)>, <rect(168, 389, 20, 20)>, <rect(148, 389, 20, 20)>, <rect(188, 369, 20, 20)>]
+Stage finished and saved
+blocks in list : 1
+states found so far: 25
+[<rect(108, 49, 20, 20)>, <rect(88, 49, 20, 20)>, <rect(68, 49, 20, 20)>, <rect(108, 29, 20, 20)>]
+trying to rotate
+[<rect(108, 49, 20, 20)>, <rect(108, 29, 20, 20)>, <rect(108, 9, 20, 20)>, <rect(128, 49, 20, 20)>]
+rotate succesfull
+Starting new rotation
+Found a collision with border
+Block restored
+Found a collision with bottom
+Block restored
+[<rect(8, 389, 20, 20)>, <rect(8, 369, 20, 20)>, <rect(8, 349, 20, 20)>, <rect(28, 389, 20, 20)>]
+Stage finished and saved
+blocks in list : 1
+states found so far: 26
+Found a collision with border
+Block restored
+Found a collision with bottom
+Block restored
+[<rect(28, 389, 20, 20)>, <rect(28, 369, 20, 20)>, <rect(28, 349, 20, 20)>, <rect(48, 389, 20, 20)>]
+Stage finished and saved
+blocks in list : 1
+states found so far: 27
+Found a collision with border
+Block restored
+Found a collision with bottom
+Block restored
+[<rect(48, 389, 20, 20)>, <rect(48, 369, 20, 20)>, <rect(48, 349, 20, 20)>, <rect(68, 389, 20, 20)>]
+Stage finished and saved
+blocks in list : 1
+states found so far: 28
+Found a collision with border
+Block restored
+Found a collision with bottom
+Block restored
+[<rect(68, 389, 20, 20)>, <rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(88, 389, 20, 20)>]
+Stage finished and saved
+blocks in list : 1
+states found so far: 29
+Found a collision with border
+Block restored
+Found a collision with bottom
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(88, 369, 20, 20)>, <rect(88, 349, 20, 20)>, <rect(108, 389, 20, 20)>]
+Stage finished and saved
+blocks in list : 1
+states found so far: 30
+Found a collision with border
+Block restored
+Found a collision with bottom
+Block restored
+[<rect(108, 389, 20, 20)>, <rect(108, 369, 20, 20)>, <rect(108, 349, 20, 20)>, <rect(128, 389, 20, 20)>]
+Stage finished and saved
+blocks in list : 1
+states found so far: 31
+Found a collision with border
+Block restored
+Found a collision with bottom
+Block restored
+[<rect(128, 389, 20, 20)>, <rect(128, 369, 20, 20)>, <rect(128, 349, 20, 20)>, <rect(148, 389, 20, 20)>]
+Stage finished and saved
+blocks in list : 1
+states found so far: 32
+Found a collision with border
+Block restored
+Found a collision with bottom
+Block restored
+[<rect(148, 389, 20, 20)>, <rect(148, 369, 20, 20)>, <rect(148, 349, 20, 20)>, <rect(168, 389, 20, 20)>]
+Stage finished and saved
+blocks in list : 1
+states found so far: 33
+Found a collision with border
+Block restored
+Found a collision with bottom
+Block restored
+[<rect(168, 389, 20, 20)>, <rect(168, 369, 20, 20)>, <rect(168, 349, 20, 20)>, <rect(188, 389, 20, 20)>]
+Stage finished and saved
+blocks in list : 1
+states found so far: 34
+[<rect(108, 49, 20, 20)>, <rect(108, 29, 20, 20)>, <rect(108, 9, 20, 20)>, <rect(128, 49, 20, 20)>]
+trying to rotate
+[<rect(108, 49, 20, 20)>, <rect(128, 49, 20, 20)>, <rect(148, 49, 20, 20)>, <rect(108, 69, 20, 20)>]
+rotate succesfull
+
+
+Generated the following states:
+finished random state selection
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+Printing representation
+[0, 0, 1, 1, 2, 0, 0, 0, 0, 0]
+Getting new block
+generated new block: J length = 2
+J block generated, going to rotate 4 times.
+Width of block = 3
+number of expected loops = 28
+Starting new rotation
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(8, 349, 20, 20)>, <rect(28, 349, 20, 20)>, <rect(48, 349, 20, 20)>, <rect(48, 369, 20, 20)>]
+Stage finished and saved
+blocks in list : 2
 states found so far: 1
 Found a collision with border
 Block restored
-Found a collision with bottom
+Found a collision with other block
 Block restored
-[<rect(168, 369, 20, 20)>, <rect(168, 389, 20, 20)>, <rect(188, 369, 20, 20)>, <rect(188, 389, 20, 20)>]
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(28, 349, 20, 20)>, <rect(48, 349, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 369, 20, 20)>]
 Stage finished and saved
-blocks in list : 1
+blocks in list : 2
 states found so far: 2
 Found a collision with border
 Block restored
-Found a collision with bottom
+Found a collision with other block
 Block restored
-[<rect(168, 369, 20, 20)>, <rect(168, 389, 20, 20)>, <rect(188, 369, 20, 20)>, <rect(188, 389, 20, 20)>]
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(48, 329, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>, <rect(88, 349, 20, 20)>]
 Stage finished and saved
-blocks in list : 1
+blocks in list : 2
 states found so far: 3
 Found a collision with border
 Block restored
-Found a collision with bottom
+Found a collision with other block
 Block restored
-[<rect(168, 369, 20, 20)>, <rect(168, 389, 20, 20)>, <rect(188, 369, 20, 20)>, <rect(188, 389, 20, 20)>]
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 349, 20, 20)>, <rect(88, 349, 20, 20)>, <rect(108, 349, 20, 20)>, <rect(108, 369, 20, 20)>]
 Stage finished and saved
-blocks in list : 1
+blocks in list : 2
 states found so far: 4
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(88, 349, 20, 20)>, <rect(108, 349, 20, 20)>, <rect(128, 349, 20, 20)>, <rect(128, 369, 20, 20)>]
+Stage finished and saved
+blocks in list : 2
+states found so far: 5
 Found a collision with border
 Block restored
 Found a collision with bottom
 Block restored
-[<rect(168, 369, 20, 20)>, <rect(168, 389, 20, 20)>, <rect(188, 369, 20, 20)>, <rect(188, 389, 20, 20)>]
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(108, 369, 20, 20)>, <rect(128, 369, 20, 20)>, <rect(148, 369, 20, 20)>, <rect(148, 389, 20, 20)>]
 Stage finished and saved
-blocks in list : 1
+blocks in list : 2
+states found so far: 6
+Found a collision with border
+Block restored
+Found a collision with bottom
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(128, 369, 20, 20)>, <rect(148, 369, 20, 20)>, <rect(168, 369, 20, 20)>, <rect(168, 389, 20, 20)>]
+Stage finished and saved
+blocks in list : 2
+states found so far: 7
+Found a collision with border
+Block restored
+Found a collision with bottom
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(148, 369, 20, 20)>, <rect(168, 369, 20, 20)>, <rect(188, 369, 20, 20)>, <rect(188, 389, 20, 20)>]
+Stage finished and saved
+blocks in list : 2
+states found so far: 8
+[<rect(108, 49, 20, 20)>, <rect(128, 49, 20, 20)>, <rect(148, 49, 20, 20)>, <rect(148, 69, 20, 20)>]
+trying to rotate
+[<rect(108, 49, 20, 20)>, <rect(108, 69, 20, 20)>, <rect(108, 89, 20, 20)>, <rect(88, 89, 20, 20)>]
+rotate succesfull
+Starting new rotation
+Found a collision with border
+Block restored
+Found a collision with bottom
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(28, 349, 20, 20)>, <rect(28, 369, 20, 20)>, <rect(28, 389, 20, 20)>, <rect(8, 389, 20, 20)>]
+Stage finished and saved
+blocks in list : 2
+states found so far: 9
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(48, 329, 20, 20)>, <rect(48, 349, 20, 20)>, <rect(48, 369, 20, 20)>, <rect(28, 369, 20, 20)>]
+Stage finished and saved
+blocks in list : 2
+states found so far: 10
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 329, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 369, 20, 20)>, <rect(48, 369, 20, 20)>]
+Stage finished and saved
+blocks in list : 2
+states found so far: 11
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(88, 309, 20, 20)>, <rect(88, 329, 20, 20)>, <rect(88, 349, 20, 20)>, <rect(68, 349, 20, 20)>]
+Stage finished and saved
+blocks in list : 2
+states found so far: 12
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(108, 329, 20, 20)>, <rect(108, 349, 20, 20)>, <rect(88, 349, 20, 20)>]
+Stage finished and saved
+blocks in list : 2
+states found so far: 13
+Found a collision with border
+Block restored
+Found a collision with bottom
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(128, 349, 20, 20)>, <rect(128, 369, 20, 20)>, <rect(128, 389, 20, 20)>, <rect(108, 389, 20, 20)>]
+Stage finished and saved
+blocks in list : 2
+states found so far: 14
+Found a collision with border
+Block restored
+Found a collision with bottom
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(148, 349, 20, 20)>, <rect(148, 369, 20, 20)>, <rect(148, 389, 20, 20)>, <rect(128, 389, 20, 20)>]
+Stage finished and saved
+blocks in list : 2
+states found so far: 15
+Found a collision with border
+Block restored
+Found a collision with bottom
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(168, 349, 20, 20)>, <rect(168, 369, 20, 20)>, <rect(168, 389, 20, 20)>, <rect(148, 389, 20, 20)>]
+Stage finished and saved
+blocks in list : 2
+states found so far: 16
+Found a collision with border
+Block restored
+Found a collision with bottom
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(188, 349, 20, 20)>, <rect(188, 369, 20, 20)>, <rect(188, 389, 20, 20)>, <rect(168, 389, 20, 20)>]
+Stage finished and saved
+blocks in list : 2
+states found so far: 17
+[<rect(108, 49, 20, 20)>, <rect(108, 69, 20, 20)>, <rect(108, 89, 20, 20)>, <rect(88, 89, 20, 20)>]
+trying to rotate
+[<rect(108, 49, 20, 20)>, <rect(88, 49, 20, 20)>, <rect(68, 49, 20, 20)>, <rect(68, 29, 20, 20)>]
+rotate succesfull
+Starting new rotation
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(48, 369, 20, 20)>, <rect(28, 369, 20, 20)>, <rect(8, 369, 20, 20)>, <rect(8, 349, 20, 20)>]
+Stage finished and saved
+blocks in list : 2
+states found so far: 18
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(48, 369, 20, 20)>, <rect(28, 369, 20, 20)>, <rect(28, 349, 20, 20)>]
+Stage finished and saved
+blocks in list : 2
+states found so far: 19
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(88, 349, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(48, 349, 20, 20)>, <rect(48, 329, 20, 20)>]
+Stage finished and saved
+blocks in list : 2
+states found so far: 20
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(108, 349, 20, 20)>, <rect(88, 349, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>]
+Stage finished and saved
+blocks in list : 2
+states found so far: 21
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(128, 349, 20, 20)>, <rect(108, 349, 20, 20)>, <rect(88, 349, 20, 20)>, <rect(88, 329, 20, 20)>]
+Stage finished and saved
+blocks in list : 2
+states found so far: 22
+Found a collision with border
+Block restored
+Found a collision with bottom
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(148, 389, 20, 20)>, <rect(128, 389, 20, 20)>, <rect(108, 389, 20, 20)>, <rect(108, 369, 20, 20)>]
+Stage finished and saved
+blocks in list : 2
+states found so far: 23
+Found a collision with border
+Block restored
+Found a collision with bottom
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(168, 389, 20, 20)>, <rect(148, 389, 20, 20)>, <rect(128, 389, 20, 20)>, <rect(128, 369, 20, 20)>]
+Stage finished and saved
+blocks in list : 2
+states found so far: 24
+Found a collision with border
+Block restored
+Found a collision with bottom
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(188, 389, 20, 20)>, <rect(168, 389, 20, 20)>, <rect(148, 389, 20, 20)>, <rect(148, 369, 20, 20)>]
+Stage finished and saved
+blocks in list : 2
+states found so far: 25
+[<rect(108, 49, 20, 20)>, <rect(88, 49, 20, 20)>, <rect(68, 49, 20, 20)>, <rect(68, 29, 20, 20)>]
+trying to rotate
+[<rect(108, 49, 20, 20)>, <rect(108, 29, 20, 20)>, <rect(108, 9, 20, 20)>, <rect(128, 9, 20, 20)>]
+rotate succesfull
+Starting new rotation
+Found a collision with border
+Block restored
+Found a collision with bottom
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(8, 389, 20, 20)>, <rect(8, 369, 20, 20)>, <rect(8, 349, 20, 20)>, <rect(28, 349, 20, 20)>]
+Stage finished and saved
+blocks in list : 2
+states found so far: 26
+Found a collision with border
+Block restored
+Found a collision with bottom
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(28, 389, 20, 20)>, <rect(28, 369, 20, 20)>, <rect(28, 349, 20, 20)>, <rect(48, 349, 20, 20)>]
+Stage finished and saved
+blocks in list : 2
+states found so far: 27
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(48, 369, 20, 20)>, <rect(48, 349, 20, 20)>, <rect(48, 329, 20, 20)>, <rect(68, 329, 20, 20)>]
+Stage finished and saved
+blocks in list : 2
+states found so far: 28
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+Stage finished and saved
+blocks in list : 2
+states found so far: 29
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(88, 349, 20, 20)>, <rect(88, 329, 20, 20)>, <rect(88, 309, 20, 20)>, <rect(108, 309, 20, 20)>]
+Stage finished and saved
+blocks in list : 2
+states found so far: 30
+Found a collision with border
+Block restored
+Found a collision with bottom
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(108, 389, 20, 20)>, <rect(108, 369, 20, 20)>, <rect(108, 349, 20, 20)>, <rect(128, 349, 20, 20)>]
+Stage finished and saved
+blocks in list : 2
+states found so far: 31
+Found a collision with border
+Block restored
+Found a collision with bottom
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(128, 389, 20, 20)>, <rect(128, 369, 20, 20)>, <rect(128, 349, 20, 20)>, <rect(148, 349, 20, 20)>]
+Stage finished and saved
+blocks in list : 2
+states found so far: 32
+Found a collision with border
+Block restored
+Found a collision with bottom
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(148, 389, 20, 20)>, <rect(148, 369, 20, 20)>, <rect(148, 349, 20, 20)>, <rect(168, 349, 20, 20)>]
+Stage finished and saved
+blocks in list : 2
+states found so far: 33
+Found a collision with border
+Block restored
+Found a collision with bottom
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(168, 389, 20, 20)>, <rect(168, 369, 20, 20)>, <rect(168, 349, 20, 20)>, <rect(188, 349, 20, 20)>]
+Stage finished and saved
+blocks in list : 2
+states found so far: 34
+[<rect(108, 49, 20, 20)>, <rect(108, 29, 20, 20)>, <rect(108, 9, 20, 20)>, <rect(128, 9, 20, 20)>]
+trying to rotate
+[<rect(108, 49, 20, 20)>, <rect(128, 49, 20, 20)>, <rect(148, 49, 20, 20)>, <rect(148, 69, 20, 20)>]
+rotate succesfull
+
+
+Generated the following states:
+finished random state selection
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+Printing representation
+[0, 0, 1, 4, 4, 0, 0, 0, 0, 0]
+Getting new block
+generated new block: S length = 3
+S block generated, going to rotate 2 times.
+Width of block = 3
+number of expected loops = 14
+Starting new rotation
+Found a collision with border
+Block restored
+Found a collision with bottom
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(28, 369, 20, 20)>, <rect(48, 369, 20, 20)>, <rect(28, 389, 20, 20)>, <rect(8, 389, 20, 20)>]
+Stage finished and saved
+blocks in list : 3
+states found so far: 1
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(48, 309, 20, 20)>, <rect(68, 309, 20, 20)>, <rect(48, 329, 20, 20)>, <rect(28, 329, 20, 20)>]
+Stage finished and saved
+blocks in list : 3
+states found so far: 2
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(68, 289, 20, 20)>, <rect(88, 289, 20, 20)>, <rect(68, 309, 20, 20)>, <rect(48, 309, 20, 20)>]
+Stage finished and saved
+blocks in list : 3
+states found so far: 3
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(88, 289, 20, 20)>, <rect(108, 289, 20, 20)>, <rect(88, 309, 20, 20)>, <rect(68, 309, 20, 20)>]
+Stage finished and saved
+blocks in list : 3
+states found so far: 4
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 289, 20, 20)>, <rect(128, 289, 20, 20)>, <rect(108, 309, 20, 20)>, <rect(88, 309, 20, 20)>]
+Stage finished and saved
+blocks in list : 3
 states found so far: 5
+Found a collision with border
+Block restored
+Found a collision with bottom
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(128, 369, 20, 20)>, <rect(148, 369, 20, 20)>, <rect(128, 389, 20, 20)>, <rect(108, 389, 20, 20)>]
+Stage finished and saved
+blocks in list : 3
+states found so far: 6
+Found a collision with border
+Block restored
+Found a collision with bottom
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(148, 369, 20, 20)>, <rect(168, 369, 20, 20)>, <rect(148, 389, 20, 20)>, <rect(128, 389, 20, 20)>]
+Stage finished and saved
+blocks in list : 3
+states found so far: 7
+Found a collision with border
+Block restored
+Found a collision with bottom
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(168, 369, 20, 20)>, <rect(188, 369, 20, 20)>, <rect(168, 389, 20, 20)>, <rect(148, 389, 20, 20)>]
+Stage finished and saved
+blocks in list : 3
+states found so far: 8
+[<rect(108, 49, 20, 20)>, <rect(128, 49, 20, 20)>, <rect(108, 69, 20, 20)>, <rect(88, 69, 20, 20)>]
+trying to rotate
+[<rect(108, 49, 20, 20)>, <rect(108, 69, 20, 20)>, <rect(88, 49, 20, 20)>, <rect(88, 29, 20, 20)>]
+rotate succesfull
+Starting new rotation
+Found a collision with border
+Block restored
+Found a collision with bottom
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(28, 369, 20, 20)>, <rect(28, 389, 20, 20)>, <rect(8, 369, 20, 20)>, <rect(8, 349, 20, 20)>]
+Stage finished and saved
+blocks in list : 3
+states found so far: 9
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(48, 349, 20, 20)>, <rect(48, 369, 20, 20)>, <rect(28, 349, 20, 20)>, <rect(28, 329, 20, 20)>]
+Stage finished and saved
+blocks in list : 3
+states found so far: 10
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(68, 289, 20, 20)>, <rect(68, 309, 20, 20)>, <rect(48, 289, 20, 20)>, <rect(48, 269, 20, 20)>]
+Stage finished and saved
+blocks in list : 3
+states found so far: 11
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(88, 289, 20, 20)>, <rect(88, 309, 20, 20)>, <rect(68, 289, 20, 20)>, <rect(68, 269, 20, 20)>]
+Stage finished and saved
+blocks in list : 3
+states found so far: 12
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>, <rect(88, 289, 20, 20)>]
+Stage finished and saved
+blocks in list : 3
+states found so far: 13
+Found a collision with border
+Block restored
+Found a collision with bottom
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(128, 369, 20, 20)>, <rect(128, 389, 20, 20)>, <rect(108, 369, 20, 20)>, <rect(108, 349, 20, 20)>]
+Stage finished and saved
+blocks in list : 3
+states found so far: 14
+Found a collision with border
+Block restored
+Found a collision with bottom
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(148, 369, 20, 20)>, <rect(148, 389, 20, 20)>, <rect(128, 369, 20, 20)>, <rect(128, 349, 20, 20)>]
+Stage finished and saved
+blocks in list : 3
+states found so far: 15
+Found a collision with border
+Block restored
+Found a collision with bottom
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(168, 369, 20, 20)>, <rect(168, 389, 20, 20)>, <rect(148, 369, 20, 20)>, <rect(148, 349, 20, 20)>]
+Stage finished and saved
+blocks in list : 3
+states found so far: 16
+Found a collision with border
+Block restored
+Found a collision with bottom
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(188, 369, 20, 20)>, <rect(188, 389, 20, 20)>, <rect(168, 369, 20, 20)>, <rect(168, 349, 20, 20)>]
+Stage finished and saved
+blocks in list : 3
+states found so far: 17
+[<rect(108, 49, 20, 20)>, <rect(108, 69, 20, 20)>, <rect(88, 49, 20, 20)>, <rect(88, 29, 20, 20)>]
+trying to rotate
+[<rect(108, 49, 20, 20)>, <rect(88, 49, 20, 20)>, <rect(108, 29, 20, 20)>, <rect(128, 29, 20, 20)>]
+rotate succesfull
+
+
+Generated the following states:
+finished random state selection
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>, <rect(88, 289, 20, 20)>]
+Printing representation
+[0, 0, 1, 4, 6, 5, 0, 0, 0, 0]
+Getting new block
+generated new block: Z length = 4
+Z block generated, going to rotate 2 times.
+Width of block = 3
+number of expected loops = 14
+Starting new rotation
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>, <rect(88, 289, 20, 20)>]
+[<rect(8, 349, 20, 20)>, <rect(28, 349, 20, 20)>, <rect(28, 369, 20, 20)>, <rect(48, 369, 20, 20)>]
+Stage finished and saved
+blocks in list : 4
+states found so far: 1
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>, <rect(88, 289, 20, 20)>]
+[<rect(28, 289, 20, 20)>, <rect(48, 289, 20, 20)>, <rect(48, 309, 20, 20)>, <rect(68, 309, 20, 20)>]
+Stage finished and saved
+blocks in list : 4
+states found so far: 2
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>, <rect(88, 289, 20, 20)>]
+[<rect(48, 249, 20, 20)>, <rect(68, 249, 20, 20)>, <rect(68, 269, 20, 20)>, <rect(88, 269, 20, 20)>]
+Stage finished and saved
+blocks in list : 4
+states found so far: 3
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>, <rect(88, 289, 20, 20)>]
+[<rect(68, 249, 20, 20)>, <rect(88, 249, 20, 20)>, <rect(88, 269, 20, 20)>, <rect(108, 269, 20, 20)>]
+Stage finished and saved
+blocks in list : 4
+states found so far: 4
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>, <rect(88, 289, 20, 20)>]
+[<rect(88, 269, 20, 20)>, <rect(108, 269, 20, 20)>, <rect(108, 289, 20, 20)>, <rect(128, 289, 20, 20)>]
+Stage finished and saved
+blocks in list : 4
+states found so far: 5
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>, <rect(88, 289, 20, 20)>]
+[<rect(108, 289, 20, 20)>, <rect(128, 289, 20, 20)>, <rect(128, 309, 20, 20)>, <rect(148, 309, 20, 20)>]
+Stage finished and saved
+blocks in list : 4
+states found so far: 6
+Found a collision with border
+Block restored
+Found a collision with bottom
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>, <rect(88, 289, 20, 20)>]
+[<rect(128, 369, 20, 20)>, <rect(148, 369, 20, 20)>, <rect(148, 389, 20, 20)>, <rect(168, 389, 20, 20)>]
+Stage finished and saved
+blocks in list : 4
+states found so far: 7
+Found a collision with border
+Block restored
+Found a collision with bottom
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>, <rect(88, 289, 20, 20)>]
+[<rect(148, 369, 20, 20)>, <rect(168, 369, 20, 20)>, <rect(168, 389, 20, 20)>, <rect(188, 389, 20, 20)>]
+Stage finished and saved
+blocks in list : 4
+states found so far: 8
+[<rect(88, 49, 20, 20)>, <rect(108, 49, 20, 20)>, <rect(108, 69, 20, 20)>, <rect(128, 69, 20, 20)>]
+trying to rotate
+[<rect(108, 29, 20, 20)>, <rect(108, 49, 20, 20)>, <rect(88, 49, 20, 20)>, <rect(88, 69, 20, 20)>]
+rotate succesfull
+Starting new rotation
+Found a collision with border
+Block restored
+Found a collision with bottom
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>, <rect(88, 289, 20, 20)>]
+[<rect(28, 349, 20, 20)>, <rect(28, 369, 20, 20)>, <rect(8, 369, 20, 20)>, <rect(8, 389, 20, 20)>]
+Stage finished and saved
+blocks in list : 4
+states found so far: 9
+Found a collision with border
+Block restored
+Found a collision with bottom
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>, <rect(88, 289, 20, 20)>]
+[<rect(48, 349, 20, 20)>, <rect(48, 369, 20, 20)>, <rect(28, 369, 20, 20)>, <rect(28, 389, 20, 20)>]
+Stage finished and saved
+blocks in list : 4
+states found so far: 10
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>, <rect(88, 289, 20, 20)>]
+[<rect(68, 289, 20, 20)>, <rect(68, 309, 20, 20)>, <rect(48, 309, 20, 20)>, <rect(48, 329, 20, 20)>]
+Stage finished and saved
+blocks in list : 4
+states found so far: 11
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>, <rect(88, 289, 20, 20)>]
+[<rect(88, 249, 20, 20)>, <rect(88, 269, 20, 20)>, <rect(68, 269, 20, 20)>, <rect(68, 289, 20, 20)>]
+Stage finished and saved
+blocks in list : 4
+states found so far: 12
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>, <rect(88, 289, 20, 20)>]
+[<rect(108, 229, 20, 20)>, <rect(108, 249, 20, 20)>, <rect(88, 249, 20, 20)>, <rect(88, 269, 20, 20)>]
+Stage finished and saved
+blocks in list : 4
+states found so far: 13
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>, <rect(88, 289, 20, 20)>]
+[<rect(128, 249, 20, 20)>, <rect(128, 269, 20, 20)>, <rect(108, 269, 20, 20)>, <rect(108, 289, 20, 20)>]
+Stage finished and saved
+blocks in list : 4
+states found so far: 14
+Found a collision with border
+Block restored
+Found a collision with bottom
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>, <rect(88, 289, 20, 20)>]
+[<rect(148, 349, 20, 20)>, <rect(148, 369, 20, 20)>, <rect(128, 369, 20, 20)>, <rect(128, 389, 20, 20)>]
+Stage finished and saved
+blocks in list : 4
+states found so far: 15
+Found a collision with border
+Block restored
+Found a collision with bottom
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>, <rect(88, 289, 20, 20)>]
+[<rect(168, 349, 20, 20)>, <rect(168, 369, 20, 20)>, <rect(148, 369, 20, 20)>, <rect(148, 389, 20, 20)>]
+Stage finished and saved
+blocks in list : 4
+states found so far: 16
+Found a collision with border
+Block restored
+Found a collision with bottom
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>, <rect(88, 289, 20, 20)>]
+[<rect(188, 349, 20, 20)>, <rect(188, 369, 20, 20)>, <rect(168, 369, 20, 20)>, <rect(168, 389, 20, 20)>]
+Stage finished and saved
+blocks in list : 4
+states found so far: 17
+[<rect(108, 29, 20, 20)>, <rect(108, 49, 20, 20)>, <rect(88, 49, 20, 20)>, <rect(88, 69, 20, 20)>]
+trying to rotate
+[<rect(128, 49, 20, 20)>, <rect(108, 49, 20, 20)>, <rect(108, 29, 20, 20)>, <rect(88, 29, 20, 20)>]
+rotate succesfull
+
+
+Generated the following states:
+finished random state selection
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>, <rect(88, 289, 20, 20)>]
+[<rect(108, 289, 20, 20)>, <rect(128, 289, 20, 20)>, <rect(128, 309, 20, 20)>, <rect(148, 309, 20, 20)>]
+Printing representation
+[0, 0, 1, 4, 6, 6, 6, 5, 0, 0]
+Getting new block
+generated new block: T length = 5
+T block generated, going to rotate 4 times.
+Width of block = 3
+number of expected loops = 28
+Starting new rotation
+Found a collision with border
+Block restored
+Found a collision with bottom
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>, <rect(88, 289, 20, 20)>]
+[<rect(108, 289, 20, 20)>, <rect(128, 289, 20, 20)>, <rect(128, 309, 20, 20)>, <rect(148, 309, 20, 20)>]
+[<rect(8, 369, 20, 20)>, <rect(28, 369, 20, 20)>, <rect(48, 369, 20, 20)>, <rect(28, 389, 20, 20)>]
+Stage finished and saved
+blocks in list : 5
+states found so far: 1
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>, <rect(88, 289, 20, 20)>]
+[<rect(108, 289, 20, 20)>, <rect(128, 289, 20, 20)>, <rect(128, 309, 20, 20)>, <rect(148, 309, 20, 20)>]
+[<rect(28, 309, 20, 20)>, <rect(48, 309, 20, 20)>, <rect(68, 309, 20, 20)>, <rect(48, 329, 20, 20)>]
+Stage finished and saved
+blocks in list : 5
+states found so far: 2
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>, <rect(88, 289, 20, 20)>]
+[<rect(108, 289, 20, 20)>, <rect(128, 289, 20, 20)>, <rect(128, 309, 20, 20)>, <rect(148, 309, 20, 20)>]
+[<rect(48, 269, 20, 20)>, <rect(68, 269, 20, 20)>, <rect(88, 269, 20, 20)>, <rect(68, 289, 20, 20)>]
+Stage finished and saved
+blocks in list : 5
+states found so far: 3
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>, <rect(88, 289, 20, 20)>]
+[<rect(108, 289, 20, 20)>, <rect(128, 289, 20, 20)>, <rect(128, 309, 20, 20)>, <rect(148, 309, 20, 20)>]
+[<rect(68, 249, 20, 20)>, <rect(88, 249, 20, 20)>, <rect(108, 249, 20, 20)>, <rect(88, 269, 20, 20)>]
+Stage finished and saved
+blocks in list : 5
+states found so far: 4
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>, <rect(88, 289, 20, 20)>]
+[<rect(108, 289, 20, 20)>, <rect(128, 289, 20, 20)>, <rect(128, 309, 20, 20)>, <rect(148, 309, 20, 20)>]
+[<rect(88, 249, 20, 20)>, <rect(108, 249, 20, 20)>, <rect(128, 249, 20, 20)>, <rect(108, 269, 20, 20)>]
+Stage finished and saved
+blocks in list : 5
+states found so far: 5
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>, <rect(88, 289, 20, 20)>]
+[<rect(108, 289, 20, 20)>, <rect(128, 289, 20, 20)>, <rect(128, 309, 20, 20)>, <rect(148, 309, 20, 20)>]
+[<rect(108, 249, 20, 20)>, <rect(128, 249, 20, 20)>, <rect(148, 249, 20, 20)>, <rect(128, 269, 20, 20)>]
+Stage finished and saved
+blocks in list : 5
+states found so far: 6
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>, <rect(88, 289, 20, 20)>]
+[<rect(108, 289, 20, 20)>, <rect(128, 289, 20, 20)>, <rect(128, 309, 20, 20)>, <rect(148, 309, 20, 20)>]
+[<rect(128, 269, 20, 20)>, <rect(148, 269, 20, 20)>, <rect(168, 269, 20, 20)>, <rect(148, 289, 20, 20)>]
+Stage finished and saved
+blocks in list : 5
+states found so far: 7
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>, <rect(88, 289, 20, 20)>]
+[<rect(108, 289, 20, 20)>, <rect(128, 289, 20, 20)>, <rect(128, 309, 20, 20)>, <rect(148, 309, 20, 20)>]
+[<rect(148, 289, 20, 20)>, <rect(168, 289, 20, 20)>, <rect(188, 289, 20, 20)>, <rect(168, 309, 20, 20)>]
+Stage finished and saved
+blocks in list : 5
+states found so far: 8
+[<rect(108, 49, 20, 20)>, <rect(128, 49, 20, 20)>, <rect(148, 49, 20, 20)>, <rect(128, 69, 20, 20)>]
+trying to rotate
+[<rect(108, 49, 20, 20)>, <rect(108, 69, 20, 20)>, <rect(108, 89, 20, 20)>, <rect(88, 69, 20, 20)>]
+rotate succesfull
+Starting new rotation
+Found a collision with border
+Block restored
+Found a collision with bottom
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>, <rect(88, 289, 20, 20)>]
+[<rect(108, 289, 20, 20)>, <rect(128, 289, 20, 20)>, <rect(128, 309, 20, 20)>, <rect(148, 309, 20, 20)>]
+[<rect(28, 349, 20, 20)>, <rect(28, 369, 20, 20)>, <rect(28, 389, 20, 20)>, <rect(8, 369, 20, 20)>]
+Stage finished and saved
+blocks in list : 5
+states found so far: 9
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>, <rect(88, 289, 20, 20)>]
+[<rect(108, 289, 20, 20)>, <rect(128, 289, 20, 20)>, <rect(128, 309, 20, 20)>, <rect(148, 309, 20, 20)>]
+[<rect(48, 329, 20, 20)>, <rect(48, 349, 20, 20)>, <rect(48, 369, 20, 20)>, <rect(28, 349, 20, 20)>]
+Stage finished and saved
+blocks in list : 5
+states found so far: 10
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>, <rect(88, 289, 20, 20)>]
+[<rect(108, 289, 20, 20)>, <rect(128, 289, 20, 20)>, <rect(128, 309, 20, 20)>, <rect(148, 309, 20, 20)>]
+[<rect(68, 269, 20, 20)>, <rect(68, 289, 20, 20)>, <rect(68, 309, 20, 20)>, <rect(48, 289, 20, 20)>]
+Stage finished and saved
+blocks in list : 5
+states found so far: 11
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>, <rect(88, 289, 20, 20)>]
+[<rect(108, 289, 20, 20)>, <rect(128, 289, 20, 20)>, <rect(128, 309, 20, 20)>, <rect(148, 309, 20, 20)>]
+[<rect(88, 229, 20, 20)>, <rect(88, 249, 20, 20)>, <rect(88, 269, 20, 20)>, <rect(68, 249, 20, 20)>]
+Stage finished and saved
+blocks in list : 5
+states found so far: 12
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>, <rect(88, 289, 20, 20)>]
+[<rect(108, 289, 20, 20)>, <rect(128, 289, 20, 20)>, <rect(128, 309, 20, 20)>, <rect(148, 309, 20, 20)>]
+[<rect(108, 229, 20, 20)>, <rect(108, 249, 20, 20)>, <rect(108, 269, 20, 20)>, <rect(88, 249, 20, 20)>]
+Stage finished and saved
+blocks in list : 5
+states found so far: 13
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>, <rect(88, 289, 20, 20)>]
+[<rect(108, 289, 20, 20)>, <rect(128, 289, 20, 20)>, <rect(128, 309, 20, 20)>, <rect(148, 309, 20, 20)>]
+[<rect(128, 229, 20, 20)>, <rect(128, 249, 20, 20)>, <rect(128, 269, 20, 20)>, <rect(108, 249, 20, 20)>]
+Stage finished and saved
+blocks in list : 5
+states found so far: 14
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>, <rect(88, 289, 20, 20)>]
+[<rect(108, 289, 20, 20)>, <rect(128, 289, 20, 20)>, <rect(128, 309, 20, 20)>, <rect(148, 309, 20, 20)>]
+[<rect(148, 249, 20, 20)>, <rect(148, 269, 20, 20)>, <rect(148, 289, 20, 20)>, <rect(128, 269, 20, 20)>]
+Stage finished and saved
+blocks in list : 5
+states found so far: 15
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>, <rect(88, 289, 20, 20)>]
+[<rect(108, 289, 20, 20)>, <rect(128, 289, 20, 20)>, <rect(128, 309, 20, 20)>, <rect(148, 309, 20, 20)>]
+[<rect(168, 269, 20, 20)>, <rect(168, 289, 20, 20)>, <rect(168, 309, 20, 20)>, <rect(148, 289, 20, 20)>]
+Stage finished and saved
+blocks in list : 5
+states found so far: 16
+Found a collision with border
+Block restored
+Found a collision with bottom
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>, <rect(88, 289, 20, 20)>]
+[<rect(108, 289, 20, 20)>, <rect(128, 289, 20, 20)>, <rect(128, 309, 20, 20)>, <rect(148, 309, 20, 20)>]
+[<rect(188, 349, 20, 20)>, <rect(188, 369, 20, 20)>, <rect(188, 389, 20, 20)>, <rect(168, 369, 20, 20)>]
+Stage finished and saved
+blocks in list : 5
+states found so far: 17
+[<rect(108, 49, 20, 20)>, <rect(108, 69, 20, 20)>, <rect(108, 89, 20, 20)>, <rect(88, 69, 20, 20)>]
+trying to rotate
+[<rect(108, 49, 20, 20)>, <rect(88, 49, 20, 20)>, <rect(68, 49, 20, 20)>, <rect(88, 29, 20, 20)>]
+rotate succesfull
+Starting new rotation
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>, <rect(88, 289, 20, 20)>]
+[<rect(108, 289, 20, 20)>, <rect(128, 289, 20, 20)>, <rect(128, 309, 20, 20)>, <rect(148, 309, 20, 20)>]
+[<rect(48, 369, 20, 20)>, <rect(28, 369, 20, 20)>, <rect(8, 369, 20, 20)>, <rect(28, 349, 20, 20)>]
+Stage finished and saved
+blocks in list : 5
+states found so far: 18
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>, <rect(88, 289, 20, 20)>]
+[<rect(108, 289, 20, 20)>, <rect(128, 289, 20, 20)>, <rect(128, 309, 20, 20)>, <rect(148, 309, 20, 20)>]
+[<rect(68, 309, 20, 20)>, <rect(48, 309, 20, 20)>, <rect(28, 309, 20, 20)>, <rect(48, 289, 20, 20)>]
+Stage finished and saved
+blocks in list : 5
+states found so far: 19
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>, <rect(88, 289, 20, 20)>]
+[<rect(108, 289, 20, 20)>, <rect(128, 289, 20, 20)>, <rect(128, 309, 20, 20)>, <rect(148, 309, 20, 20)>]
+[<rect(88, 269, 20, 20)>, <rect(68, 269, 20, 20)>, <rect(48, 269, 20, 20)>, <rect(68, 249, 20, 20)>]
+Stage finished and saved
+blocks in list : 5
+states found so far: 20
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>, <rect(88, 289, 20, 20)>]
+[<rect(108, 289, 20, 20)>, <rect(128, 289, 20, 20)>, <rect(128, 309, 20, 20)>, <rect(148, 309, 20, 20)>]
+[<rect(108, 269, 20, 20)>, <rect(88, 269, 20, 20)>, <rect(68, 269, 20, 20)>, <rect(88, 249, 20, 20)>]
+Stage finished and saved
+blocks in list : 5
+states found so far: 21
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>, <rect(88, 289, 20, 20)>]
+[<rect(108, 289, 20, 20)>, <rect(128, 289, 20, 20)>, <rect(128, 309, 20, 20)>, <rect(148, 309, 20, 20)>]
+[<rect(128, 269, 20, 20)>, <rect(108, 269, 20, 20)>, <rect(88, 269, 20, 20)>, <rect(108, 249, 20, 20)>]
+Stage finished and saved
+blocks in list : 5
+states found so far: 22
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>, <rect(88, 289, 20, 20)>]
+[<rect(108, 289, 20, 20)>, <rect(128, 289, 20, 20)>, <rect(128, 309, 20, 20)>, <rect(148, 309, 20, 20)>]
+[<rect(148, 269, 20, 20)>, <rect(128, 269, 20, 20)>, <rect(108, 269, 20, 20)>, <rect(128, 249, 20, 20)>]
+Stage finished and saved
+blocks in list : 5
+states found so far: 23
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>, <rect(88, 289, 20, 20)>]
+[<rect(108, 289, 20, 20)>, <rect(128, 289, 20, 20)>, <rect(128, 309, 20, 20)>, <rect(148, 309, 20, 20)>]
+[<rect(168, 269, 20, 20)>, <rect(148, 269, 20, 20)>, <rect(128, 269, 20, 20)>, <rect(148, 249, 20, 20)>]
+Stage finished and saved
+blocks in list : 5
+states found so far: 24
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>, <rect(88, 289, 20, 20)>]
+[<rect(108, 289, 20, 20)>, <rect(128, 289, 20, 20)>, <rect(128, 309, 20, 20)>, <rect(148, 309, 20, 20)>]
+[<rect(188, 289, 20, 20)>, <rect(168, 289, 20, 20)>, <rect(148, 289, 20, 20)>, <rect(168, 269, 20, 20)>]
+Stage finished and saved
+blocks in list : 5
+states found so far: 25
+[<rect(108, 49, 20, 20)>, <rect(88, 49, 20, 20)>, <rect(68, 49, 20, 20)>, <rect(88, 29, 20, 20)>]
+trying to rotate
+[<rect(108, 49, 20, 20)>, <rect(108, 29, 20, 20)>, <rect(108, 9, 20, 20)>, <rect(128, 29, 20, 20)>]
+rotate succesfull
+Starting new rotation
+Found a collision with border
+Block restored
+Found a collision with bottom
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>, <rect(88, 289, 20, 20)>]
+[<rect(108, 289, 20, 20)>, <rect(128, 289, 20, 20)>, <rect(128, 309, 20, 20)>, <rect(148, 309, 20, 20)>]
+[<rect(8, 389, 20, 20)>, <rect(8, 369, 20, 20)>, <rect(8, 349, 20, 20)>, <rect(28, 369, 20, 20)>]
+Stage finished and saved
+blocks in list : 5
+states found so far: 26
+Found a collision with border
+Block restored
+Found a collision with bottom
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>, <rect(88, 289, 20, 20)>]
+[<rect(108, 289, 20, 20)>, <rect(128, 289, 20, 20)>, <rect(128, 309, 20, 20)>, <rect(148, 309, 20, 20)>]
+[<rect(28, 389, 20, 20)>, <rect(28, 369, 20, 20)>, <rect(28, 349, 20, 20)>, <rect(48, 369, 20, 20)>]
+Stage finished and saved
+blocks in list : 5
+states found so far: 27
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>, <rect(88, 289, 20, 20)>]
+[<rect(108, 289, 20, 20)>, <rect(128, 289, 20, 20)>, <rect(128, 309, 20, 20)>, <rect(148, 309, 20, 20)>]
+[<rect(48, 329, 20, 20)>, <rect(48, 309, 20, 20)>, <rect(48, 289, 20, 20)>, <rect(68, 309, 20, 20)>]
+Stage finished and saved
+blocks in list : 5
+states found so far: 28
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>, <rect(88, 289, 20, 20)>]
+[<rect(108, 289, 20, 20)>, <rect(128, 289, 20, 20)>, <rect(128, 309, 20, 20)>, <rect(148, 309, 20, 20)>]
+[<rect(68, 289, 20, 20)>, <rect(68, 269, 20, 20)>, <rect(68, 249, 20, 20)>, <rect(88, 269, 20, 20)>]
+Stage finished and saved
+blocks in list : 5
+states found so far: 29
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>, <rect(88, 289, 20, 20)>]
+[<rect(108, 289, 20, 20)>, <rect(128, 289, 20, 20)>, <rect(128, 309, 20, 20)>, <rect(148, 309, 20, 20)>]
+[<rect(88, 269, 20, 20)>, <rect(88, 249, 20, 20)>, <rect(88, 229, 20, 20)>, <rect(108, 249, 20, 20)>]
+Stage finished and saved
+blocks in list : 5
+states found so far: 30
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>, <rect(88, 289, 20, 20)>]
+[<rect(108, 289, 20, 20)>, <rect(128, 289, 20, 20)>, <rect(128, 309, 20, 20)>, <rect(148, 309, 20, 20)>]
+[<rect(108, 269, 20, 20)>, <rect(108, 249, 20, 20)>, <rect(108, 229, 20, 20)>, <rect(128, 249, 20, 20)>]
+Stage finished and saved
+blocks in list : 5
+states found so far: 31
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>, <rect(88, 289, 20, 20)>]
+[<rect(108, 289, 20, 20)>, <rect(128, 289, 20, 20)>, <rect(128, 309, 20, 20)>, <rect(148, 309, 20, 20)>]
+[<rect(128, 269, 20, 20)>, <rect(128, 249, 20, 20)>, <rect(128, 229, 20, 20)>, <rect(148, 249, 20, 20)>]
+Stage finished and saved
+blocks in list : 5
+states found so far: 32
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>, <rect(88, 289, 20, 20)>]
+[<rect(108, 289, 20, 20)>, <rect(128, 289, 20, 20)>, <rect(128, 309, 20, 20)>, <rect(148, 309, 20, 20)>]
+[<rect(148, 289, 20, 20)>, <rect(148, 269, 20, 20)>, <rect(148, 249, 20, 20)>, <rect(168, 269, 20, 20)>]
+Stage finished and saved
+blocks in list : 5
+states found so far: 33
+Found a collision with border
+Block restored
+Found a collision with bottom
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>, <rect(88, 289, 20, 20)>]
+[<rect(108, 289, 20, 20)>, <rect(128, 289, 20, 20)>, <rect(128, 309, 20, 20)>, <rect(148, 309, 20, 20)>]
+[<rect(168, 389, 20, 20)>, <rect(168, 369, 20, 20)>, <rect(168, 349, 20, 20)>, <rect(188, 369, 20, 20)>]
+Stage finished and saved
+blocks in list : 5
+states found so far: 34
+[<rect(108, 49, 20, 20)>, <rect(108, 29, 20, 20)>, <rect(108, 9, 20, 20)>, <rect(128, 29, 20, 20)>]
+trying to rotate
+[<rect(108, 49, 20, 20)>, <rect(128, 49, 20, 20)>, <rect(148, 49, 20, 20)>, <rect(128, 69, 20, 20)>]
+rotate succesfull
+
+
+Generated the following states:
+finished random state selection
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>, <rect(88, 289, 20, 20)>]
+[<rect(108, 289, 20, 20)>, <rect(128, 289, 20, 20)>, <rect(128, 309, 20, 20)>, <rect(148, 309, 20, 20)>]
+[<rect(48, 329, 20, 20)>, <rect(48, 309, 20, 20)>, <rect(48, 289, 20, 20)>, <rect(68, 309, 20, 20)>]
+Printing representation
+[0, 0, 6, 5, 6, 6, 6, 5, 0, 0]
+Getting new block
+generated new block: S length = 6
+S block generated, going to rotate 2 times.
+Width of block = 3
+number of expected loops = 14
+Starting new rotation
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>, <rect(88, 289, 20, 20)>]
+[<rect(108, 289, 20, 20)>, <rect(128, 289, 20, 20)>, <rect(128, 309, 20, 20)>, <rect(148, 309, 20, 20)>]
+[<rect(48, 329, 20, 20)>, <rect(48, 309, 20, 20)>, <rect(48, 289, 20, 20)>, <rect(68, 309, 20, 20)>]
+[<rect(28, 269, 20, 20)>, <rect(48, 269, 20, 20)>, <rect(28, 289, 20, 20)>, <rect(8, 289, 20, 20)>]
+Stage finished and saved
+blocks in list : 6
+states found so far: 1
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>, <rect(88, 289, 20, 20)>]
+[<rect(108, 289, 20, 20)>, <rect(128, 289, 20, 20)>, <rect(128, 309, 20, 20)>, <rect(148, 309, 20, 20)>]
+[<rect(48, 329, 20, 20)>, <rect(48, 309, 20, 20)>, <rect(48, 289, 20, 20)>, <rect(68, 309, 20, 20)>]
+[<rect(48, 249, 20, 20)>, <rect(68, 249, 20, 20)>, <rect(48, 269, 20, 20)>, <rect(28, 269, 20, 20)>]
+Stage finished and saved
+blocks in list : 6
+states found so far: 2
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>, <rect(88, 289, 20, 20)>]
+[<rect(108, 289, 20, 20)>, <rect(128, 289, 20, 20)>, <rect(128, 309, 20, 20)>, <rect(148, 309, 20, 20)>]
+[<rect(48, 329, 20, 20)>, <rect(48, 309, 20, 20)>, <rect(48, 289, 20, 20)>, <rect(68, 309, 20, 20)>]
+[<rect(68, 249, 20, 20)>, <rect(88, 249, 20, 20)>, <rect(68, 269, 20, 20)>, <rect(48, 269, 20, 20)>]
+Stage finished and saved
+blocks in list : 6
+states found so far: 3
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>, <rect(88, 289, 20, 20)>]
+[<rect(108, 289, 20, 20)>, <rect(128, 289, 20, 20)>, <rect(128, 309, 20, 20)>, <rect(148, 309, 20, 20)>]
+[<rect(48, 329, 20, 20)>, <rect(48, 309, 20, 20)>, <rect(48, 289, 20, 20)>, <rect(68, 309, 20, 20)>]
+[<rect(88, 249, 20, 20)>, <rect(108, 249, 20, 20)>, <rect(88, 269, 20, 20)>, <rect(68, 269, 20, 20)>]
+Stage finished and saved
+blocks in list : 6
+states found so far: 4
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>, <rect(88, 289, 20, 20)>]
+[<rect(108, 289, 20, 20)>, <rect(128, 289, 20, 20)>, <rect(128, 309, 20, 20)>, <rect(148, 309, 20, 20)>]
+[<rect(48, 329, 20, 20)>, <rect(48, 309, 20, 20)>, <rect(48, 289, 20, 20)>, <rect(68, 309, 20, 20)>]
+[<rect(108, 249, 20, 20)>, <rect(128, 249, 20, 20)>, <rect(108, 269, 20, 20)>, <rect(88, 269, 20, 20)>]
+Stage finished and saved
+blocks in list : 6
+states found so far: 5
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>, <rect(88, 289, 20, 20)>]
+[<rect(108, 289, 20, 20)>, <rect(128, 289, 20, 20)>, <rect(128, 309, 20, 20)>, <rect(148, 309, 20, 20)>]
+[<rect(48, 329, 20, 20)>, <rect(48, 309, 20, 20)>, <rect(48, 289, 20, 20)>, <rect(68, 309, 20, 20)>]
+[<rect(128, 249, 20, 20)>, <rect(148, 249, 20, 20)>, <rect(128, 269, 20, 20)>, <rect(108, 269, 20, 20)>]
+Stage finished and saved
+blocks in list : 6
+states found so far: 6
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>, <rect(88, 289, 20, 20)>]
+[<rect(108, 289, 20, 20)>, <rect(128, 289, 20, 20)>, <rect(128, 309, 20, 20)>, <rect(148, 309, 20, 20)>]
+[<rect(48, 329, 20, 20)>, <rect(48, 309, 20, 20)>, <rect(48, 289, 20, 20)>, <rect(68, 309, 20, 20)>]
+[<rect(148, 249, 20, 20)>, <rect(168, 249, 20, 20)>, <rect(148, 269, 20, 20)>, <rect(128, 269, 20, 20)>]
+Stage finished and saved
+blocks in list : 6
+states found so far: 7
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>, <rect(88, 289, 20, 20)>]
+[<rect(108, 289, 20, 20)>, <rect(128, 289, 20, 20)>, <rect(128, 309, 20, 20)>, <rect(148, 309, 20, 20)>]
+[<rect(48, 329, 20, 20)>, <rect(48, 309, 20, 20)>, <rect(48, 289, 20, 20)>, <rect(68, 309, 20, 20)>]
+[<rect(168, 269, 20, 20)>, <rect(188, 269, 20, 20)>, <rect(168, 289, 20, 20)>, <rect(148, 289, 20, 20)>]
+Stage finished and saved
+blocks in list : 6
+states found so far: 8
+[<rect(108, 49, 20, 20)>, <rect(128, 49, 20, 20)>, <rect(108, 69, 20, 20)>, <rect(88, 69, 20, 20)>]
+trying to rotate
+[<rect(108, 49, 20, 20)>, <rect(108, 69, 20, 20)>, <rect(88, 49, 20, 20)>, <rect(88, 29, 20, 20)>]
+rotate succesfull
+Starting new rotation
+Found a collision with border
+Block restored
+Found a collision with bottom
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>, <rect(88, 289, 20, 20)>]
+[<rect(108, 289, 20, 20)>, <rect(128, 289, 20, 20)>, <rect(128, 309, 20, 20)>, <rect(148, 309, 20, 20)>]
+[<rect(48, 329, 20, 20)>, <rect(48, 309, 20, 20)>, <rect(48, 289, 20, 20)>, <rect(68, 309, 20, 20)>]
+[<rect(28, 369, 20, 20)>, <rect(28, 389, 20, 20)>, <rect(8, 369, 20, 20)>, <rect(8, 349, 20, 20)>]
+Stage finished and saved
+blocks in list : 6
+states found so far: 9
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>, <rect(88, 289, 20, 20)>]
+[<rect(108, 289, 20, 20)>, <rect(128, 289, 20, 20)>, <rect(128, 309, 20, 20)>, <rect(148, 309, 20, 20)>]
+[<rect(48, 329, 20, 20)>, <rect(48, 309, 20, 20)>, <rect(48, 289, 20, 20)>, <rect(68, 309, 20, 20)>]
+[<rect(48, 249, 20, 20)>, <rect(48, 269, 20, 20)>, <rect(28, 249, 20, 20)>, <rect(28, 229, 20, 20)>]
+Stage finished and saved
+blocks in list : 6
+states found so far: 10
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>, <rect(88, 289, 20, 20)>]
+[<rect(108, 289, 20, 20)>, <rect(128, 289, 20, 20)>, <rect(128, 309, 20, 20)>, <rect(148, 309, 20, 20)>]
+[<rect(48, 329, 20, 20)>, <rect(48, 309, 20, 20)>, <rect(48, 289, 20, 20)>, <rect(68, 309, 20, 20)>]
+[<rect(68, 269, 20, 20)>, <rect(68, 289, 20, 20)>, <rect(48, 269, 20, 20)>, <rect(48, 249, 20, 20)>]
+Stage finished and saved
+blocks in list : 6
+states found so far: 11
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>, <rect(88, 289, 20, 20)>]
+[<rect(108, 289, 20, 20)>, <rect(128, 289, 20, 20)>, <rect(128, 309, 20, 20)>, <rect(148, 309, 20, 20)>]
+[<rect(48, 329, 20, 20)>, <rect(48, 309, 20, 20)>, <rect(48, 289, 20, 20)>, <rect(68, 309, 20, 20)>]
+[<rect(88, 249, 20, 20)>, <rect(88, 269, 20, 20)>, <rect(68, 249, 20, 20)>, <rect(68, 229, 20, 20)>]
+Stage finished and saved
+blocks in list : 6
+states found so far: 12
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>, <rect(88, 289, 20, 20)>]
+[<rect(108, 289, 20, 20)>, <rect(128, 289, 20, 20)>, <rect(128, 309, 20, 20)>, <rect(148, 309, 20, 20)>]
+[<rect(48, 329, 20, 20)>, <rect(48, 309, 20, 20)>, <rect(48, 289, 20, 20)>, <rect(68, 309, 20, 20)>]
+[<rect(108, 249, 20, 20)>, <rect(108, 269, 20, 20)>, <rect(88, 249, 20, 20)>, <rect(88, 229, 20, 20)>]
+Stage finished and saved
+blocks in list : 6
+states found so far: 13
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>, <rect(88, 289, 20, 20)>]
+[<rect(108, 289, 20, 20)>, <rect(128, 289, 20, 20)>, <rect(128, 309, 20, 20)>, <rect(148, 309, 20, 20)>]
+[<rect(48, 329, 20, 20)>, <rect(48, 309, 20, 20)>, <rect(48, 289, 20, 20)>, <rect(68, 309, 20, 20)>]
+[<rect(128, 249, 20, 20)>, <rect(128, 269, 20, 20)>, <rect(108, 249, 20, 20)>, <rect(108, 229, 20, 20)>]
+Stage finished and saved
+blocks in list : 6
+states found so far: 14
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>, <rect(88, 289, 20, 20)>]
+[<rect(108, 289, 20, 20)>, <rect(128, 289, 20, 20)>, <rect(128, 309, 20, 20)>, <rect(148, 309, 20, 20)>]
+[<rect(48, 329, 20, 20)>, <rect(48, 309, 20, 20)>, <rect(48, 289, 20, 20)>, <rect(68, 309, 20, 20)>]
+[<rect(148, 269, 20, 20)>, <rect(148, 289, 20, 20)>, <rect(128, 269, 20, 20)>, <rect(128, 249, 20, 20)>]
+Stage finished and saved
+blocks in list : 6
+states found so far: 15
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>, <rect(88, 289, 20, 20)>]
+[<rect(108, 289, 20, 20)>, <rect(128, 289, 20, 20)>, <rect(128, 309, 20, 20)>, <rect(148, 309, 20, 20)>]
+[<rect(48, 329, 20, 20)>, <rect(48, 309, 20, 20)>, <rect(48, 289, 20, 20)>, <rect(68, 309, 20, 20)>]
+[<rect(168, 289, 20, 20)>, <rect(168, 309, 20, 20)>, <rect(148, 289, 20, 20)>, <rect(148, 269, 20, 20)>]
+Stage finished and saved
+blocks in list : 6
+states found so far: 16
+Found a collision with border
+Block restored
+Found a collision with bottom
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>, <rect(88, 289, 20, 20)>]
+[<rect(108, 289, 20, 20)>, <rect(128, 289, 20, 20)>, <rect(128, 309, 20, 20)>, <rect(148, 309, 20, 20)>]
+[<rect(48, 329, 20, 20)>, <rect(48, 309, 20, 20)>, <rect(48, 289, 20, 20)>, <rect(68, 309, 20, 20)>]
+[<rect(188, 369, 20, 20)>, <rect(188, 389, 20, 20)>, <rect(168, 369, 20, 20)>, <rect(168, 349, 20, 20)>]
+Stage finished and saved
+blocks in list : 6
+states found so far: 17
+[<rect(108, 49, 20, 20)>, <rect(108, 69, 20, 20)>, <rect(88, 49, 20, 20)>, <rect(88, 29, 20, 20)>]
+trying to rotate
+[<rect(108, 49, 20, 20)>, <rect(88, 49, 20, 20)>, <rect(108, 29, 20, 20)>, <rect(128, 29, 20, 20)>]
+rotate succesfull
+
+
+Generated the following states:
+finished random state selection
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>, <rect(88, 289, 20, 20)>]
+[<rect(108, 289, 20, 20)>, <rect(128, 289, 20, 20)>, <rect(128, 309, 20, 20)>, <rect(148, 309, 20, 20)>]
+[<rect(48, 329, 20, 20)>, <rect(48, 309, 20, 20)>, <rect(48, 289, 20, 20)>, <rect(68, 309, 20, 20)>]
+[<rect(28, 369, 20, 20)>, <rect(28, 389, 20, 20)>, <rect(8, 369, 20, 20)>, <rect(8, 349, 20, 20)>]
+Printing representation
+[3, 2, 6, 5, 6, 6, 6, 5, 0, 0]
+Getting new block
+generated new block: Z length = 7
+Z block generated, going to rotate 2 times.
+Width of block = 3
+number of expected loops = 14
+Starting new rotation
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>, <rect(88, 289, 20, 20)>]
+[<rect(108, 289, 20, 20)>, <rect(128, 289, 20, 20)>, <rect(128, 309, 20, 20)>, <rect(148, 309, 20, 20)>]
+[<rect(48, 329, 20, 20)>, <rect(48, 309, 20, 20)>, <rect(48, 289, 20, 20)>, <rect(68, 309, 20, 20)>]
+[<rect(28, 369, 20, 20)>, <rect(28, 389, 20, 20)>, <rect(8, 369, 20, 20)>, <rect(8, 349, 20, 20)>]
+[<rect(8, 249, 20, 20)>, <rect(28, 249, 20, 20)>, <rect(28, 269, 20, 20)>, <rect(48, 269, 20, 20)>]
+Stage finished and saved
+blocks in list : 7
+states found so far: 1
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>, <rect(88, 289, 20, 20)>]
+[<rect(108, 289, 20, 20)>, <rect(128, 289, 20, 20)>, <rect(128, 309, 20, 20)>, <rect(148, 309, 20, 20)>]
+[<rect(48, 329, 20, 20)>, <rect(48, 309, 20, 20)>, <rect(48, 289, 20, 20)>, <rect(68, 309, 20, 20)>]
+[<rect(28, 369, 20, 20)>, <rect(28, 389, 20, 20)>, <rect(8, 369, 20, 20)>, <rect(8, 349, 20, 20)>]
+[<rect(28, 249, 20, 20)>, <rect(48, 249, 20, 20)>, <rect(48, 269, 20, 20)>, <rect(68, 269, 20, 20)>]
+Stage finished and saved
+blocks in list : 7
+states found so far: 2
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>, <rect(88, 289, 20, 20)>]
+[<rect(108, 289, 20, 20)>, <rect(128, 289, 20, 20)>, <rect(128, 309, 20, 20)>, <rect(148, 309, 20, 20)>]
+[<rect(48, 329, 20, 20)>, <rect(48, 309, 20, 20)>, <rect(48, 289, 20, 20)>, <rect(68, 309, 20, 20)>]
+[<rect(28, 369, 20, 20)>, <rect(28, 389, 20, 20)>, <rect(8, 369, 20, 20)>, <rect(8, 349, 20, 20)>]
+[<rect(48, 249, 20, 20)>, <rect(68, 249, 20, 20)>, <rect(68, 269, 20, 20)>, <rect(88, 269, 20, 20)>]
+Stage finished and saved
+blocks in list : 7
+states found so far: 3
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>, <rect(88, 289, 20, 20)>]
+[<rect(108, 289, 20, 20)>, <rect(128, 289, 20, 20)>, <rect(128, 309, 20, 20)>, <rect(148, 309, 20, 20)>]
+[<rect(48, 329, 20, 20)>, <rect(48, 309, 20, 20)>, <rect(48, 289, 20, 20)>, <rect(68, 309, 20, 20)>]
+[<rect(28, 369, 20, 20)>, <rect(28, 389, 20, 20)>, <rect(8, 369, 20, 20)>, <rect(8, 349, 20, 20)>]
+[<rect(68, 249, 20, 20)>, <rect(88, 249, 20, 20)>, <rect(88, 269, 20, 20)>, <rect(108, 269, 20, 20)>]
+Stage finished and saved
+blocks in list : 7
+states found so far: 4
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>, <rect(88, 289, 20, 20)>]
+[<rect(108, 289, 20, 20)>, <rect(128, 289, 20, 20)>, <rect(128, 309, 20, 20)>, <rect(148, 309, 20, 20)>]
+[<rect(48, 329, 20, 20)>, <rect(48, 309, 20, 20)>, <rect(48, 289, 20, 20)>, <rect(68, 309, 20, 20)>]
+[<rect(28, 369, 20, 20)>, <rect(28, 389, 20, 20)>, <rect(8, 369, 20, 20)>, <rect(8, 349, 20, 20)>]
+[<rect(88, 249, 20, 20)>, <rect(108, 249, 20, 20)>, <rect(108, 269, 20, 20)>, <rect(128, 269, 20, 20)>]
+Stage finished and saved
+blocks in list : 7
+states found so far: 5
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>, <rect(88, 289, 20, 20)>]
+[<rect(108, 289, 20, 20)>, <rect(128, 289, 20, 20)>, <rect(128, 309, 20, 20)>, <rect(148, 309, 20, 20)>]
+[<rect(48, 329, 20, 20)>, <rect(48, 309, 20, 20)>, <rect(48, 289, 20, 20)>, <rect(68, 309, 20, 20)>]
+[<rect(28, 369, 20, 20)>, <rect(28, 389, 20, 20)>, <rect(8, 369, 20, 20)>, <rect(8, 349, 20, 20)>]
+[<rect(108, 249, 20, 20)>, <rect(128, 249, 20, 20)>, <rect(128, 269, 20, 20)>, <rect(148, 269, 20, 20)>]
+Stage finished and saved
+blocks in list : 7
+states found so far: 6
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>, <rect(88, 289, 20, 20)>]
+[<rect(108, 289, 20, 20)>, <rect(128, 289, 20, 20)>, <rect(128, 309, 20, 20)>, <rect(148, 309, 20, 20)>]
+[<rect(48, 329, 20, 20)>, <rect(48, 309, 20, 20)>, <rect(48, 289, 20, 20)>, <rect(68, 309, 20, 20)>]
+[<rect(28, 369, 20, 20)>, <rect(28, 389, 20, 20)>, <rect(8, 369, 20, 20)>, <rect(8, 349, 20, 20)>]
+[<rect(128, 269, 20, 20)>, <rect(148, 269, 20, 20)>, <rect(148, 289, 20, 20)>, <rect(168, 289, 20, 20)>]
+Stage finished and saved
+blocks in list : 7
+states found so far: 7
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>, <rect(88, 289, 20, 20)>]
+[<rect(108, 289, 20, 20)>, <rect(128, 289, 20, 20)>, <rect(128, 309, 20, 20)>, <rect(148, 309, 20, 20)>]
+[<rect(48, 329, 20, 20)>, <rect(48, 309, 20, 20)>, <rect(48, 289, 20, 20)>, <rect(68, 309, 20, 20)>]
+[<rect(28, 369, 20, 20)>, <rect(28, 389, 20, 20)>, <rect(8, 369, 20, 20)>, <rect(8, 349, 20, 20)>]
+[<rect(148, 289, 20, 20)>, <rect(168, 289, 20, 20)>, <rect(168, 309, 20, 20)>, <rect(188, 309, 20, 20)>]
+Stage finished and saved
+blocks in list : 7
+states found so far: 8
+[<rect(88, 49, 20, 20)>, <rect(108, 49, 20, 20)>, <rect(108, 69, 20, 20)>, <rect(128, 69, 20, 20)>]
+trying to rotate
+[<rect(108, 29, 20, 20)>, <rect(108, 49, 20, 20)>, <rect(88, 49, 20, 20)>, <rect(88, 69, 20, 20)>]
+rotate succesfull
+Starting new rotation
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>, <rect(88, 289, 20, 20)>]
+[<rect(108, 289, 20, 20)>, <rect(128, 289, 20, 20)>, <rect(128, 309, 20, 20)>, <rect(148, 309, 20, 20)>]
+[<rect(48, 329, 20, 20)>, <rect(48, 309, 20, 20)>, <rect(48, 289, 20, 20)>, <rect(68, 309, 20, 20)>]
+[<rect(28, 369, 20, 20)>, <rect(28, 389, 20, 20)>, <rect(8, 369, 20, 20)>, <rect(8, 349, 20, 20)>]
+[<rect(28, 289, 20, 20)>, <rect(28, 309, 20, 20)>, <rect(8, 309, 20, 20)>, <rect(8, 329, 20, 20)>]
+Stage finished and saved
+blocks in list : 7
+states found so far: 9
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>, <rect(88, 289, 20, 20)>]
+[<rect(108, 289, 20, 20)>, <rect(128, 289, 20, 20)>, <rect(128, 309, 20, 20)>, <rect(148, 309, 20, 20)>]
+[<rect(48, 329, 20, 20)>, <rect(48, 309, 20, 20)>, <rect(48, 289, 20, 20)>, <rect(68, 309, 20, 20)>]
+[<rect(28, 369, 20, 20)>, <rect(28, 389, 20, 20)>, <rect(8, 369, 20, 20)>, <rect(8, 349, 20, 20)>]
+[<rect(48, 249, 20, 20)>, <rect(48, 269, 20, 20)>, <rect(28, 269, 20, 20)>, <rect(28, 289, 20, 20)>]
+Stage finished and saved
+blocks in list : 7
+states found so far: 10
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>, <rect(88, 289, 20, 20)>]
+[<rect(108, 289, 20, 20)>, <rect(128, 289, 20, 20)>, <rect(128, 309, 20, 20)>, <rect(148, 309, 20, 20)>]
+[<rect(48, 329, 20, 20)>, <rect(48, 309, 20, 20)>, <rect(48, 289, 20, 20)>, <rect(68, 309, 20, 20)>]
+[<rect(28, 369, 20, 20)>, <rect(28, 389, 20, 20)>, <rect(8, 369, 20, 20)>, <rect(8, 349, 20, 20)>]
+[<rect(68, 229, 20, 20)>, <rect(68, 249, 20, 20)>, <rect(48, 249, 20, 20)>, <rect(48, 269, 20, 20)>]
+Stage finished and saved
+blocks in list : 7
+states found so far: 11
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>, <rect(88, 289, 20, 20)>]
+[<rect(108, 289, 20, 20)>, <rect(128, 289, 20, 20)>, <rect(128, 309, 20, 20)>, <rect(148, 309, 20, 20)>]
+[<rect(48, 329, 20, 20)>, <rect(48, 309, 20, 20)>, <rect(48, 289, 20, 20)>, <rect(68, 309, 20, 20)>]
+[<rect(28, 369, 20, 20)>, <rect(28, 389, 20, 20)>, <rect(8, 369, 20, 20)>, <rect(8, 349, 20, 20)>]
+[<rect(88, 249, 20, 20)>, <rect(88, 269, 20, 20)>, <rect(68, 269, 20, 20)>, <rect(68, 289, 20, 20)>]
+Stage finished and saved
+blocks in list : 7
+states found so far: 12
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>, <rect(88, 289, 20, 20)>]
+[<rect(108, 289, 20, 20)>, <rect(128, 289, 20, 20)>, <rect(128, 309, 20, 20)>, <rect(148, 309, 20, 20)>]
+[<rect(48, 329, 20, 20)>, <rect(48, 309, 20, 20)>, <rect(48, 289, 20, 20)>, <rect(68, 309, 20, 20)>]
+[<rect(28, 369, 20, 20)>, <rect(28, 389, 20, 20)>, <rect(8, 369, 20, 20)>, <rect(8, 349, 20, 20)>]
+[<rect(108, 229, 20, 20)>, <rect(108, 249, 20, 20)>, <rect(88, 249, 20, 20)>, <rect(88, 269, 20, 20)>]
+Stage finished and saved
+blocks in list : 7
+states found so far: 13
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>, <rect(88, 289, 20, 20)>]
+[<rect(108, 289, 20, 20)>, <rect(128, 289, 20, 20)>, <rect(128, 309, 20, 20)>, <rect(148, 309, 20, 20)>]
+[<rect(48, 329, 20, 20)>, <rect(48, 309, 20, 20)>, <rect(48, 289, 20, 20)>, <rect(68, 309, 20, 20)>]
+[<rect(28, 369, 20, 20)>, <rect(28, 389, 20, 20)>, <rect(8, 369, 20, 20)>, <rect(8, 349, 20, 20)>]
+[<rect(128, 229, 20, 20)>, <rect(128, 249, 20, 20)>, <rect(108, 249, 20, 20)>, <rect(108, 269, 20, 20)>]
+Stage finished and saved
+blocks in list : 7
+states found so far: 14
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>, <rect(88, 289, 20, 20)>]
+[<rect(108, 289, 20, 20)>, <rect(128, 289, 20, 20)>, <rect(128, 309, 20, 20)>, <rect(148, 309, 20, 20)>]
+[<rect(48, 329, 20, 20)>, <rect(48, 309, 20, 20)>, <rect(48, 289, 20, 20)>, <rect(68, 309, 20, 20)>]
+[<rect(28, 369, 20, 20)>, <rect(28, 389, 20, 20)>, <rect(8, 369, 20, 20)>, <rect(8, 349, 20, 20)>]
+[<rect(148, 229, 20, 20)>, <rect(148, 249, 20, 20)>, <rect(128, 249, 20, 20)>, <rect(128, 269, 20, 20)>]
+Stage finished and saved
+blocks in list : 7
+states found so far: 15
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>, <rect(88, 289, 20, 20)>]
+[<rect(108, 289, 20, 20)>, <rect(128, 289, 20, 20)>, <rect(128, 309, 20, 20)>, <rect(148, 309, 20, 20)>]
+[<rect(48, 329, 20, 20)>, <rect(48, 309, 20, 20)>, <rect(48, 289, 20, 20)>, <rect(68, 309, 20, 20)>]
+[<rect(28, 369, 20, 20)>, <rect(28, 389, 20, 20)>, <rect(8, 369, 20, 20)>, <rect(8, 349, 20, 20)>]
+[<rect(168, 249, 20, 20)>, <rect(168, 269, 20, 20)>, <rect(148, 269, 20, 20)>, <rect(148, 289, 20, 20)>]
+Stage finished and saved
+blocks in list : 7
+states found so far: 16
+Found a collision with border
+Block restored
+Found a collision with bottom
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>, <rect(88, 289, 20, 20)>]
+[<rect(108, 289, 20, 20)>, <rect(128, 289, 20, 20)>, <rect(128, 309, 20, 20)>, <rect(148, 309, 20, 20)>]
+[<rect(48, 329, 20, 20)>, <rect(48, 309, 20, 20)>, <rect(48, 289, 20, 20)>, <rect(68, 309, 20, 20)>]
+[<rect(28, 369, 20, 20)>, <rect(28, 389, 20, 20)>, <rect(8, 369, 20, 20)>, <rect(8, 349, 20, 20)>]
+[<rect(188, 349, 20, 20)>, <rect(188, 369, 20, 20)>, <rect(168, 369, 20, 20)>, <rect(168, 389, 20, 20)>]
+Stage finished and saved
+blocks in list : 7
+states found so far: 17
+[<rect(108, 29, 20, 20)>, <rect(108, 49, 20, 20)>, <rect(88, 49, 20, 20)>, <rect(88, 69, 20, 20)>]
+trying to rotate
+[<rect(128, 49, 20, 20)>, <rect(108, 49, 20, 20)>, <rect(108, 29, 20, 20)>, <rect(88, 29, 20, 20)>]
+rotate succesfull
+
+
+Generated the following states:
+finished random state selection
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>, <rect(88, 289, 20, 20)>]
+[<rect(108, 289, 20, 20)>, <rect(128, 289, 20, 20)>, <rect(128, 309, 20, 20)>, <rect(148, 309, 20, 20)>]
+[<rect(48, 329, 20, 20)>, <rect(48, 309, 20, 20)>, <rect(48, 289, 20, 20)>, <rect(68, 309, 20, 20)>]
+[<rect(28, 369, 20, 20)>, <rect(28, 389, 20, 20)>, <rect(8, 369, 20, 20)>, <rect(8, 349, 20, 20)>]
+[<rect(148, 289, 20, 20)>, <rect(168, 289, 20, 20)>, <rect(168, 309, 20, 20)>, <rect(188, 309, 20, 20)>]
+Printing representation
+[3, 2, 6, 5, 6, 6, 6, 6, 6, 5]
+Getting new block
+generated new block: Z length = 8
+Z block generated, going to rotate 2 times.
+Width of block = 3
+number of expected loops = 14
+Starting new rotation
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>, <rect(88, 289, 20, 20)>]
+[<rect(108, 289, 20, 20)>, <rect(128, 289, 20, 20)>, <rect(128, 309, 20, 20)>, <rect(148, 309, 20, 20)>]
+[<rect(48, 329, 20, 20)>, <rect(48, 309, 20, 20)>, <rect(48, 289, 20, 20)>, <rect(68, 309, 20, 20)>]
+[<rect(28, 369, 20, 20)>, <rect(28, 389, 20, 20)>, <rect(8, 369, 20, 20)>, <rect(8, 349, 20, 20)>]
+[<rect(148, 289, 20, 20)>, <rect(168, 289, 20, 20)>, <rect(168, 309, 20, 20)>, <rect(188, 309, 20, 20)>]
+[<rect(8, 249, 20, 20)>, <rect(28, 249, 20, 20)>, <rect(28, 269, 20, 20)>, <rect(48, 269, 20, 20)>]
+Stage finished and saved
+blocks in list : 8
+states found so far: 1
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>, <rect(88, 289, 20, 20)>]
+[<rect(108, 289, 20, 20)>, <rect(128, 289, 20, 20)>, <rect(128, 309, 20, 20)>, <rect(148, 309, 20, 20)>]
+[<rect(48, 329, 20, 20)>, <rect(48, 309, 20, 20)>, <rect(48, 289, 20, 20)>, <rect(68, 309, 20, 20)>]
+[<rect(28, 369, 20, 20)>, <rect(28, 389, 20, 20)>, <rect(8, 369, 20, 20)>, <rect(8, 349, 20, 20)>]
+[<rect(148, 289, 20, 20)>, <rect(168, 289, 20, 20)>, <rect(168, 309, 20, 20)>, <rect(188, 309, 20, 20)>]
+[<rect(28, 249, 20, 20)>, <rect(48, 249, 20, 20)>, <rect(48, 269, 20, 20)>, <rect(68, 269, 20, 20)>]
+Stage finished and saved
+blocks in list : 8
+states found so far: 2
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>, <rect(88, 289, 20, 20)>]
+[<rect(108, 289, 20, 20)>, <rect(128, 289, 20, 20)>, <rect(128, 309, 20, 20)>, <rect(148, 309, 20, 20)>]
+[<rect(48, 329, 20, 20)>, <rect(48, 309, 20, 20)>, <rect(48, 289, 20, 20)>, <rect(68, 309, 20, 20)>]
+[<rect(28, 369, 20, 20)>, <rect(28, 389, 20, 20)>, <rect(8, 369, 20, 20)>, <rect(8, 349, 20, 20)>]
+[<rect(148, 289, 20, 20)>, <rect(168, 289, 20, 20)>, <rect(168, 309, 20, 20)>, <rect(188, 309, 20, 20)>]
+[<rect(48, 249, 20, 20)>, <rect(68, 249, 20, 20)>, <rect(68, 269, 20, 20)>, <rect(88, 269, 20, 20)>]
+Stage finished and saved
+blocks in list : 8
+states found so far: 3
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>, <rect(88, 289, 20, 20)>]
+[<rect(108, 289, 20, 20)>, <rect(128, 289, 20, 20)>, <rect(128, 309, 20, 20)>, <rect(148, 309, 20, 20)>]
+[<rect(48, 329, 20, 20)>, <rect(48, 309, 20, 20)>, <rect(48, 289, 20, 20)>, <rect(68, 309, 20, 20)>]
+[<rect(28, 369, 20, 20)>, <rect(28, 389, 20, 20)>, <rect(8, 369, 20, 20)>, <rect(8, 349, 20, 20)>]
+[<rect(148, 289, 20, 20)>, <rect(168, 289, 20, 20)>, <rect(168, 309, 20, 20)>, <rect(188, 309, 20, 20)>]
+[<rect(68, 249, 20, 20)>, <rect(88, 249, 20, 20)>, <rect(88, 269, 20, 20)>, <rect(108, 269, 20, 20)>]
+Stage finished and saved
+blocks in list : 8
+states found so far: 4
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>, <rect(88, 289, 20, 20)>]
+[<rect(108, 289, 20, 20)>, <rect(128, 289, 20, 20)>, <rect(128, 309, 20, 20)>, <rect(148, 309, 20, 20)>]
+[<rect(48, 329, 20, 20)>, <rect(48, 309, 20, 20)>, <rect(48, 289, 20, 20)>, <rect(68, 309, 20, 20)>]
+[<rect(28, 369, 20, 20)>, <rect(28, 389, 20, 20)>, <rect(8, 369, 20, 20)>, <rect(8, 349, 20, 20)>]
+[<rect(148, 289, 20, 20)>, <rect(168, 289, 20, 20)>, <rect(168, 309, 20, 20)>, <rect(188, 309, 20, 20)>]
+[<rect(88, 249, 20, 20)>, <rect(108, 249, 20, 20)>, <rect(108, 269, 20, 20)>, <rect(128, 269, 20, 20)>]
+Stage finished and saved
+blocks in list : 8
+states found so far: 5
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>, <rect(88, 289, 20, 20)>]
+[<rect(108, 289, 20, 20)>, <rect(128, 289, 20, 20)>, <rect(128, 309, 20, 20)>, <rect(148, 309, 20, 20)>]
+[<rect(48, 329, 20, 20)>, <rect(48, 309, 20, 20)>, <rect(48, 289, 20, 20)>, <rect(68, 309, 20, 20)>]
+[<rect(28, 369, 20, 20)>, <rect(28, 389, 20, 20)>, <rect(8, 369, 20, 20)>, <rect(8, 349, 20, 20)>]
+[<rect(148, 289, 20, 20)>, <rect(168, 289, 20, 20)>, <rect(168, 309, 20, 20)>, <rect(188, 309, 20, 20)>]
+[<rect(108, 249, 20, 20)>, <rect(128, 249, 20, 20)>, <rect(128, 269, 20, 20)>, <rect(148, 269, 20, 20)>]
+Stage finished and saved
+blocks in list : 8
+states found so far: 6
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>, <rect(88, 289, 20, 20)>]
+[<rect(108, 289, 20, 20)>, <rect(128, 289, 20, 20)>, <rect(128, 309, 20, 20)>, <rect(148, 309, 20, 20)>]
+[<rect(48, 329, 20, 20)>, <rect(48, 309, 20, 20)>, <rect(48, 289, 20, 20)>, <rect(68, 309, 20, 20)>]
+[<rect(28, 369, 20, 20)>, <rect(28, 389, 20, 20)>, <rect(8, 369, 20, 20)>, <rect(8, 349, 20, 20)>]
+[<rect(148, 289, 20, 20)>, <rect(168, 289, 20, 20)>, <rect(168, 309, 20, 20)>, <rect(188, 309, 20, 20)>]
+[<rect(128, 249, 20, 20)>, <rect(148, 249, 20, 20)>, <rect(148, 269, 20, 20)>, <rect(168, 269, 20, 20)>]
+Stage finished and saved
+blocks in list : 8
+states found so far: 7
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>, <rect(88, 289, 20, 20)>]
+[<rect(108, 289, 20, 20)>, <rect(128, 289, 20, 20)>, <rect(128, 309, 20, 20)>, <rect(148, 309, 20, 20)>]
+[<rect(48, 329, 20, 20)>, <rect(48, 309, 20, 20)>, <rect(48, 289, 20, 20)>, <rect(68, 309, 20, 20)>]
+[<rect(28, 369, 20, 20)>, <rect(28, 389, 20, 20)>, <rect(8, 369, 20, 20)>, <rect(8, 349, 20, 20)>]
+[<rect(148, 289, 20, 20)>, <rect(168, 289, 20, 20)>, <rect(168, 309, 20, 20)>, <rect(188, 309, 20, 20)>]
+[<rect(148, 249, 20, 20)>, <rect(168, 249, 20, 20)>, <rect(168, 269, 20, 20)>, <rect(188, 269, 20, 20)>]
+Stage finished and saved
+blocks in list : 8
+states found so far: 8
+[<rect(88, 49, 20, 20)>, <rect(108, 49, 20, 20)>, <rect(108, 69, 20, 20)>, <rect(128, 69, 20, 20)>]
+trying to rotate
+[<rect(108, 29, 20, 20)>, <rect(108, 49, 20, 20)>, <rect(88, 49, 20, 20)>, <rect(88, 69, 20, 20)>]
+rotate succesfull
+Starting new rotation
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(128, 309, 20, 20)>]
+[<rect(48, 329, 20, 20)>, <rect(48, 309, 20, 20)>]
+[<rect(28, 369, 20, 20)>, <rect(28, 389, 20, 20)>, <rect(8, 369, 20, 20)>, <rect(8, 349, 20, 20)>]
+[<rect(148, 309, 20, 20)>, <rect(168, 309, 20, 20)>]
+[<rect(28, 309, 20, 20)>, <rect(8, 329, 20, 20)>]
+Stage finished and saved
+blocks in list : 8
+states found so far: 9
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(128, 309, 20, 20)>]
+[<rect(48, 329, 20, 20)>, <rect(48, 309, 20, 20)>]
+[<rect(28, 369, 20, 20)>, <rect(28, 389, 20, 20)>, <rect(8, 369, 20, 20)>, <rect(8, 349, 20, 20)>]
+[<rect(148, 309, 20, 20)>, <rect(168, 309, 20, 20)>]
+[<rect(48, 269, 20, 20)>, <rect(48, 289, 20, 20)>, <rect(28, 289, 20, 20)>, <rect(28, 309, 20, 20)>]
+Stage finished and saved
+blocks in list : 8
+states found so far: 10
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(128, 309, 20, 20)>]
+[<rect(48, 329, 20, 20)>, <rect(48, 309, 20, 20)>]
+[<rect(28, 369, 20, 20)>, <rect(28, 389, 20, 20)>, <rect(8, 369, 20, 20)>, <rect(8, 349, 20, 20)>]
+[<rect(148, 309, 20, 20)>, <rect(168, 309, 20, 20)>]
+[<rect(68, 249, 20, 20)>, <rect(68, 269, 20, 20)>, <rect(48, 269, 20, 20)>, <rect(48, 289, 20, 20)>]
+Stage finished and saved
+blocks in list : 8
+states found so far: 11
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(128, 309, 20, 20)>]
+[<rect(48, 329, 20, 20)>, <rect(48, 309, 20, 20)>]
+[<rect(28, 369, 20, 20)>, <rect(28, 389, 20, 20)>, <rect(8, 369, 20, 20)>, <rect(8, 349, 20, 20)>]
+[<rect(148, 309, 20, 20)>, <rect(168, 309, 20, 20)>]
+[<rect(88, 269, 20, 20)>, <rect(88, 289, 20, 20)>, <rect(68, 289, 20, 20)>, <rect(68, 309, 20, 20)>]
+Stage finished and saved
+blocks in list : 8
+states found so far: 12
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(128, 309, 20, 20)>]
+[<rect(48, 329, 20, 20)>, <rect(48, 309, 20, 20)>]
+[<rect(28, 369, 20, 20)>, <rect(28, 389, 20, 20)>, <rect(8, 369, 20, 20)>, <rect(8, 349, 20, 20)>]
+[<rect(148, 309, 20, 20)>, <rect(168, 309, 20, 20)>]
+[<rect(108, 249, 20, 20)>, <rect(108, 269, 20, 20)>, <rect(88, 269, 20, 20)>, <rect(88, 289, 20, 20)>]
+Stage finished and saved
+blocks in list : 8
+states found so far: 13
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(128, 309, 20, 20)>]
+[<rect(48, 329, 20, 20)>, <rect(48, 309, 20, 20)>]
+[<rect(28, 369, 20, 20)>, <rect(28, 389, 20, 20)>, <rect(8, 369, 20, 20)>, <rect(8, 349, 20, 20)>]
+[<rect(148, 309, 20, 20)>, <rect(168, 309, 20, 20)>]
+[<rect(128, 249, 20, 20)>, <rect(128, 269, 20, 20)>, <rect(108, 269, 20, 20)>, <rect(108, 289, 20, 20)>]
+Stage finished and saved
+blocks in list : 8
+states found so far: 14
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(128, 309, 20, 20)>]
+[<rect(48, 329, 20, 20)>, <rect(48, 309, 20, 20)>]
+[<rect(28, 369, 20, 20)>, <rect(28, 389, 20, 20)>, <rect(8, 369, 20, 20)>, <rect(8, 349, 20, 20)>]
+[<rect(148, 309, 20, 20)>, <rect(168, 309, 20, 20)>]
+[<rect(148, 249, 20, 20)>, <rect(148, 269, 20, 20)>, <rect(128, 269, 20, 20)>, <rect(128, 289, 20, 20)>]
+Stage finished and saved
+blocks in list : 8
+states found so far: 15
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(128, 309, 20, 20)>]
+[<rect(48, 329, 20, 20)>, <rect(48, 309, 20, 20)>]
+[<rect(28, 369, 20, 20)>, <rect(28, 389, 20, 20)>, <rect(8, 369, 20, 20)>, <rect(8, 349, 20, 20)>]
+[<rect(148, 309, 20, 20)>, <rect(168, 309, 20, 20)>]
+[<rect(168, 249, 20, 20)>, <rect(168, 269, 20, 20)>, <rect(148, 269, 20, 20)>, <rect(148, 289, 20, 20)>]
+Stage finished and saved
+blocks in list : 8
+states found so far: 16
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(128, 309, 20, 20)>]
+[<rect(48, 329, 20, 20)>, <rect(48, 309, 20, 20)>]
+[<rect(28, 369, 20, 20)>, <rect(28, 389, 20, 20)>, <rect(8, 369, 20, 20)>, <rect(8, 349, 20, 20)>]
+[<rect(148, 309, 20, 20)>, <rect(168, 309, 20, 20)>]
+[<rect(188, 249, 20, 20)>, <rect(188, 269, 20, 20)>, <rect(168, 269, 20, 20)>, <rect(168, 289, 20, 20)>]
+Stage finished and saved
+blocks in list : 8
+states found so far: 17
+[<rect(108, 29, 20, 20)>, <rect(108, 49, 20, 20)>, <rect(88, 49, 20, 20)>, <rect(88, 69, 20, 20)>]
+trying to rotate
+[<rect(128, 49, 20, 20)>, <rect(108, 49, 20, 20)>, <rect(108, 29, 20, 20)>, <rect(88, 29, 20, 20)>]
+rotate succesfull
+
+
+Generated the following states:
+finished random state selection
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>, <rect(88, 289, 20, 20)>]
+[<rect(108, 289, 20, 20)>, <rect(128, 289, 20, 20)>, <rect(128, 309, 20, 20)>, <rect(148, 309, 20, 20)>]
+[<rect(48, 329, 20, 20)>, <rect(48, 309, 20, 20)>, <rect(48, 289, 20, 20)>, <rect(68, 309, 20, 20)>]
+[<rect(28, 369, 20, 20)>, <rect(28, 389, 20, 20)>, <rect(8, 369, 20, 20)>, <rect(8, 349, 20, 20)>]
+[<rect(148, 289, 20, 20)>, <rect(168, 289, 20, 20)>, <rect(168, 309, 20, 20)>, <rect(188, 309, 20, 20)>]
+[<rect(128, 249, 20, 20)>, <rect(148, 249, 20, 20)>, <rect(148, 269, 20, 20)>, <rect(168, 269, 20, 20)>]
+Printing representation
+[3, 2, 6, 5, 6, 6, 8, 8, 7, 5]
+Getting new block
+generated new block: J length = 9
+J block generated, going to rotate 4 times.
+Width of block = 3
+number of expected loops = 28
+Starting new rotation
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>, <rect(88, 289, 20, 20)>]
+[<rect(108, 289, 20, 20)>, <rect(128, 289, 20, 20)>, <rect(128, 309, 20, 20)>, <rect(148, 309, 20, 20)>]
+[<rect(48, 329, 20, 20)>, <rect(48, 309, 20, 20)>, <rect(48, 289, 20, 20)>, <rect(68, 309, 20, 20)>]
+[<rect(28, 369, 20, 20)>, <rect(28, 389, 20, 20)>, <rect(8, 369, 20, 20)>, <rect(8, 349, 20, 20)>]
+[<rect(148, 289, 20, 20)>, <rect(168, 289, 20, 20)>, <rect(168, 309, 20, 20)>, <rect(188, 309, 20, 20)>]
+[<rect(128, 249, 20, 20)>, <rect(148, 249, 20, 20)>, <rect(148, 269, 20, 20)>, <rect(168, 269, 20, 20)>]
+[<rect(8, 249, 20, 20)>, <rect(28, 249, 20, 20)>, <rect(48, 249, 20, 20)>, <rect(48, 269, 20, 20)>]
+Stage finished and saved
+blocks in list : 9
+states found so far: 1
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>, <rect(88, 289, 20, 20)>]
+[<rect(108, 289, 20, 20)>, <rect(128, 289, 20, 20)>, <rect(128, 309, 20, 20)>, <rect(148, 309, 20, 20)>]
+[<rect(48, 329, 20, 20)>, <rect(48, 309, 20, 20)>, <rect(48, 289, 20, 20)>, <rect(68, 309, 20, 20)>]
+[<rect(28, 369, 20, 20)>, <rect(28, 389, 20, 20)>, <rect(8, 369, 20, 20)>, <rect(8, 349, 20, 20)>]
+[<rect(148, 289, 20, 20)>, <rect(168, 289, 20, 20)>, <rect(168, 309, 20, 20)>, <rect(188, 309, 20, 20)>]
+[<rect(128, 249, 20, 20)>, <rect(148, 249, 20, 20)>, <rect(148, 269, 20, 20)>, <rect(168, 269, 20, 20)>]
+[<rect(28, 269, 20, 20)>, <rect(48, 269, 20, 20)>, <rect(68, 269, 20, 20)>, <rect(68, 289, 20, 20)>]
+Stage finished and saved
+blocks in list : 9
+states found so far: 2
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>, <rect(88, 289, 20, 20)>]
+[<rect(108, 289, 20, 20)>, <rect(128, 289, 20, 20)>, <rect(128, 309, 20, 20)>, <rect(148, 309, 20, 20)>]
+[<rect(48, 329, 20, 20)>, <rect(48, 309, 20, 20)>, <rect(48, 289, 20, 20)>, <rect(68, 309, 20, 20)>]
+[<rect(28, 369, 20, 20)>, <rect(28, 389, 20, 20)>, <rect(8, 369, 20, 20)>, <rect(8, 349, 20, 20)>]
+[<rect(148, 289, 20, 20)>, <rect(168, 289, 20, 20)>, <rect(168, 309, 20, 20)>, <rect(188, 309, 20, 20)>]
+[<rect(128, 249, 20, 20)>, <rect(148, 249, 20, 20)>, <rect(148, 269, 20, 20)>, <rect(168, 269, 20, 20)>]
+[<rect(48, 249, 20, 20)>, <rect(68, 249, 20, 20)>, <rect(88, 249, 20, 20)>, <rect(88, 269, 20, 20)>]
+Stage finished and saved
+blocks in list : 9
+states found so far: 3
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>, <rect(88, 289, 20, 20)>]
+[<rect(108, 289, 20, 20)>, <rect(128, 289, 20, 20)>, <rect(128, 309, 20, 20)>, <rect(148, 309, 20, 20)>]
+[<rect(48, 329, 20, 20)>, <rect(48, 309, 20, 20)>, <rect(48, 289, 20, 20)>, <rect(68, 309, 20, 20)>]
+[<rect(28, 369, 20, 20)>, <rect(28, 389, 20, 20)>, <rect(8, 369, 20, 20)>, <rect(8, 349, 20, 20)>]
+[<rect(148, 289, 20, 20)>, <rect(168, 289, 20, 20)>, <rect(168, 309, 20, 20)>, <rect(188, 309, 20, 20)>]
+[<rect(128, 249, 20, 20)>, <rect(148, 249, 20, 20)>, <rect(148, 269, 20, 20)>, <rect(168, 269, 20, 20)>]
+[<rect(68, 249, 20, 20)>, <rect(88, 249, 20, 20)>, <rect(108, 249, 20, 20)>, <rect(108, 269, 20, 20)>]
+Stage finished and saved
+blocks in list : 9
+states found so far: 4
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>, <rect(88, 289, 20, 20)>]
+[<rect(108, 289, 20, 20)>, <rect(128, 289, 20, 20)>, <rect(128, 309, 20, 20)>, <rect(148, 309, 20, 20)>]
+[<rect(48, 329, 20, 20)>, <rect(48, 309, 20, 20)>, <rect(48, 289, 20, 20)>, <rect(68, 309, 20, 20)>]
+[<rect(28, 369, 20, 20)>, <rect(28, 389, 20, 20)>, <rect(8, 369, 20, 20)>, <rect(8, 349, 20, 20)>]
+[<rect(148, 289, 20, 20)>, <rect(168, 289, 20, 20)>, <rect(168, 309, 20, 20)>, <rect(188, 309, 20, 20)>]
+[<rect(128, 249, 20, 20)>, <rect(148, 249, 20, 20)>, <rect(148, 269, 20, 20)>, <rect(168, 269, 20, 20)>]
+[<rect(88, 209, 20, 20)>, <rect(108, 209, 20, 20)>, <rect(128, 209, 20, 20)>, <rect(128, 229, 20, 20)>]
+Stage finished and saved
+blocks in list : 9
+states found so far: 5
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>, <rect(88, 289, 20, 20)>]
+[<rect(108, 289, 20, 20)>, <rect(128, 289, 20, 20)>, <rect(128, 309, 20, 20)>, <rect(148, 309, 20, 20)>]
+[<rect(48, 329, 20, 20)>, <rect(48, 309, 20, 20)>, <rect(48, 289, 20, 20)>, <rect(68, 309, 20, 20)>]
+[<rect(28, 369, 20, 20)>, <rect(28, 389, 20, 20)>, <rect(8, 369, 20, 20)>, <rect(8, 349, 20, 20)>]
+[<rect(148, 289, 20, 20)>, <rect(168, 289, 20, 20)>, <rect(168, 309, 20, 20)>, <rect(188, 309, 20, 20)>]
+[<rect(128, 249, 20, 20)>, <rect(148, 249, 20, 20)>, <rect(148, 269, 20, 20)>, <rect(168, 269, 20, 20)>]
+[<rect(108, 209, 20, 20)>, <rect(128, 209, 20, 20)>, <rect(148, 209, 20, 20)>, <rect(148, 229, 20, 20)>]
+Stage finished and saved
+blocks in list : 9
+states found so far: 6
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>, <rect(88, 289, 20, 20)>]
+[<rect(108, 289, 20, 20)>, <rect(128, 289, 20, 20)>, <rect(128, 309, 20, 20)>, <rect(148, 309, 20, 20)>]
+[<rect(48, 329, 20, 20)>, <rect(48, 309, 20, 20)>, <rect(48, 289, 20, 20)>, <rect(68, 309, 20, 20)>]
+[<rect(28, 369, 20, 20)>, <rect(28, 389, 20, 20)>, <rect(8, 369, 20, 20)>, <rect(8, 349, 20, 20)>]
+[<rect(148, 289, 20, 20)>, <rect(168, 289, 20, 20)>, <rect(168, 309, 20, 20)>, <rect(188, 309, 20, 20)>]
+[<rect(128, 249, 20, 20)>, <rect(148, 249, 20, 20)>, <rect(148, 269, 20, 20)>, <rect(168, 269, 20, 20)>]
+[<rect(128, 229, 20, 20)>, <rect(148, 229, 20, 20)>, <rect(168, 229, 20, 20)>, <rect(168, 249, 20, 20)>]
+Stage finished and saved
+blocks in list : 9
+states found so far: 7
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>, <rect(88, 289, 20, 20)>]
+[<rect(108, 289, 20, 20)>, <rect(128, 289, 20, 20)>, <rect(128, 309, 20, 20)>, <rect(148, 309, 20, 20)>]
+[<rect(48, 329, 20, 20)>, <rect(48, 309, 20, 20)>, <rect(48, 289, 20, 20)>, <rect(68, 309, 20, 20)>]
+[<rect(28, 369, 20, 20)>, <rect(28, 389, 20, 20)>, <rect(8, 369, 20, 20)>, <rect(8, 349, 20, 20)>]
+[<rect(148, 289, 20, 20)>, <rect(168, 289, 20, 20)>, <rect(168, 309, 20, 20)>, <rect(188, 309, 20, 20)>]
+[<rect(128, 249, 20, 20)>, <rect(148, 249, 20, 20)>, <rect(148, 269, 20, 20)>, <rect(168, 269, 20, 20)>]
+[<rect(148, 229, 20, 20)>, <rect(168, 229, 20, 20)>, <rect(188, 229, 20, 20)>, <rect(188, 249, 20, 20)>]
+Stage finished and saved
+blocks in list : 9
+states found so far: 8
+[<rect(108, 49, 20, 20)>, <rect(128, 49, 20, 20)>, <rect(148, 49, 20, 20)>, <rect(148, 69, 20, 20)>]
+trying to rotate
+[<rect(108, 49, 20, 20)>, <rect(108, 69, 20, 20)>, <rect(108, 89, 20, 20)>, <rect(88, 89, 20, 20)>]
+rotate succesfull
+Starting new rotation
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(128, 309, 20, 20)>]
+[<rect(48, 329, 20, 20)>, <rect(48, 309, 20, 20)>]
+[<rect(28, 369, 20, 20)>, <rect(28, 389, 20, 20)>, <rect(8, 369, 20, 20)>, <rect(8, 349, 20, 20)>]
+[<rect(148, 309, 20, 20)>, <rect(168, 309, 20, 20)>]
+[<rect(128, 269, 20, 20)>, <rect(148, 269, 20, 20)>, <rect(148, 289, 20, 20)>, <rect(168, 289, 20, 20)>]
+[<rect(28, 329, 20, 20)>, <rect(28, 349, 20, 20)>]
+Stage finished and saved
+blocks in list : 9
+states found so far: 9
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(128, 309, 20, 20)>]
+[<rect(48, 329, 20, 20)>, <rect(48, 309, 20, 20)>]
+[<rect(28, 369, 20, 20)>, <rect(28, 389, 20, 20)>, <rect(8, 369, 20, 20)>, <rect(8, 349, 20, 20)>]
+[<rect(148, 309, 20, 20)>, <rect(168, 309, 20, 20)>]
+[<rect(128, 269, 20, 20)>, <rect(148, 269, 20, 20)>, <rect(148, 289, 20, 20)>, <rect(168, 289, 20, 20)>]
+[<rect(48, 249, 20, 20)>, <rect(48, 269, 20, 20)>, <rect(48, 289, 20, 20)>, <rect(28, 289, 20, 20)>]
+Stage finished and saved
+blocks in list : 9
+states found so far: 10
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(128, 309, 20, 20)>]
+[<rect(48, 329, 20, 20)>, <rect(48, 309, 20, 20)>]
+[<rect(28, 369, 20, 20)>, <rect(28, 389, 20, 20)>, <rect(8, 369, 20, 20)>, <rect(8, 349, 20, 20)>]
+[<rect(148, 309, 20, 20)>, <rect(168, 309, 20, 20)>]
+[<rect(128, 269, 20, 20)>, <rect(148, 269, 20, 20)>, <rect(148, 289, 20, 20)>, <rect(168, 289, 20, 20)>]
+[<rect(68, 249, 20, 20)>, <rect(68, 269, 20, 20)>, <rect(68, 289, 20, 20)>, <rect(48, 289, 20, 20)>]
+Stage finished and saved
+blocks in list : 9
+states found so far: 11
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(128, 309, 20, 20)>]
+[<rect(48, 329, 20, 20)>, <rect(48, 309, 20, 20)>]
+[<rect(28, 369, 20, 20)>, <rect(28, 389, 20, 20)>, <rect(8, 369, 20, 20)>, <rect(8, 349, 20, 20)>]
+[<rect(148, 309, 20, 20)>, <rect(168, 309, 20, 20)>]
+[<rect(128, 269, 20, 20)>, <rect(148, 269, 20, 20)>, <rect(148, 289, 20, 20)>, <rect(168, 289, 20, 20)>]
+[<rect(88, 249, 20, 20)>, <rect(88, 269, 20, 20)>, <rect(88, 289, 20, 20)>, <rect(68, 289, 20, 20)>]
+Stage finished and saved
+blocks in list : 9
+states found so far: 12
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(128, 309, 20, 20)>]
+[<rect(48, 329, 20, 20)>, <rect(48, 309, 20, 20)>]
+[<rect(28, 369, 20, 20)>, <rect(28, 389, 20, 20)>, <rect(8, 369, 20, 20)>, <rect(8, 349, 20, 20)>]
+[<rect(148, 309, 20, 20)>, <rect(168, 309, 20, 20)>]
+[<rect(128, 269, 20, 20)>, <rect(148, 269, 20, 20)>, <rect(148, 289, 20, 20)>, <rect(168, 289, 20, 20)>]
+[<rect(108, 249, 20, 20)>, <rect(108, 269, 20, 20)>, <rect(108, 289, 20, 20)>, <rect(88, 289, 20, 20)>]
+Stage finished and saved
+blocks in list : 9
+states found so far: 13
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(128, 309, 20, 20)>]
+[<rect(48, 329, 20, 20)>, <rect(48, 309, 20, 20)>]
+[<rect(28, 369, 20, 20)>, <rect(28, 389, 20, 20)>, <rect(8, 369, 20, 20)>, <rect(8, 349, 20, 20)>]
+[<rect(148, 309, 20, 20)>, <rect(168, 309, 20, 20)>]
+[<rect(128, 269, 20, 20)>, <rect(148, 269, 20, 20)>, <rect(148, 289, 20, 20)>, <rect(168, 289, 20, 20)>]
+[<rect(128, 209, 20, 20)>, <rect(128, 229, 20, 20)>, <rect(128, 249, 20, 20)>, <rect(108, 249, 20, 20)>]
+Stage finished and saved
+blocks in list : 9
+states found so far: 14
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(128, 309, 20, 20)>]
+[<rect(48, 329, 20, 20)>, <rect(48, 309, 20, 20)>]
+[<rect(28, 369, 20, 20)>, <rect(28, 389, 20, 20)>, <rect(8, 369, 20, 20)>, <rect(8, 349, 20, 20)>]
+[<rect(148, 309, 20, 20)>, <rect(168, 309, 20, 20)>]
+[<rect(128, 269, 20, 20)>, <rect(148, 269, 20, 20)>, <rect(148, 289, 20, 20)>, <rect(168, 289, 20, 20)>]
+[<rect(148, 209, 20, 20)>, <rect(148, 229, 20, 20)>, <rect(148, 249, 20, 20)>, <rect(128, 249, 20, 20)>]
+Stage finished and saved
+blocks in list : 9
+states found so far: 15
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(128, 309, 20, 20)>]
+[<rect(48, 329, 20, 20)>, <rect(48, 309, 20, 20)>]
+[<rect(28, 369, 20, 20)>, <rect(28, 389, 20, 20)>, <rect(8, 369, 20, 20)>, <rect(8, 349, 20, 20)>]
+[<rect(148, 309, 20, 20)>, <rect(168, 309, 20, 20)>]
+[<rect(128, 269, 20, 20)>, <rect(148, 269, 20, 20)>, <rect(148, 289, 20, 20)>, <rect(168, 289, 20, 20)>]
+[<rect(168, 209, 20, 20)>, <rect(168, 229, 20, 20)>, <rect(168, 249, 20, 20)>, <rect(148, 249, 20, 20)>]
+Stage finished and saved
+blocks in list : 9
+states found so far: 16
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(128, 309, 20, 20)>]
+[<rect(48, 329, 20, 20)>, <rect(48, 309, 20, 20)>]
+[<rect(28, 369, 20, 20)>, <rect(28, 389, 20, 20)>, <rect(8, 369, 20, 20)>, <rect(8, 349, 20, 20)>]
+[<rect(148, 309, 20, 20)>, <rect(168, 309, 20, 20)>]
+[<rect(128, 269, 20, 20)>, <rect(148, 269, 20, 20)>, <rect(148, 289, 20, 20)>, <rect(168, 289, 20, 20)>]
+[<rect(188, 229, 20, 20)>, <rect(188, 249, 20, 20)>, <rect(188, 269, 20, 20)>, <rect(168, 269, 20, 20)>]
+Stage finished and saved
+blocks in list : 9
+states found so far: 17
+[<rect(108, 49, 20, 20)>, <rect(108, 69, 20, 20)>, <rect(108, 89, 20, 20)>, <rect(88, 89, 20, 20)>]
+trying to rotate
+[<rect(108, 49, 20, 20)>, <rect(88, 49, 20, 20)>, <rect(68, 49, 20, 20)>, <rect(68, 29, 20, 20)>]
+rotate succesfull
+Starting new rotation
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(128, 309, 20, 20)>]
+[<rect(48, 329, 20, 20)>, <rect(48, 309, 20, 20)>]
+[<rect(28, 369, 20, 20)>, <rect(28, 389, 20, 20)>, <rect(8, 369, 20, 20)>, <rect(8, 349, 20, 20)>]
+[<rect(148, 309, 20, 20)>, <rect(168, 309, 20, 20)>]
+[<rect(128, 269, 20, 20)>, <rect(148, 269, 20, 20)>, <rect(148, 289, 20, 20)>, <rect(168, 289, 20, 20)>]
+[<rect(48, 289, 20, 20)>, <rect(28, 289, 20, 20)>, <rect(8, 289, 20, 20)>, <rect(8, 269, 20, 20)>]
+Stage finished and saved
+blocks in list : 9
+states found so far: 18
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(128, 309, 20, 20)>]
+[<rect(48, 329, 20, 20)>, <rect(48, 309, 20, 20)>]
+[<rect(28, 369, 20, 20)>, <rect(28, 389, 20, 20)>, <rect(8, 369, 20, 20)>, <rect(8, 349, 20, 20)>]
+[<rect(148, 309, 20, 20)>, <rect(168, 309, 20, 20)>]
+[<rect(128, 269, 20, 20)>, <rect(148, 269, 20, 20)>, <rect(148, 289, 20, 20)>, <rect(168, 289, 20, 20)>]
+[<rect(68, 289, 20, 20)>, <rect(48, 289, 20, 20)>, <rect(28, 289, 20, 20)>, <rect(28, 269, 20, 20)>]
+Stage finished and saved
+blocks in list : 9
+states found so far: 19
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(128, 309, 20, 20)>]
+[<rect(48, 329, 20, 20)>, <rect(48, 309, 20, 20)>]
+[<rect(28, 369, 20, 20)>, <rect(28, 389, 20, 20)>, <rect(8, 369, 20, 20)>, <rect(8, 349, 20, 20)>]
+[<rect(148, 309, 20, 20)>, <rect(168, 309, 20, 20)>]
+[<rect(128, 269, 20, 20)>, <rect(148, 269, 20, 20)>, <rect(148, 289, 20, 20)>, <rect(168, 289, 20, 20)>]
+[<rect(88, 289, 20, 20)>, <rect(68, 289, 20, 20)>, <rect(48, 289, 20, 20)>, <rect(48, 269, 20, 20)>]
+Stage finished and saved
+blocks in list : 9
+states found so far: 20
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(128, 309, 20, 20)>]
+[<rect(48, 329, 20, 20)>, <rect(48, 309, 20, 20)>]
+[<rect(28, 369, 20, 20)>, <rect(28, 389, 20, 20)>, <rect(8, 369, 20, 20)>, <rect(8, 349, 20, 20)>]
+[<rect(148, 309, 20, 20)>, <rect(168, 309, 20, 20)>]
+[<rect(128, 269, 20, 20)>, <rect(148, 269, 20, 20)>, <rect(148, 289, 20, 20)>, <rect(168, 289, 20, 20)>]
+[<rect(108, 289, 20, 20)>, <rect(88, 289, 20, 20)>, <rect(68, 289, 20, 20)>, <rect(68, 269, 20, 20)>]
+Stage finished and saved
+blocks in list : 9
+states found so far: 21
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(128, 309, 20, 20)>]
+[<rect(48, 329, 20, 20)>, <rect(48, 309, 20, 20)>]
+[<rect(28, 369, 20, 20)>, <rect(28, 389, 20, 20)>, <rect(8, 369, 20, 20)>, <rect(8, 349, 20, 20)>]
+[<rect(148, 309, 20, 20)>, <rect(168, 309, 20, 20)>]
+[<rect(128, 269, 20, 20)>, <rect(148, 269, 20, 20)>, <rect(148, 289, 20, 20)>, <rect(168, 289, 20, 20)>]
+[<rect(128, 249, 20, 20)>, <rect(108, 249, 20, 20)>, <rect(88, 249, 20, 20)>, <rect(88, 229, 20, 20)>]
+Stage finished and saved
+blocks in list : 9
+states found so far: 22
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(128, 309, 20, 20)>]
+[<rect(48, 329, 20, 20)>, <rect(48, 309, 20, 20)>]
+[<rect(28, 369, 20, 20)>, <rect(28, 389, 20, 20)>, <rect(8, 369, 20, 20)>, <rect(8, 349, 20, 20)>]
+[<rect(148, 309, 20, 20)>, <rect(168, 309, 20, 20)>]
+[<rect(128, 269, 20, 20)>, <rect(148, 269, 20, 20)>, <rect(148, 289, 20, 20)>, <rect(168, 289, 20, 20)>]
+[<rect(148, 249, 20, 20)>, <rect(128, 249, 20, 20)>, <rect(108, 249, 20, 20)>, <rect(108, 229, 20, 20)>]
+Stage finished and saved
+blocks in list : 9
+states found so far: 23
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(128, 309, 20, 20)>]
+[<rect(48, 329, 20, 20)>, <rect(48, 309, 20, 20)>]
+[<rect(28, 369, 20, 20)>, <rect(28, 389, 20, 20)>, <rect(8, 369, 20, 20)>, <rect(8, 349, 20, 20)>]
+[<rect(148, 309, 20, 20)>, <rect(168, 309, 20, 20)>]
+[<rect(128, 269, 20, 20)>, <rect(148, 269, 20, 20)>, <rect(148, 289, 20, 20)>, <rect(168, 289, 20, 20)>]
+[<rect(168, 249, 20, 20)>, <rect(148, 249, 20, 20)>, <rect(128, 249, 20, 20)>, <rect(128, 229, 20, 20)>]
+Stage finished and saved
+blocks in list : 9
+states found so far: 24
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(128, 309, 20, 20)>]
+[<rect(48, 329, 20, 20)>, <rect(48, 309, 20, 20)>]
+[<rect(28, 369, 20, 20)>, <rect(28, 389, 20, 20)>, <rect(8, 369, 20, 20)>, <rect(8, 349, 20, 20)>]
+[<rect(148, 309, 20, 20)>, <rect(168, 309, 20, 20)>]
+[<rect(128, 269, 20, 20)>, <rect(148, 269, 20, 20)>, <rect(148, 289, 20, 20)>, <rect(168, 289, 20, 20)>]
+[<rect(188, 249, 20, 20)>, <rect(168, 249, 20, 20)>, <rect(148, 249, 20, 20)>, <rect(148, 229, 20, 20)>]
+Stage finished and saved
+blocks in list : 9
+states found so far: 25
+[<rect(108, 49, 20, 20)>, <rect(88, 49, 20, 20)>, <rect(68, 49, 20, 20)>, <rect(68, 29, 20, 20)>]
+trying to rotate
+[<rect(108, 49, 20, 20)>, <rect(108, 29, 20, 20)>, <rect(108, 9, 20, 20)>, <rect(128, 9, 20, 20)>]
+rotate succesfull
+Starting new rotation
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(128, 309, 20, 20)>]
+[<rect(48, 329, 20, 20)>, <rect(48, 309, 20, 20)>]
+[<rect(28, 369, 20, 20)>, <rect(28, 389, 20, 20)>, <rect(8, 369, 20, 20)>, <rect(8, 349, 20, 20)>]
+[<rect(148, 309, 20, 20)>, <rect(168, 309, 20, 20)>]
+[<rect(128, 269, 20, 20)>, <rect(148, 269, 20, 20)>, <rect(148, 289, 20, 20)>, <rect(168, 289, 20, 20)>]
+[<rect(8, 329, 20, 20)>, <rect(8, 309, 20, 20)>, <rect(8, 289, 20, 20)>, <rect(28, 289, 20, 20)>]
+Stage finished and saved
+blocks in list : 9
+states found so far: 26
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(128, 309, 20, 20)>]
+[<rect(48, 329, 20, 20)>, <rect(48, 309, 20, 20)>]
+[<rect(28, 369, 20, 20)>, <rect(28, 389, 20, 20)>, <rect(8, 369, 20, 20)>, <rect(8, 349, 20, 20)>]
+[<rect(148, 309, 20, 20)>, <rect(168, 309, 20, 20)>]
+[<rect(128, 269, 20, 20)>, <rect(148, 269, 20, 20)>, <rect(148, 289, 20, 20)>, <rect(168, 289, 20, 20)>]
+[<rect(28, 329, 20, 20)>, <rect(28, 309, 20, 20)>, <rect(28, 289, 20, 20)>, <rect(48, 289, 20, 20)>]
+Stage finished and saved
+blocks in list : 9
+states found so far: 27
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(128, 309, 20, 20)>]
+[<rect(48, 329, 20, 20)>, <rect(48, 309, 20, 20)>]
+[<rect(28, 369, 20, 20)>, <rect(28, 389, 20, 20)>, <rect(8, 369, 20, 20)>, <rect(8, 349, 20, 20)>]
+[<rect(148, 309, 20, 20)>, <rect(168, 309, 20, 20)>]
+[<rect(128, 269, 20, 20)>, <rect(148, 269, 20, 20)>, <rect(148, 289, 20, 20)>, <rect(168, 289, 20, 20)>]
+[<rect(48, 289, 20, 20)>, <rect(48, 269, 20, 20)>, <rect(48, 249, 20, 20)>, <rect(68, 249, 20, 20)>]
+Stage finished and saved
+blocks in list : 9
+states found so far: 28
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(128, 309, 20, 20)>]
+[<rect(48, 329, 20, 20)>, <rect(48, 309, 20, 20)>]
+[<rect(28, 369, 20, 20)>, <rect(28, 389, 20, 20)>, <rect(8, 369, 20, 20)>, <rect(8, 349, 20, 20)>]
+[<rect(148, 309, 20, 20)>, <rect(168, 309, 20, 20)>]
+[<rect(128, 269, 20, 20)>, <rect(148, 269, 20, 20)>, <rect(148, 289, 20, 20)>, <rect(168, 289, 20, 20)>]
+[<rect(68, 309, 20, 20)>, <rect(68, 289, 20, 20)>, <rect(68, 269, 20, 20)>, <rect(88, 269, 20, 20)>]
+Stage finished and saved
+blocks in list : 9
+states found so far: 29
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(128, 309, 20, 20)>]
+[<rect(48, 329, 20, 20)>, <rect(48, 309, 20, 20)>]
+[<rect(28, 369, 20, 20)>, <rect(28, 389, 20, 20)>, <rect(8, 369, 20, 20)>, <rect(8, 349, 20, 20)>]
+[<rect(148, 309, 20, 20)>, <rect(168, 309, 20, 20)>]
+[<rect(128, 269, 20, 20)>, <rect(148, 269, 20, 20)>, <rect(148, 289, 20, 20)>, <rect(168, 289, 20, 20)>]
+[<rect(88, 289, 20, 20)>, <rect(88, 269, 20, 20)>, <rect(88, 249, 20, 20)>, <rect(108, 249, 20, 20)>]
+Stage finished and saved
+blocks in list : 9
+states found so far: 30
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(128, 309, 20, 20)>]
+[<rect(48, 329, 20, 20)>, <rect(48, 309, 20, 20)>]
+[<rect(28, 369, 20, 20)>, <rect(28, 389, 20, 20)>, <rect(8, 369, 20, 20)>, <rect(8, 349, 20, 20)>]
+[<rect(148, 309, 20, 20)>, <rect(168, 309, 20, 20)>]
+[<rect(128, 269, 20, 20)>, <rect(148, 269, 20, 20)>, <rect(148, 289, 20, 20)>, <rect(168, 289, 20, 20)>]
+[<rect(108, 289, 20, 20)>, <rect(108, 269, 20, 20)>, <rect(108, 249, 20, 20)>, <rect(128, 249, 20, 20)>]
+Stage finished and saved
+blocks in list : 9
+states found so far: 31
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(128, 309, 20, 20)>]
+[<rect(48, 329, 20, 20)>, <rect(48, 309, 20, 20)>]
+[<rect(28, 369, 20, 20)>, <rect(28, 389, 20, 20)>, <rect(8, 369, 20, 20)>, <rect(8, 349, 20, 20)>]
+[<rect(148, 309, 20, 20)>, <rect(168, 309, 20, 20)>]
+[<rect(128, 269, 20, 20)>, <rect(148, 269, 20, 20)>, <rect(148, 289, 20, 20)>, <rect(168, 289, 20, 20)>]
+[<rect(128, 249, 20, 20)>, <rect(128, 229, 20, 20)>, <rect(128, 209, 20, 20)>, <rect(148, 209, 20, 20)>]
+Stage finished and saved
+blocks in list : 9
+states found so far: 32
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(128, 309, 20, 20)>]
+[<rect(48, 329, 20, 20)>, <rect(48, 309, 20, 20)>]
+[<rect(28, 369, 20, 20)>, <rect(28, 389, 20, 20)>, <rect(8, 369, 20, 20)>, <rect(8, 349, 20, 20)>]
+[<rect(148, 309, 20, 20)>, <rect(168, 309, 20, 20)>]
+[<rect(128, 269, 20, 20)>, <rect(148, 269, 20, 20)>, <rect(148, 289, 20, 20)>, <rect(168, 289, 20, 20)>]
+[<rect(148, 249, 20, 20)>, <rect(148, 229, 20, 20)>, <rect(148, 209, 20, 20)>, <rect(168, 209, 20, 20)>]
+Stage finished and saved
+blocks in list : 9
+states found so far: 33
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(128, 309, 20, 20)>]
+[<rect(48, 329, 20, 20)>, <rect(48, 309, 20, 20)>]
+[<rect(28, 369, 20, 20)>, <rect(28, 389, 20, 20)>, <rect(8, 369, 20, 20)>, <rect(8, 349, 20, 20)>]
+[<rect(148, 309, 20, 20)>, <rect(168, 309, 20, 20)>]
+[<rect(128, 269, 20, 20)>, <rect(148, 269, 20, 20)>, <rect(148, 289, 20, 20)>, <rect(168, 289, 20, 20)>]
+[<rect(168, 269, 20, 20)>, <rect(168, 249, 20, 20)>, <rect(168, 229, 20, 20)>, <rect(188, 229, 20, 20)>]
+Stage finished and saved
+blocks in list : 9
+states found so far: 34
+[<rect(108, 49, 20, 20)>, <rect(108, 29, 20, 20)>, <rect(108, 9, 20, 20)>, <rect(128, 9, 20, 20)>]
+trying to rotate
+[<rect(108, 49, 20, 20)>, <rect(128, 49, 20, 20)>, <rect(148, 49, 20, 20)>, <rect(148, 69, 20, 20)>]
+rotate succesfull
+
+
+Generated the following states:
+finished random state selection
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(128, 309, 20, 20)>]
+[<rect(48, 329, 20, 20)>, <rect(48, 309, 20, 20)>]
+[<rect(28, 369, 20, 20)>, <rect(28, 389, 20, 20)>, <rect(8, 369, 20, 20)>, <rect(8, 349, 20, 20)>]
+[<rect(148, 309, 20, 20)>, <rect(168, 309, 20, 20)>]
+[<rect(128, 269, 20, 20)>, <rect(148, 269, 20, 20)>, <rect(148, 289, 20, 20)>, <rect(168, 289, 20, 20)>]
+[<rect(148, 249, 20, 20)>, <rect(128, 249, 20, 20)>, <rect(108, 249, 20, 20)>, <rect(108, 229, 20, 20)>]
+Printing representation
+[3, 2, 5, 4, 6, 9, 8, 8, 6, 5]
+Getting new block
+generated new block: Z length = 10
+Z block generated, going to rotate 2 times.
+Width of block = 3
+number of expected loops = 14
+Starting new rotation
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(128, 309, 20, 20)>]
+[<rect(48, 329, 20, 20)>, <rect(48, 309, 20, 20)>]
+[<rect(28, 369, 20, 20)>, <rect(28, 389, 20, 20)>, <rect(8, 369, 20, 20)>, <rect(8, 349, 20, 20)>]
+[<rect(148, 309, 20, 20)>, <rect(168, 309, 20, 20)>]
+[<rect(128, 269, 20, 20)>, <rect(148, 269, 20, 20)>, <rect(148, 289, 20, 20)>, <rect(168, 289, 20, 20)>]
+[<rect(148, 249, 20, 20)>, <rect(128, 249, 20, 20)>, <rect(108, 249, 20, 20)>, <rect(108, 229, 20, 20)>]
+[<rect(8, 269, 20, 20)>, <rect(28, 269, 20, 20)>, <rect(28, 289, 20, 20)>, <rect(48, 289, 20, 20)>]
+Stage finished and saved
+blocks in list : 10
+states found so far: 1
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(128, 309, 20, 20)>]
+[<rect(48, 329, 20, 20)>, <rect(48, 309, 20, 20)>]
+[<rect(28, 369, 20, 20)>, <rect(28, 389, 20, 20)>, <rect(8, 369, 20, 20)>, <rect(8, 349, 20, 20)>]
+[<rect(148, 309, 20, 20)>, <rect(168, 309, 20, 20)>]
+[<rect(128, 269, 20, 20)>, <rect(148, 269, 20, 20)>, <rect(148, 289, 20, 20)>, <rect(168, 289, 20, 20)>]
+[<rect(148, 249, 20, 20)>, <rect(128, 249, 20, 20)>, <rect(108, 249, 20, 20)>, <rect(108, 229, 20, 20)>]
+[<rect(28, 269, 20, 20)>, <rect(48, 269, 20, 20)>, <rect(48, 289, 20, 20)>, <rect(68, 289, 20, 20)>]
+Stage finished and saved
+blocks in list : 10
+states found so far: 2
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(128, 309, 20, 20)>]
+[<rect(48, 329, 20, 20)>, <rect(48, 309, 20, 20)>]
+[<rect(28, 369, 20, 20)>, <rect(28, 389, 20, 20)>, <rect(8, 369, 20, 20)>, <rect(8, 349, 20, 20)>]
+[<rect(148, 309, 20, 20)>, <rect(168, 309, 20, 20)>]
+[<rect(128, 269, 20, 20)>, <rect(148, 269, 20, 20)>, <rect(148, 289, 20, 20)>, <rect(168, 289, 20, 20)>]
+[<rect(148, 249, 20, 20)>, <rect(128, 249, 20, 20)>, <rect(108, 249, 20, 20)>, <rect(108, 229, 20, 20)>]
+[<rect(48, 269, 20, 20)>, <rect(68, 269, 20, 20)>, <rect(68, 289, 20, 20)>, <rect(88, 289, 20, 20)>]
+Stage finished and saved
+blocks in list : 10
+states found so far: 3
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(128, 309, 20, 20)>]
+[<rect(48, 329, 20, 20)>, <rect(48, 309, 20, 20)>]
+[<rect(28, 369, 20, 20)>, <rect(28, 389, 20, 20)>, <rect(8, 369, 20, 20)>, <rect(8, 349, 20, 20)>]
+[<rect(148, 309, 20, 20)>, <rect(168, 309, 20, 20)>]
+[<rect(128, 269, 20, 20)>, <rect(148, 269, 20, 20)>, <rect(148, 289, 20, 20)>, <rect(168, 289, 20, 20)>]
+[<rect(148, 249, 20, 20)>, <rect(128, 249, 20, 20)>, <rect(108, 249, 20, 20)>, <rect(108, 229, 20, 20)>]
+[<rect(68, 189, 20, 20)>, <rect(88, 189, 20, 20)>, <rect(88, 209, 20, 20)>, <rect(108, 209, 20, 20)>]
+Stage finished and saved
+blocks in list : 10
+states found so far: 4
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(128, 309, 20, 20)>]
+[<rect(48, 329, 20, 20)>, <rect(48, 309, 20, 20)>]
+[<rect(28, 369, 20, 20)>, <rect(28, 389, 20, 20)>, <rect(8, 369, 20, 20)>, <rect(8, 349, 20, 20)>]
+[<rect(148, 309, 20, 20)>, <rect(168, 309, 20, 20)>]
+[<rect(128, 269, 20, 20)>, <rect(148, 269, 20, 20)>, <rect(148, 289, 20, 20)>, <rect(168, 289, 20, 20)>]
+[<rect(148, 249, 20, 20)>, <rect(128, 249, 20, 20)>, <rect(108, 249, 20, 20)>, <rect(108, 229, 20, 20)>]
+[<rect(88, 189, 20, 20)>, <rect(108, 189, 20, 20)>, <rect(108, 209, 20, 20)>, <rect(128, 209, 20, 20)>]
+Stage finished and saved
+blocks in list : 10
+states found so far: 5
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(128, 309, 20, 20)>]
+[<rect(48, 329, 20, 20)>, <rect(48, 309, 20, 20)>]
+[<rect(28, 369, 20, 20)>, <rect(28, 389, 20, 20)>, <rect(8, 369, 20, 20)>, <rect(8, 349, 20, 20)>]
+[<rect(148, 309, 20, 20)>, <rect(168, 309, 20, 20)>]
+[<rect(128, 269, 20, 20)>, <rect(148, 269, 20, 20)>, <rect(148, 289, 20, 20)>, <rect(168, 289, 20, 20)>]
+[<rect(148, 249, 20, 20)>, <rect(128, 249, 20, 20)>, <rect(108, 249, 20, 20)>, <rect(108, 229, 20, 20)>]
+[<rect(108, 209, 20, 20)>, <rect(128, 209, 20, 20)>, <rect(128, 229, 20, 20)>, <rect(148, 229, 20, 20)>]
+Stage finished and saved
+blocks in list : 10
+states found so far: 6
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(128, 309, 20, 20)>]
+[<rect(48, 329, 20, 20)>, <rect(48, 309, 20, 20)>]
+[<rect(28, 369, 20, 20)>, <rect(28, 389, 20, 20)>, <rect(8, 369, 20, 20)>, <rect(8, 349, 20, 20)>]
+[<rect(148, 309, 20, 20)>, <rect(168, 309, 20, 20)>]
+[<rect(128, 269, 20, 20)>, <rect(148, 269, 20, 20)>, <rect(148, 289, 20, 20)>, <rect(168, 289, 20, 20)>]
+[<rect(148, 249, 20, 20)>, <rect(128, 249, 20, 20)>, <rect(108, 249, 20, 20)>, <rect(108, 229, 20, 20)>]
+[<rect(128, 209, 20, 20)>, <rect(148, 209, 20, 20)>, <rect(148, 229, 20, 20)>, <rect(168, 229, 20, 20)>]
+Stage finished and saved
+blocks in list : 10
+states found so far: 7
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(128, 309, 20, 20)>]
+[<rect(48, 329, 20, 20)>, <rect(48, 309, 20, 20)>]
+[<rect(28, 369, 20, 20)>, <rect(28, 389, 20, 20)>, <rect(8, 369, 20, 20)>, <rect(8, 349, 20, 20)>]
+[<rect(148, 309, 20, 20)>, <rect(168, 309, 20, 20)>]
+[<rect(128, 269, 20, 20)>, <rect(148, 269, 20, 20)>, <rect(148, 289, 20, 20)>, <rect(168, 289, 20, 20)>]
+[<rect(148, 249, 20, 20)>, <rect(128, 249, 20, 20)>, <rect(108, 249, 20, 20)>, <rect(108, 229, 20, 20)>]
+[<rect(148, 229, 20, 20)>, <rect(168, 229, 20, 20)>, <rect(168, 249, 20, 20)>, <rect(188, 249, 20, 20)>]
+Stage finished and saved
+blocks in list : 10
+states found so far: 8
+[<rect(88, 49, 20, 20)>, <rect(108, 49, 20, 20)>, <rect(108, 69, 20, 20)>, <rect(128, 69, 20, 20)>]
+trying to rotate
+[<rect(108, 29, 20, 20)>, <rect(108, 49, 20, 20)>, <rect(88, 49, 20, 20)>, <rect(88, 69, 20, 20)>]
+rotate succesfull
+Starting new rotation
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(128, 309, 20, 20)>]
+[<rect(48, 329, 20, 20)>, <rect(48, 309, 20, 20)>]
+[<rect(28, 369, 20, 20)>, <rect(28, 389, 20, 20)>, <rect(8, 369, 20, 20)>, <rect(8, 349, 20, 20)>]
+[<rect(148, 309, 20, 20)>, <rect(168, 309, 20, 20)>]
+[<rect(128, 269, 20, 20)>, <rect(148, 269, 20, 20)>, <rect(148, 289, 20, 20)>, <rect(168, 289, 20, 20)>]
+[<rect(148, 249, 20, 20)>, <rect(128, 249, 20, 20)>, <rect(108, 249, 20, 20)>, <rect(108, 229, 20, 20)>]
+[<rect(28, 289, 20, 20)>, <rect(28, 309, 20, 20)>, <rect(8, 309, 20, 20)>, <rect(8, 329, 20, 20)>]
+Stage finished and saved
+blocks in list : 10
+states found so far: 9
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(128, 309, 20, 20)>]
+[<rect(48, 329, 20, 20)>, <rect(48, 309, 20, 20)>]
+[<rect(28, 369, 20, 20)>, <rect(28, 389, 20, 20)>, <rect(8, 369, 20, 20)>, <rect(8, 349, 20, 20)>]
+[<rect(148, 309, 20, 20)>, <rect(168, 309, 20, 20)>]
+[<rect(128, 269, 20, 20)>, <rect(148, 269, 20, 20)>, <rect(148, 289, 20, 20)>, <rect(168, 289, 20, 20)>]
+[<rect(148, 249, 20, 20)>, <rect(128, 249, 20, 20)>, <rect(108, 249, 20, 20)>, <rect(108, 229, 20, 20)>]
+[<rect(48, 269, 20, 20)>, <rect(48, 289, 20, 20)>, <rect(28, 289, 20, 20)>, <rect(28, 309, 20, 20)>]
+Stage finished and saved
+blocks in list : 10
+states found so far: 10
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(128, 309, 20, 20)>]
+[<rect(48, 329, 20, 20)>, <rect(48, 309, 20, 20)>]
+[<rect(28, 369, 20, 20)>, <rect(28, 389, 20, 20)>, <rect(8, 369, 20, 20)>, <rect(8, 349, 20, 20)>]
+[<rect(148, 309, 20, 20)>, <rect(168, 309, 20, 20)>]
+[<rect(128, 269, 20, 20)>, <rect(148, 269, 20, 20)>, <rect(148, 289, 20, 20)>, <rect(168, 289, 20, 20)>]
+[<rect(148, 249, 20, 20)>, <rect(128, 249, 20, 20)>, <rect(108, 249, 20, 20)>, <rect(108, 229, 20, 20)>]
+[<rect(68, 249, 20, 20)>, <rect(68, 269, 20, 20)>, <rect(48, 269, 20, 20)>, <rect(48, 289, 20, 20)>]
+Stage finished and saved
+blocks in list : 10
+states found so far: 11
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(128, 309, 20, 20)>]
+[<rect(48, 329, 20, 20)>, <rect(48, 309, 20, 20)>]
+[<rect(28, 369, 20, 20)>, <rect(28, 389, 20, 20)>, <rect(8, 369, 20, 20)>, <rect(8, 349, 20, 20)>]
+[<rect(148, 309, 20, 20)>, <rect(168, 309, 20, 20)>]
+[<rect(128, 269, 20, 20)>, <rect(148, 269, 20, 20)>, <rect(148, 289, 20, 20)>, <rect(168, 289, 20, 20)>]
+[<rect(148, 249, 20, 20)>, <rect(128, 249, 20, 20)>, <rect(108, 249, 20, 20)>, <rect(108, 229, 20, 20)>]
+[<rect(88, 269, 20, 20)>, <rect(88, 289, 20, 20)>, <rect(68, 289, 20, 20)>, <rect(68, 309, 20, 20)>]
+Stage finished and saved
+blocks in list : 10
+states found so far: 12
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(128, 309, 20, 20)>]
+[<rect(48, 329, 20, 20)>, <rect(48, 309, 20, 20)>]
+[<rect(28, 369, 20, 20)>, <rect(28, 389, 20, 20)>, <rect(8, 369, 20, 20)>, <rect(8, 349, 20, 20)>]
+[<rect(148, 309, 20, 20)>, <rect(168, 309, 20, 20)>]
+[<rect(128, 269, 20, 20)>, <rect(148, 269, 20, 20)>, <rect(148, 289, 20, 20)>, <rect(168, 289, 20, 20)>]
+[<rect(148, 249, 20, 20)>, <rect(128, 249, 20, 20)>, <rect(108, 249, 20, 20)>, <rect(108, 229, 20, 20)>]
+[<rect(108, 189, 20, 20)>, <rect(108, 209, 20, 20)>, <rect(88, 209, 20, 20)>, <rect(88, 229, 20, 20)>]
+Stage finished and saved
+blocks in list : 10
+states found so far: 13
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(128, 309, 20, 20)>]
+[<rect(48, 329, 20, 20)>, <rect(48, 309, 20, 20)>]
+[<rect(28, 369, 20, 20)>, <rect(28, 389, 20, 20)>, <rect(8, 369, 20, 20)>, <rect(8, 349, 20, 20)>]
+[<rect(148, 309, 20, 20)>, <rect(168, 309, 20, 20)>]
+[<rect(128, 269, 20, 20)>, <rect(148, 269, 20, 20)>, <rect(148, 289, 20, 20)>, <rect(168, 289, 20, 20)>]
+[<rect(148, 249, 20, 20)>, <rect(128, 249, 20, 20)>, <rect(108, 249, 20, 20)>, <rect(108, 229, 20, 20)>]
+[<rect(128, 169, 20, 20)>, <rect(128, 189, 20, 20)>, <rect(108, 189, 20, 20)>, <rect(108, 209, 20, 20)>]
+Stage finished and saved
+blocks in list : 10
+states found so far: 14
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(128, 309, 20, 20)>]
+[<rect(48, 329, 20, 20)>, <rect(48, 309, 20, 20)>]
+[<rect(28, 369, 20, 20)>, <rect(28, 389, 20, 20)>, <rect(8, 369, 20, 20)>, <rect(8, 349, 20, 20)>]
+[<rect(148, 309, 20, 20)>, <rect(168, 309, 20, 20)>]
+[<rect(128, 269, 20, 20)>, <rect(148, 269, 20, 20)>, <rect(148, 289, 20, 20)>, <rect(168, 289, 20, 20)>]
+[<rect(148, 249, 20, 20)>, <rect(128, 249, 20, 20)>, <rect(108, 249, 20, 20)>, <rect(108, 229, 20, 20)>]
+[<rect(148, 189, 20, 20)>, <rect(148, 209, 20, 20)>, <rect(128, 209, 20, 20)>, <rect(128, 229, 20, 20)>]
+Stage finished and saved
+blocks in list : 10
+states found so far: 15
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(128, 309, 20, 20)>]
+[<rect(48, 329, 20, 20)>, <rect(48, 309, 20, 20)>]
+[<rect(28, 369, 20, 20)>, <rect(28, 389, 20, 20)>, <rect(8, 369, 20, 20)>, <rect(8, 349, 20, 20)>]
+[<rect(148, 309, 20, 20)>, <rect(168, 309, 20, 20)>]
+[<rect(128, 269, 20, 20)>, <rect(148, 269, 20, 20)>, <rect(148, 289, 20, 20)>, <rect(168, 289, 20, 20)>]
+[<rect(148, 249, 20, 20)>, <rect(128, 249, 20, 20)>, <rect(108, 249, 20, 20)>, <rect(108, 229, 20, 20)>]
+[<rect(168, 189, 20, 20)>, <rect(168, 209, 20, 20)>, <rect(148, 209, 20, 20)>, <rect(148, 229, 20, 20)>]
+Stage finished and saved
+blocks in list : 10
+states found so far: 16
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(128, 309, 20, 20)>]
+[<rect(48, 329, 20, 20)>, <rect(48, 309, 20, 20)>]
+[<rect(28, 369, 20, 20)>, <rect(28, 389, 20, 20)>, <rect(8, 369, 20, 20)>, <rect(8, 349, 20, 20)>]
+[<rect(148, 309, 20, 20)>, <rect(168, 309, 20, 20)>]
+[<rect(128, 269, 20, 20)>, <rect(148, 269, 20, 20)>, <rect(148, 289, 20, 20)>, <rect(168, 289, 20, 20)>]
+[<rect(148, 249, 20, 20)>, <rect(128, 249, 20, 20)>, <rect(108, 249, 20, 20)>, <rect(108, 229, 20, 20)>]
+[<rect(188, 229, 20, 20)>, <rect(188, 249, 20, 20)>, <rect(168, 249, 20, 20)>, <rect(168, 269, 20, 20)>]
+Stage finished and saved
+blocks in list : 10
+states found so far: 17
+[<rect(108, 29, 20, 20)>, <rect(108, 49, 20, 20)>, <rect(88, 49, 20, 20)>, <rect(88, 69, 20, 20)>]
+trying to rotate
+[<rect(128, 49, 20, 20)>, <rect(108, 49, 20, 20)>, <rect(108, 29, 20, 20)>, <rect(88, 29, 20, 20)>]
+rotate succesfull
+
+
+Generated the following states:
+finished random state selection
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(128, 309, 20, 20)>]
+[<rect(48, 329, 20, 20)>, <rect(48, 309, 20, 20)>]
+[<rect(28, 369, 20, 20)>, <rect(28, 389, 20, 20)>, <rect(8, 369, 20, 20)>, <rect(8, 349, 20, 20)>]
+[<rect(148, 309, 20, 20)>, <rect(168, 309, 20, 20)>]
+[<rect(128, 269, 20, 20)>, <rect(148, 269, 20, 20)>, <rect(148, 289, 20, 20)>, <rect(168, 289, 20, 20)>]
+[<rect(148, 249, 20, 20)>, <rect(128, 249, 20, 20)>, <rect(108, 249, 20, 20)>, <rect(108, 229, 20, 20)>]
+[<rect(68, 189, 20, 20)>, <rect(88, 189, 20, 20)>, <rect(88, 209, 20, 20)>, <rect(108, 209, 20, 20)>]
+Printing representation
+[3, 2, 5, 11, 11, 10, 8, 8, 6, 0]
+Getting new block
+generated new block: S length = 11
+S block generated, going to rotate 2 times.
+Width of block = 3
+number of expected loops = 14
+Starting new rotation
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(128, 309, 20, 20)>]
+[<rect(48, 329, 20, 20)>, <rect(48, 309, 20, 20)>]
+[<rect(28, 369, 20, 20)>, <rect(28, 389, 20, 20)>, <rect(8, 369, 20, 20)>, <rect(8, 349, 20, 20)>]
+[<rect(148, 309, 20, 20)>, <rect(168, 309, 20, 20)>]
+[<rect(128, 269, 20, 20)>, <rect(148, 269, 20, 20)>, <rect(148, 289, 20, 20)>, <rect(168, 289, 20, 20)>]
+[<rect(148, 249, 20, 20)>, <rect(128, 249, 20, 20)>, <rect(108, 249, 20, 20)>, <rect(108, 229, 20, 20)>]
+[<rect(68, 189, 20, 20)>, <rect(88, 189, 20, 20)>, <rect(88, 209, 20, 20)>, <rect(108, 209, 20, 20)>]
+[<rect(28, 289, 20, 20)>, <rect(48, 289, 20, 20)>, <rect(28, 309, 20, 20)>, <rect(8, 309, 20, 20)>]
+Stage finished and saved
+blocks in list : 11
+states found so far: 1
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(128, 309, 20, 20)>]
+[<rect(48, 329, 20, 20)>, <rect(48, 309, 20, 20)>]
+[<rect(28, 369, 20, 20)>, <rect(28, 389, 20, 20)>, <rect(8, 369, 20, 20)>, <rect(8, 349, 20, 20)>]
+[<rect(148, 309, 20, 20)>, <rect(168, 309, 20, 20)>]
+[<rect(128, 269, 20, 20)>, <rect(148, 269, 20, 20)>, <rect(148, 289, 20, 20)>, <rect(168, 289, 20, 20)>]
+[<rect(148, 249, 20, 20)>, <rect(128, 249, 20, 20)>, <rect(108, 249, 20, 20)>, <rect(108, 229, 20, 20)>]
+[<rect(68, 189, 20, 20)>, <rect(88, 189, 20, 20)>, <rect(88, 209, 20, 20)>, <rect(108, 209, 20, 20)>]
+[<rect(48, 169, 20, 20)>, <rect(68, 169, 20, 20)>, <rect(48, 189, 20, 20)>, <rect(28, 189, 20, 20)>]
+Stage finished and saved
+blocks in list : 11
+states found so far: 2
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(128, 309, 20, 20)>]
+[<rect(48, 329, 20, 20)>, <rect(48, 309, 20, 20)>]
+[<rect(28, 369, 20, 20)>, <rect(28, 389, 20, 20)>, <rect(8, 369, 20, 20)>, <rect(8, 349, 20, 20)>]
+[<rect(148, 309, 20, 20)>, <rect(168, 309, 20, 20)>]
+[<rect(128, 269, 20, 20)>, <rect(148, 269, 20, 20)>, <rect(148, 289, 20, 20)>, <rect(168, 289, 20, 20)>]
+[<rect(148, 249, 20, 20)>, <rect(128, 249, 20, 20)>, <rect(108, 249, 20, 20)>, <rect(108, 229, 20, 20)>]
+[<rect(68, 189, 20, 20)>, <rect(88, 189, 20, 20)>, <rect(88, 209, 20, 20)>, <rect(108, 209, 20, 20)>]
+[<rect(68, 149, 20, 20)>, <rect(88, 149, 20, 20)>, <rect(68, 169, 20, 20)>, <rect(48, 169, 20, 20)>]
+Stage finished and saved
+blocks in list : 11
+states found so far: 3
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(128, 309, 20, 20)>]
+[<rect(48, 329, 20, 20)>, <rect(48, 309, 20, 20)>]
+[<rect(28, 369, 20, 20)>, <rect(28, 389, 20, 20)>, <rect(8, 369, 20, 20)>, <rect(8, 349, 20, 20)>]
+[<rect(148, 309, 20, 20)>, <rect(168, 309, 20, 20)>]
+[<rect(128, 269, 20, 20)>, <rect(148, 269, 20, 20)>, <rect(148, 289, 20, 20)>, <rect(168, 289, 20, 20)>]
+[<rect(148, 249, 20, 20)>, <rect(128, 249, 20, 20)>, <rect(108, 249, 20, 20)>, <rect(108, 229, 20, 20)>]
+[<rect(68, 189, 20, 20)>, <rect(88, 189, 20, 20)>, <rect(88, 209, 20, 20)>, <rect(108, 209, 20, 20)>]
+[<rect(88, 149, 20, 20)>, <rect(108, 149, 20, 20)>, <rect(88, 169, 20, 20)>, <rect(68, 169, 20, 20)>]
+Stage finished and saved
+blocks in list : 11
+states found so far: 4
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(128, 309, 20, 20)>]
+[<rect(48, 329, 20, 20)>, <rect(48, 309, 20, 20)>]
+[<rect(28, 369, 20, 20)>, <rect(28, 389, 20, 20)>, <rect(8, 369, 20, 20)>, <rect(8, 349, 20, 20)>]
+[<rect(148, 309, 20, 20)>, <rect(168, 309, 20, 20)>]
+[<rect(128, 269, 20, 20)>, <rect(148, 269, 20, 20)>, <rect(148, 289, 20, 20)>, <rect(168, 289, 20, 20)>]
+[<rect(148, 249, 20, 20)>, <rect(128, 249, 20, 20)>, <rect(108, 249, 20, 20)>, <rect(108, 229, 20, 20)>]
+[<rect(68, 189, 20, 20)>, <rect(88, 189, 20, 20)>, <rect(88, 209, 20, 20)>, <rect(108, 209, 20, 20)>]
+[<rect(108, 149, 20, 20)>, <rect(128, 149, 20, 20)>, <rect(108, 169, 20, 20)>, <rect(88, 169, 20, 20)>]
+Stage finished and saved
+blocks in list : 11
+states found so far: 5
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(128, 309, 20, 20)>]
+[<rect(48, 329, 20, 20)>, <rect(48, 309, 20, 20)>]
+[<rect(28, 369, 20, 20)>, <rect(28, 389, 20, 20)>, <rect(8, 369, 20, 20)>, <rect(8, 349, 20, 20)>]
+[<rect(148, 309, 20, 20)>, <rect(168, 309, 20, 20)>]
+[<rect(128, 269, 20, 20)>, <rect(148, 269, 20, 20)>, <rect(148, 289, 20, 20)>, <rect(168, 289, 20, 20)>]
+[<rect(148, 249, 20, 20)>, <rect(128, 249, 20, 20)>, <rect(108, 249, 20, 20)>, <rect(108, 229, 20, 20)>]
+[<rect(68, 189, 20, 20)>, <rect(88, 189, 20, 20)>, <rect(88, 209, 20, 20)>, <rect(108, 209, 20, 20)>]
+[<rect(128, 169, 20, 20)>, <rect(148, 169, 20, 20)>, <rect(128, 189, 20, 20)>, <rect(108, 189, 20, 20)>]
+Stage finished and saved
+blocks in list : 11
+states found so far: 6
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(128, 309, 20, 20)>]
+[<rect(48, 329, 20, 20)>, <rect(48, 309, 20, 20)>]
+[<rect(28, 369, 20, 20)>, <rect(28, 389, 20, 20)>, <rect(8, 369, 20, 20)>, <rect(8, 349, 20, 20)>]
+[<rect(148, 309, 20, 20)>, <rect(168, 309, 20, 20)>]
+[<rect(128, 269, 20, 20)>, <rect(148, 269, 20, 20)>, <rect(148, 289, 20, 20)>, <rect(168, 289, 20, 20)>]
+[<rect(148, 249, 20, 20)>, <rect(128, 249, 20, 20)>, <rect(108, 249, 20, 20)>, <rect(108, 229, 20, 20)>]
+[<rect(68, 189, 20, 20)>, <rect(88, 189, 20, 20)>, <rect(88, 209, 20, 20)>, <rect(108, 209, 20, 20)>]
+[<rect(148, 209, 20, 20)>, <rect(168, 209, 20, 20)>, <rect(148, 229, 20, 20)>, <rect(128, 229, 20, 20)>]
+Stage finished and saved
+blocks in list : 11
+states found so far: 7
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(128, 309, 20, 20)>]
+[<rect(48, 329, 20, 20)>, <rect(48, 309, 20, 20)>]
+[<rect(28, 369, 20, 20)>, <rect(28, 389, 20, 20)>, <rect(8, 369, 20, 20)>, <rect(8, 349, 20, 20)>]
+[<rect(148, 309, 20, 20)>, <rect(168, 309, 20, 20)>]
+[<rect(128, 269, 20, 20)>, <rect(148, 269, 20, 20)>, <rect(148, 289, 20, 20)>, <rect(168, 289, 20, 20)>]
+[<rect(148, 249, 20, 20)>, <rect(128, 249, 20, 20)>, <rect(108, 249, 20, 20)>, <rect(108, 229, 20, 20)>]
+[<rect(68, 189, 20, 20)>, <rect(88, 189, 20, 20)>, <rect(88, 209, 20, 20)>, <rect(108, 209, 20, 20)>]
+[<rect(168, 209, 20, 20)>, <rect(188, 209, 20, 20)>, <rect(168, 229, 20, 20)>, <rect(148, 229, 20, 20)>]
+Stage finished and saved
+blocks in list : 11
+states found so far: 8
+[<rect(108, 49, 20, 20)>, <rect(128, 49, 20, 20)>, <rect(108, 69, 20, 20)>, <rect(88, 69, 20, 20)>]
+trying to rotate
+[<rect(108, 49, 20, 20)>, <rect(108, 69, 20, 20)>, <rect(88, 49, 20, 20)>, <rect(88, 29, 20, 20)>]
+rotate succesfull
+Starting new rotation
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(128, 309, 20, 20)>]
+[<rect(48, 329, 20, 20)>, <rect(48, 309, 20, 20)>]
+[<rect(28, 369, 20, 20)>, <rect(28, 389, 20, 20)>, <rect(8, 369, 20, 20)>, <rect(8, 349, 20, 20)>]
+[<rect(148, 309, 20, 20)>, <rect(168, 309, 20, 20)>]
+[<rect(128, 269, 20, 20)>, <rect(148, 269, 20, 20)>, <rect(148, 289, 20, 20)>, <rect(168, 289, 20, 20)>]
+[<rect(148, 249, 20, 20)>, <rect(128, 249, 20, 20)>, <rect(108, 249, 20, 20)>, <rect(108, 229, 20, 20)>]
+[<rect(68, 189, 20, 20)>, <rect(88, 189, 20, 20)>, <rect(88, 209, 20, 20)>, <rect(108, 209, 20, 20)>]
+[<rect(28, 329, 20, 20)>, <rect(28, 349, 20, 20)>, <rect(8, 329, 20, 20)>, <rect(8, 309, 20, 20)>]
+Stage finished and saved
+blocks in list : 11
+states found so far: 9
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(128, 309, 20, 20)>]
+[<rect(48, 329, 20, 20)>, <rect(48, 309, 20, 20)>]
+[<rect(28, 369, 20, 20)>, <rect(28, 389, 20, 20)>, <rect(8, 369, 20, 20)>, <rect(8, 349, 20, 20)>]
+[<rect(148, 309, 20, 20)>, <rect(168, 309, 20, 20)>]
+[<rect(128, 269, 20, 20)>, <rect(148, 269, 20, 20)>, <rect(148, 289, 20, 20)>, <rect(168, 289, 20, 20)>]
+[<rect(148, 249, 20, 20)>, <rect(128, 249, 20, 20)>, <rect(108, 249, 20, 20)>, <rect(108, 229, 20, 20)>]
+[<rect(68, 189, 20, 20)>, <rect(88, 189, 20, 20)>, <rect(88, 209, 20, 20)>, <rect(108, 209, 20, 20)>]
+[<rect(48, 269, 20, 20)>, <rect(48, 289, 20, 20)>, <rect(28, 269, 20, 20)>, <rect(28, 249, 20, 20)>]
+Stage finished and saved
+blocks in list : 11
+states found so far: 10
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(128, 309, 20, 20)>]
+[<rect(48, 329, 20, 20)>, <rect(48, 309, 20, 20)>]
+[<rect(28, 369, 20, 20)>, <rect(28, 389, 20, 20)>, <rect(8, 369, 20, 20)>, <rect(8, 349, 20, 20)>]
+[<rect(148, 309, 20, 20)>, <rect(168, 309, 20, 20)>]
+[<rect(128, 269, 20, 20)>, <rect(148, 269, 20, 20)>, <rect(148, 289, 20, 20)>, <rect(168, 289, 20, 20)>]
+[<rect(148, 249, 20, 20)>, <rect(128, 249, 20, 20)>, <rect(108, 249, 20, 20)>, <rect(108, 229, 20, 20)>]
+[<rect(68, 189, 20, 20)>, <rect(88, 189, 20, 20)>, <rect(88, 209, 20, 20)>, <rect(108, 209, 20, 20)>]
+[<rect(68, 149, 20, 20)>, <rect(68, 169, 20, 20)>, <rect(48, 149, 20, 20)>, <rect(48, 129, 20, 20)>]
+Stage finished and saved
+blocks in list : 11
+states found so far: 11
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(128, 309, 20, 20)>]
+[<rect(48, 329, 20, 20)>, <rect(48, 309, 20, 20)>]
+[<rect(28, 369, 20, 20)>, <rect(28, 389, 20, 20)>, <rect(8, 369, 20, 20)>, <rect(8, 349, 20, 20)>]
+[<rect(148, 309, 20, 20)>, <rect(168, 309, 20, 20)>]
+[<rect(128, 269, 20, 20)>, <rect(148, 269, 20, 20)>, <rect(148, 289, 20, 20)>, <rect(168, 289, 20, 20)>]
+[<rect(148, 249, 20, 20)>, <rect(128, 249, 20, 20)>, <rect(108, 249, 20, 20)>, <rect(108, 229, 20, 20)>]
+[<rect(68, 189, 20, 20)>, <rect(88, 189, 20, 20)>, <rect(88, 209, 20, 20)>, <rect(108, 209, 20, 20)>]
+[<rect(88, 149, 20, 20)>, <rect(88, 169, 20, 20)>, <rect(68, 149, 20, 20)>, <rect(68, 129, 20, 20)>]
+Stage finished and saved
+blocks in list : 11
+states found so far: 12
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(128, 309, 20, 20)>]
+[<rect(48, 329, 20, 20)>, <rect(48, 309, 20, 20)>]
+[<rect(28, 369, 20, 20)>, <rect(28, 389, 20, 20)>, <rect(8, 369, 20, 20)>, <rect(8, 349, 20, 20)>]
+[<rect(148, 309, 20, 20)>, <rect(168, 309, 20, 20)>]
+[<rect(128, 269, 20, 20)>, <rect(148, 269, 20, 20)>, <rect(148, 289, 20, 20)>, <rect(168, 289, 20, 20)>]
+[<rect(148, 249, 20, 20)>, <rect(128, 249, 20, 20)>, <rect(108, 249, 20, 20)>, <rect(108, 229, 20, 20)>]
+[<rect(68, 189, 20, 20)>, <rect(88, 189, 20, 20)>, <rect(88, 209, 20, 20)>, <rect(108, 209, 20, 20)>]
+[<rect(108, 169, 20, 20)>, <rect(108, 189, 20, 20)>, <rect(88, 169, 20, 20)>, <rect(88, 149, 20, 20)>]
+Stage finished and saved
+blocks in list : 11
+states found so far: 13
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(128, 309, 20, 20)>]
+[<rect(48, 329, 20, 20)>, <rect(48, 309, 20, 20)>]
+[<rect(28, 369, 20, 20)>, <rect(28, 389, 20, 20)>, <rect(8, 369, 20, 20)>, <rect(8, 349, 20, 20)>]
+[<rect(148, 309, 20, 20)>, <rect(168, 309, 20, 20)>]
+[<rect(128, 269, 20, 20)>, <rect(148, 269, 20, 20)>, <rect(148, 289, 20, 20)>, <rect(168, 289, 20, 20)>]
+[<rect(148, 249, 20, 20)>, <rect(128, 249, 20, 20)>, <rect(108, 249, 20, 20)>, <rect(108, 229, 20, 20)>]
+[<rect(68, 189, 20, 20)>, <rect(88, 189, 20, 20)>, <rect(88, 209, 20, 20)>, <rect(108, 209, 20, 20)>]
+[<rect(128, 189, 20, 20)>, <rect(128, 209, 20, 20)>, <rect(108, 189, 20, 20)>, <rect(108, 169, 20, 20)>]
+Stage finished and saved
+blocks in list : 11
+states found so far: 14
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(128, 309, 20, 20)>]
+[<rect(48, 329, 20, 20)>, <rect(48, 309, 20, 20)>]
+[<rect(28, 369, 20, 20)>, <rect(28, 389, 20, 20)>, <rect(8, 369, 20, 20)>, <rect(8, 349, 20, 20)>]
+[<rect(148, 309, 20, 20)>, <rect(168, 309, 20, 20)>]
+[<rect(128, 269, 20, 20)>, <rect(148, 269, 20, 20)>, <rect(148, 289, 20, 20)>, <rect(168, 289, 20, 20)>]
+[<rect(148, 249, 20, 20)>, <rect(128, 249, 20, 20)>, <rect(108, 249, 20, 20)>, <rect(108, 229, 20, 20)>]
+[<rect(68, 189, 20, 20)>, <rect(88, 189, 20, 20)>, <rect(88, 209, 20, 20)>, <rect(108, 209, 20, 20)>]
+[<rect(148, 209, 20, 20)>, <rect(148, 229, 20, 20)>, <rect(128, 209, 20, 20)>, <rect(128, 189, 20, 20)>]
+Stage finished and saved
+blocks in list : 11
+states found so far: 15
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(128, 309, 20, 20)>]
+[<rect(48, 329, 20, 20)>, <rect(48, 309, 20, 20)>]
+[<rect(28, 369, 20, 20)>, <rect(28, 389, 20, 20)>, <rect(8, 369, 20, 20)>, <rect(8, 349, 20, 20)>]
+[<rect(148, 309, 20, 20)>, <rect(168, 309, 20, 20)>]
+[<rect(128, 269, 20, 20)>, <rect(148, 269, 20, 20)>, <rect(148, 289, 20, 20)>, <rect(168, 289, 20, 20)>]
+[<rect(148, 249, 20, 20)>, <rect(128, 249, 20, 20)>, <rect(108, 249, 20, 20)>, <rect(108, 229, 20, 20)>]
+[<rect(68, 189, 20, 20)>, <rect(88, 189, 20, 20)>, <rect(88, 209, 20, 20)>, <rect(108, 209, 20, 20)>]
+[<rect(168, 229, 20, 20)>, <rect(168, 249, 20, 20)>, <rect(148, 229, 20, 20)>, <rect(148, 209, 20, 20)>]
+Stage finished and saved
+blocks in list : 11
+states found so far: 16
+Found a collision with border
+Block restored
+Found a collision with other block
+Block restored
+[<rect(88, 389, 20, 20)>, <rect(68, 389, 20, 20)>, <rect(48, 389, 20, 20)>, <rect(88, 369, 20, 20)>]
+[<rect(68, 369, 20, 20)>, <rect(68, 349, 20, 20)>, <rect(68, 329, 20, 20)>, <rect(88, 329, 20, 20)>]
+[<rect(108, 329, 20, 20)>, <rect(88, 309, 20, 20)>]
+[<rect(108, 309, 20, 20)>, <rect(128, 309, 20, 20)>]
+[<rect(48, 329, 20, 20)>, <rect(48, 309, 20, 20)>]
+[<rect(28, 369, 20, 20)>, <rect(28, 389, 20, 20)>, <rect(8, 369, 20, 20)>, <rect(8, 349, 20, 20)>]
+[<rect(148, 309, 20, 20)>, <rect(168, 309, 20, 20)>]
+[<rect(128, 269, 20, 20)>, <rect(148, 269, 20, 20)>, <rect(148, 289, 20, 20)>, <rect(168, 289, 20, 20)>]
+[<rect(148, 249, 20, 20)>, <rect(128, 249, 20, 20)>, <rect(108, 249, 20, 20)>, <rect(108, 229, 20, 20)>]
+[<rect(68, 189, 20, 20)>, <rect(88, 189, 20, 20)>, <rect(88, 209, 20, 20)>, <rect(108, 209, 20, 20)>]
+[<rect(188, 269, 20, 20)>, <rect(188, 289, 20, 20)>, <rect(168, 269, 20, 20)>, <rect(168, 249, 20, 20)>]
+Stage finished and saved
+blocks in list : 11
+states found so far: 17
+[<rect(108, 49, 20, 20)>, <rect(108, 69, 20, 20)>, <rect(88, 49, 20, 20)>, <rect(88, 29, 20, 20)>]
+trying to rotate
+[<rect(108, 49, 20, 20)>, <rect(88, 49, 20, 20)>, <rect(108, 29, 20, 20)>, <rect(128, 29, 20, 20)>]
+rotate succesfull
+
+
+Generated the following states:
+finished random state selection
