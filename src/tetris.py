@@ -425,7 +425,8 @@ class Tetris(object):
     # Returns true otherwise
     def valid_state(self):
         down_board  = self.active_block.check_collision([self.board_down])
-        any_border  = self.active_block.check_collision([self.board_left,self.board_up,self.board_right])
+        any_border  = self.active_block.check_collision([self.board_left,self.board_right])
+        top_border  = self.active_block.check_collision([self.board_up])
         block_any   = self.block_colides()
         # Restore the configuration if any collision was detected
         if down_board or any_border or block_any:
@@ -444,8 +445,9 @@ class Tetris(object):
         can_move_down = not self.block_colides()  
         self.active_block.restore()
         # We end the game if we are on the respawn and we cannot move --> bang!
-        if not can_move_down and (self.start_x == self.active_block.x and self.start_y == self.active_block.y):
-            self.game_over = True
+        if not can_move_down and top_border:
+            #self.game_over = True
+            log("Game over? Cant move down and collision with top")
             return False
         self.detect_line()
         return True
