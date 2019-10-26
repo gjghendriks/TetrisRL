@@ -87,6 +87,13 @@ class Tetris(object):
         self.shape_copy = 0
         self.org_x_copy = 0
         self.org_y_copy = 0
+        # Control variables for the game. The done signal is used 
+        # to control the main loop (it is set by the quit action), the game_over signal
+        # is set by the game logic and it is also used for the detection of "game over" drawing.
+        # Finally the new_block variable is used for the requesting of new tetris block. 
+        self.done = False
+        self.game_over = False
+        self.new_block = True
 
     def apply_action(self):
         """
@@ -202,7 +209,8 @@ class Tetris(object):
                 log("states found so far: " + str(len(states)))
 
                 self.draw_game()
-                pygame.time.wait(200)
+                if constants.DEBUG:
+                    pygame.time.wait(200)
 
 
             # try rotate the block
@@ -276,7 +284,8 @@ class Tetris(object):
             self.active_block.restore()
             log("Block restored")
             self.draw_game
-            pygame.time.wait(10)
+            if constants.DEBUG:
+                pygame.time.wait(10)
             #log(self.active_block.shape)
             return False
 
@@ -291,13 +300,7 @@ class Tetris(object):
         pygame.display.set_caption("Tetris")
         # Setup the time to fire the move event every given time
         self.set_move_timer()
-        # Control variables for the game. The done signal is used 
-        # to control the main loop (it is set by the quit action), the game_over signal
-        # is set by the game logic and it is also used for the detection of "game over" drawing.
-        # Finally the new_block variable is used for the requesting of new tetris block. 
-        self.done = False
-        self.game_over = False
-        self.new_block = True
+        
         # Print the initial score
         self.print_status_line()
         while not(self.done) and not(self.game_over):
@@ -314,7 +317,34 @@ class Tetris(object):
             self.print_game_over()
         # Disable the pygame stuff
         pygame.font.quit()
-        pygame.display.quit()        
+        pygame.display.quit()
+
+
+
+
+    def nextState(self):
+        pygame.init()
+        pygame.font.init()
+        self.myfont = pygame.font.SysFont(pygame.font.get_default_font(),constants.FONT_SIZE)
+        self.screen = pygame.display.set_mode((self.resx,self.resy))
+        pygame.display.set_caption("Tetris")
+        # Setup the time to fire the move event every given time
+
+        # Print the initial score
+        self.print_status_line()
+        if not(self.done) and not(self.game_over):
+            # Get the block and run the game logic
+            log("Getting new block")
+            self.new_block = True
+            self.get_block()
+            self.draw_game()
+            self.select_random_state()
+            self.update_representation(self.representation)
+            self.representation.print()
+        # Display the game_over and wait for a keypress
+        return self.representation
+
+
    
     def print_status_line(self):
         """
@@ -395,6 +425,7 @@ class Tetris(object):
                 log("Found a collision with border")
             if block_any:
                 log("Found a collision with other block")
+                self.detect_line()
             return False
         # So far so good, sample the previous state and try to move down (to detect the colision with other block). 
         # After that, detect the the insertion of new block. The block new block is inserted if we reached the boarder

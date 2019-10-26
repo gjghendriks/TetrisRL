@@ -24,7 +24,7 @@ VERTBLOCKS = 20
 # number of block that the game can fit horizontally
 HORZBLOCKS = 10
 
-DEBUG = True
+DEBUG = False
 
 #### DONT CHANGE ####
 

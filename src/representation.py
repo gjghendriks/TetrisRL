@@ -2,6 +2,7 @@
 
 import tetris
 import constants
+import tensorflow as tf
 
 if __name__ == "__main__":
     tetris.Tetris(constants.HORZBLOCKS,constants.VERTBLOCKS).run()
@@ -13,6 +14,8 @@ class Representation(object):
 		for x in range(length):
 			self.arr.append(0)
 
+	def __str__(self):
+		return(str(self.arr))
 
 	def clear(self):
 		"""
@@ -38,4 +41,14 @@ class Representation(object):
 		print("Printing representation")
 		print(self.arr)
 
+
+	def format(self):
+		"""
+		returns the formatted version
+		to be used by tensorflow
+		"""
+		new = []
+		for x in range(len(self.arr)):
+			new.append(self.arr[x] / 20.0)
+		return tf.Variable([new])
 
