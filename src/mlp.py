@@ -10,6 +10,7 @@ import constants
 board = tetris.Tetris(constants.HORZBLOCKS,constants.VERTBLOCKS)
 state = board.nextState()
 formatted_state = state.format()
+score = [board.score]
 #placeholder to speed up
 """state = [0,0,0,0,0,0,1,1,2,0]
 for n in range(len(state)):
@@ -32,14 +33,24 @@ num_classes = 1
 
 
 model = tf.keras.Sequential([
-	tf.keras.layers.Flatten(input_shape=(10, 1)),
-	tf.keras.layers.Dense(10, activation='relu'),
-	tf.keras.layers.Dense(1, activation=tf.nn.softmax)
+	tf.keras.layers.Dense(10, input_shape=(10,), activation='relu'),
+	#tf.keras.layers.Dense(10, activation='relu'),
+	tf.keras.layers.Dense(1, activation='softmax')
 ])
 
-model.compile(optimizer='adam',
+model.summary()
+
+
+model.compile(optimizer=tf.keras.optimizers.Adam(lr=learning_rate),
 	loss='sparse_categorical_crossentropy',
 	metrics=['accuracy'])
 
-print("hello")
-print(model.weights)
+
+#shuffle true/false
+#train the model
+#model.fit(formatted_state, score, batch_size=batch_size, epochs=training_epochs, verbose=2)
+
+
+prediction = model.predict(formatted_state)
+print(type(prediction))
+print(prediction)
