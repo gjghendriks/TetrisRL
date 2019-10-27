@@ -6,24 +6,6 @@ import constants
 import representation as rep
 #use for v1 : tf.compat.v1.
 
-# init a board
-board = tetris.Tetris(constants.HORZBLOCKS,constants.VERTBLOCKS)
-# generate all nest possible states
-states = board.nextStates()
-
-print("States generated: {}".format(len(states)))
-
-for x, y in states[0].items():
-  print(x, y) 
-
-#placeholder to speed up
-"""state = [0,0,0,0,0,0,1,1,2,0]
-for n in range(len(state)):
-	state[n] = state[n] /20.0
-
-print(state)"""
-
-
 # defining params
 learning_rate = 0.001
 training_epochs = 15
@@ -36,30 +18,56 @@ num_hidden_1 = 10
 num_classes = 1
 
 
-model = tf.keras.Sequential([
-	tf.keras.layers.Dense(10, input_shape=[states[0]["representation"].shape[1]], activation='relu'),
-	#tf.keras.layers.Dense(10, activation='relu'),
-	tf.keras.layers.Dense(1, activation='softmax')
-])
+# init a board
+board = tetris.Tetris(constants.HORZBLOCKS,constants.VERTBLOCKS)
 
+# init model
+model = tf.keras.Sequential([
+	tf.keras.layers.Dense(10, input_shape=[constants.HORZBLOCKS,], activation='relu'),
+	#tf.keras.layers.Dense(10, activation='relu'),
+	tf.keras.layers.Dense(1, activation='linear')
+])
+#print summary of model
 model.summary()
 
-
+#create model
 model.compile(optimizer=tf.keras.optimizers.Adam(lr=learning_rate),
 	loss='sparse_categorical_crossentropy',
 	metrics=['accuracy'])
 
 
-#shuffle true/false
-#train the model
-#model.fit(formatted_state, score, batch_size=batch_size, epochs=training_epochs, verbose=2)
+for epoch in range(100):
 
+	'''
+	generate all next possible states
+	with:
+	    blk_list:           list of all the block
+	    score:              the current score
+	    representation:     the representation of the state
+	'''
+	states = board.nextStates()
+	#init predictions
+	predictions = []
+	for state in states:
 
-predictions = []
-for state in states:
+		p = model.predict(state["formatted_representation"])
+		predictions.append(p)
 
-	p = model.predict(state["representation"])
-	predictions.append(p)
+	for x in range(len(predictions)):
+		print(predictions[x])
 
-for x in range(len(predictions)):
-	print(predictions[x][0])
+	# get the value and index of the largest prediction
+	max_value = -float('inf')
+	for row_idx, row in enumerate(predictions):    
+	    for col_idx, col in enumerate(row):
+	        if col > max_value:
+	            max_value = col
+	            max_index = (row_idx, col_idx)
+
+	print("max = {} index = {}".format(max_value, max_index))
+	print(predictions[max_index[0]][max_index[1]])
+
+	board.setState(states[max_index[0]])
+	board.draw_board()
+
+print("done")

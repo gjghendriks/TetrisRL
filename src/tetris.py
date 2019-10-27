@@ -203,11 +203,12 @@ class Tetris(object):
                 r = representation.Representation()
                 for blk in new_block_list:
                     r.add(blk)
-                r = r.format()
+                formatted_r = r.format()
                 gen_state = {
                     "blk_list" : new_block_list,
                     "score" : self.score,
-                    "representation": r
+                    "representation": r,
+                    "formatted_representation": formatted_r
                 }
                 states.append(gen_state)
 
@@ -246,27 +247,17 @@ class Tetris(object):
         #log("finished random state selection")
 
     def setState(self, state):
+        self.representation = state['representation']
+        self.score = state['score']
         self.blk_list.clear()
-        for blk in state:
+        for blk in state['blk_list']:
             self.blk_list.append(block.Block(copy.deepcopy(blk.shape), blk.x,blk.y,blk.screen,blk.color,blk.rotate_en,blk.letter, True))
 
     def update_representation(self, r):
-        r.clear()
         for blk in self.blk_list:
                 if blk != self.active_block:
                     r.add(blk)
         return
-
-
-    def restore_active_block(self):
-        self.active_block.shape = copy.deepcopy(self.shape_copy)
-        self.active_block.x = self.org_x_copy
-        self.active_block.y = self.org_y_copy
-
-    def backup_active_block(self):
-        self.shape_copy = copy.deepcopy(self.active_block.shape)
-        self.org_x_copy = self.active_block.x
-        self.org_y_copy = self.active_block.y
 
 
     def try_action(self, action):
@@ -299,10 +290,6 @@ class Tetris(object):
 
         return True
 
-
-
-
-
     def nextStates(self):
         '''
         returns all possible states following from the previous
@@ -328,9 +315,56 @@ class Tetris(object):
             self.draw_game()
             states = self.generate_all_states()
             self.update_representation(self.representation)
-            self.representation.print()
         # Display the game_over and wait for a keypress
         return states
+
+
+
+    # Returns false if invalid state
+    # Returns true otherwise
+    def valid_state(self):
+        down_board  = self.active_block.check_collision([self.board_down])
+        any_border  = self.active_block.check_collision([self.board_left,self.board_right])
+        top_border  = self.active_block.check_collision([self.board_up])
+        block_any   = self.block_colides()
+        # Restore the configuration if any collision was detected
+        if down_board or any_border or block_any:
+            if down_board:
+                log("Found a collision with bottom")
+            if any_border:
+                log("Found a collision with border")
+            if block_any:
+                log("Found a collision with other block")
+                self.detect_line()
+            return False
+        # So far so good, sample the previous state and try to move down (to detect the colision with other block). 
+        # After that, detect the the insertion of new block. The block new block is inserted if we reached the boarder
+        # or we cannot move down.
+        self.active_block.backup()
+        self.active_block.move(0,constants.BHEIGHT)
+        can_move_down = not self.block_colides()  
+        self.active_block.restore()
+        # We end the game if we are on the respawn and we cannot move --> bang!
+        if not can_move_down and top_border:
+            #self.game_over = True
+            log("Game over? Cant move down and collision with top")
+            return False
+        self.detect_line()
+        return True
+
+
+
+####################
+
+    def restore_active_block(self):
+        self.active_block.shape = copy.deepcopy(self.shape_copy)
+        self.active_block.x = self.org_x_copy
+        self.active_block.y = self.org_y_copy
+
+    def backup_active_block(self):
+        self.shape_copy = copy.deepcopy(self.active_block.shape)
+        self.org_x_copy = self.active_block.x
+        self.org_y_copy = self.active_block.y
 
 
    
@@ -397,38 +431,6 @@ class Tetris(object):
         return False
 
 
-
-    # Returns false if invalid state
-    # Returns true otherwise
-    def valid_state(self):
-        down_board  = self.active_block.check_collision([self.board_down])
-        any_border  = self.active_block.check_collision([self.board_left,self.board_right])
-        top_border  = self.active_block.check_collision([self.board_up])
-        block_any   = self.block_colides()
-        # Restore the configuration if any collision was detected
-        if down_board or any_border or block_any:
-            if down_board:
-                log("Found a collision with bottom")
-            if any_border:
-                log("Found a collision with border")
-            if block_any:
-                log("Found a collision with other block")
-                self.detect_line()
-            return False
-        # So far so good, sample the previous state and try to move down (to detect the colision with other block). 
-        # After that, detect the the insertion of new block. The block new block is inserted if we reached the boarder
-        # or we cannot move down.
-        self.active_block.backup()
-        self.active_block.move(0,constants.BHEIGHT)
-        can_move_down = not self.block_colides()  
-        self.active_block.restore()
-        # We end the game if we are on the respawn and we cannot move --> bang!
-        if not can_move_down and top_border:
-            #self.game_over = True
-            log("Game over? Cant move down and collision with top")
-            return False
-        self.detect_line()
-        return True
 
     def detect_line(self):
         """
