@@ -9,9 +9,9 @@ if __name__ == "__main__":
 
 class Representation(object):
 
-	def __init__(self, length):
+	def __init__(self):
 		self.arr = []
-		for x in range(length):
+		for x in range(constants.HORZBLOCKS):
 			self.arr.append(0)
 
 	def __str__(self):
@@ -29,7 +29,7 @@ class Representation(object):
 		"""
 		add the given block to the representation
 		"""
-		print(block.shape)
+		#print(block.shape)
 		for rect in block.shape:
 			x = int((rect.x - 8) / 20)
 			y = int(constants.VERTBLOCKS-2-((rect.y - 49) / 20))

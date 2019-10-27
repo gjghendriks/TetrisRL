@@ -83,7 +83,7 @@ class Tetris(object):
         # The score level threshold
         self.score_level = constants.SCORE_LEVEL
         # make new repesentation
-        self.representation = representation.Representation(constants.HORZBLOCKS)
+        self.representation = representation.Representation()
         self.shape_copy = 0
         self.org_x_copy = 0
         self.org_y_copy = 0
@@ -145,7 +145,7 @@ class Tetris(object):
         pygame.time.set_timer(constants.TIMER_MOVE_EVENT,speed)
  
 
-    def select_random_state(self):
+    def generate_all_states(self):
         #log(self.blk_list)
         #initalize list to store states in
         states = []
@@ -200,7 +200,16 @@ class Tetris(object):
                     new_block_list.append(b)
 
                 # append state to list
-                states.append(new_block_list)
+                r = representation.Representation()
+                for blk in new_block_list:
+                    r.add(blk)
+                r = r.format()
+                gen_state = {
+                    "blk_list" : new_block_list,
+                    "score" : self.score,
+                    "representation": r
+                }
+                states.append(gen_state)
 
                 # reset to the initial state
                 self.restore_active_block()
@@ -227,20 +236,19 @@ class Tetris(object):
             log("rotate succesfull")
 
 
-        ## select random entry from available states
-        #log(states)
-        log("\n\nGenerated the following states:")
-        #for state in states:
-        #    for blk in state:
-        #        log(blk.shape)
+        #return all possible options
+        return states
 
+        #choice = random.choice(states)
+        #self.blk_list.clear()
+        #for blk in choice:
+        #    self.blk_list.append(block.Block(copy.deepcopy(blk.shape),blk.x,blk.y,blk.screen,blk.color,blk.rotate_en,blk.letter, True))
+        #log("finished random state selection")
 
-        choice = random.choice(states)
-
+    def setState(self, state):
         self.blk_list.clear()
-        for blk in choice:
-            self.blk_list.append(block.Block(copy.deepcopy(blk.shape),blk.x,blk.y,blk.screen,blk.color,blk.rotate_en,blk.letter, True))
-        log("finished random state selection")
+        for blk in state:
+            self.blk_list.append(block.Block(copy.deepcopy(blk.shape), blk.x,blk.y,blk.screen,blk.color,blk.rotate_en,blk.letter, True))
 
     def update_representation(self, r):
         r.clear()
@@ -291,38 +299,18 @@ class Tetris(object):
 
         return True
 
-    def run(self):
-        # Initialize the game (pygame, fonts)
-        pygame.init()
-        pygame.font.init()
-        self.myfont = pygame.font.SysFont(pygame.font.get_default_font(),constants.FONT_SIZE)
-        self.screen = pygame.display.set_mode((self.resx,self.resy))
-        pygame.display.set_caption("Tetris")
-        # Setup the time to fire the move event every given time
-        self.set_move_timer()
-        
-        # Print the initial score
-        self.print_status_line()
-        while not(self.done) and not(self.game_over):
-            # Get the block and run the game logic
-            log("Getting new block")
-            self.new_block = True
-            self.get_block()
-            self.draw_game()
-            self.select_random_state()
-            self.update_representation(self.representation)
-            self.representation.print()
-        # Display the game_over and wait for a keypress
-        if self.game_over:
-            self.print_game_over()
-        # Disable the pygame stuff
-        pygame.font.quit()
-        pygame.display.quit()
 
 
 
 
-    def nextState(self):
+    def nextStates(self):
+        '''
+        returns all possible states following from the previous
+        returns a dict with:
+            blk_list:           list of all the block
+            score:              the current score
+            representation:     the representation of the state
+        '''
         pygame.init()
         pygame.font.init()
         self.myfont = pygame.font.SysFont(pygame.font.get_default_font(),constants.FONT_SIZE)
@@ -338,11 +326,11 @@ class Tetris(object):
             self.new_block = True
             self.get_block()
             self.draw_game()
-            self.select_random_state()
+            states = self.generate_all_states()
             self.update_representation(self.representation)
             self.representation.print()
         # Display the game_over and wait for a keypress
-        return self.representation
+        return states
 
 
    
