@@ -19,6 +19,13 @@
 
 from pygame.locals import *
 
+
+# Hyper parameters
+DISCOUNT_RATE = 0.5
+
+
+
+
 # number of blocks that the game can fit vertically
 VERTBLOCKS = 20
 # number of block that the game can fit horizontally
@@ -69,7 +76,7 @@ SCORE_LEVEL_RATIO  = 2
 
 # Configuration of score
 # Number of points for one building block
-POINT_VALUE       = 100
+POINT_VALUE       = 0.3
 # Margin of the SCORE string
 POINT_MARGIN      = 10
 

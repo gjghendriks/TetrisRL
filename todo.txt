@@ -1,11 +1,5 @@
 TODO:
 
-other
-prepare meeting with marco
-Read more papers
-Read sutton
 
-
-
-programming
-collision with top when rotating
+How to scale reward?
+fix out of bounds array error

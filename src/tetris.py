@@ -95,58 +95,19 @@ class Tetris(object):
         self.game_over = False
         self.new_block = True
 
-    def apply_action(self):
-        """
-        Get the event from the event queue and run the appropriate 
-        action.
-        """
-        # Take the event from the event queue.
-        for ev in pygame.event.get():
-            # Check if the close button was fired.
-            if ev.type == pygame.QUIT or (ev.type == pygame.KEYDOWN and ev.unicode == 'q'):
-                self.done = True
-            # Detect the key evevents for game control.
-            if ev.type == pygame.KEYDOWN:
-                if ev.key == pygame.K_DOWN:
-                    self.active_block.move(0,constants.BHEIGHT)
-                if ev.key == pygame.K_LEFT:
-                    self.active_block.move(-constants.BWIDTH,0)
-                if ev.key == pygame.K_RIGHT:
-                    self.active_block.move(constants.BWIDTH,0)
-                if ev.key == pygame.K_SPACE:
-                    self.active_block.rotate()
-                if ev.key == pygame.K_p:
-                    self.pause()
-       
-            # Detect if the movement event was fired by the timer.
-            if ev.type == constants.TIMER_MOVE_EVENT:
-                self.active_block.move(0,constants.BHEIGHT)
-       
-    def pause(self):
-        """
-        Pause the game and draw the string. This function
-        also calls the flip function which draws the string on the screen.
-        """
-        # Draw the string to the center of the screen.
-        self.print_center(["PAUSE","Press \"p\" to continue"])
-        pygame.display.flip()
-        while True:
-            for ev in pygame.event.get():
-                if ev.type == pygame.KEYDOWN and ev.key == pygame.K_p:
-                    return
-       
-    def set_move_timer(self):
-        """
-        Setup the move timer to the 
-        """
-        # Setup the time to fire the move event. Minimal allowed value is 1
-        speed = math.floor(constants.MOVE_TICK / self.speed)
-        speed = max(1,speed)
-        pygame.time.set_timer(constants.TIMER_MOVE_EVENT,speed)
+
  
 
     def generate_all_states(self):
-        #log(self.blk_list)
+        """
+        Generates all states that can come from the current one.
+        Returns a list of states with each state containing:
+            "blk_list" : new_block_list,
+            "score" : self.score,
+            "representation": r,
+            "formatted_representation": formatted_r
+        """
+
         #initalize list to store states in
         states = []
         # make a copy of the active block
@@ -161,6 +122,7 @@ class Tetris(object):
             #two rotataions available 
             rot = 2
         else:
+            # four unique rotations
             rot = 4
 
         log(self.active_block.letter + " block generated, going to rotate " + str(rot) + " times.")
@@ -217,7 +179,7 @@ class Tetris(object):
                 log("Stage finished and saved")
                 log("blocks in list : " + str(len(self.blk_list)))
                 log("states found so far: " + str(len(states)))
-
+                #draw the game
                 self.draw_game()
                 if constants.DEBUG:
                     pygame.time.wait(200)
@@ -313,6 +275,10 @@ class Tetris(object):
             self.new_block = True
             self.get_block()
             self.draw_game()
+            # check if the game is over
+            if(not self.valid_state()):
+                print("State is not valid, returning false")
+                return False
             states = self.generate_all_states()
             self.update_representation(self.representation)
         # Display the game_over and wait for a keypress
@@ -355,6 +321,15 @@ class Tetris(object):
 
 
 ####################
+
+    def set_move_timer(self):
+        """
+        Setup the move timer to the 
+        """
+        # Setup the time to fire the move event. Minimal allowed value is 1
+        speed = math.floor(constants.MOVE_TICK / self.speed)
+        speed = max(1,speed)
+        pygame.time.set_timer(constants.TIMER_MOVE_EVENT,speed)
 
     def restore_active_block(self):
         self.active_block.shape = copy.deepcopy(self.shape_copy)
@@ -449,13 +424,8 @@ class Tetris(object):
             # Ok, the full line is detected!     
             self.remove_line(tmp_y)
             # Update the score.
-            self.score += self.blocks_in_line * constants.POINT_VALUE 
-            # Check if we need to speed up the game. If yes, change control variables
-            if self.score > self.score_level:
-                self.score_level *= constants.SCORE_LEVEL_RATIO
-                self.speed       *= constants.GAME_SPEEDUP_RATIO
-                # Change the game speed
-                self.set_move_timer()
+            self.score += constants.POINT_VALUE
+
 
     def remove_line(self,y):
         """
