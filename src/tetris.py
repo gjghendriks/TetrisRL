@@ -133,7 +133,10 @@ class Tetris(object):
 
             log("Starting new rotation")
             # for every x position
-            for x in range(constants.HORZBLOCKS - self.active_block.get_width() + 1):
+            log("+++++++++++++++++++++")
+            log("{} width = {}".format(range(constants.HORZBLOCKS - self.active_block.get_width() + 1), self.active_block.get_width() +1 ))
+
+            for x in range(constants.HORZBLOCKS - self.active_block.get_width()):
 
 
                 # first move the block all the way to the left
@@ -259,6 +262,7 @@ class Tetris(object):
             blk_list:           list of all the block
             score:              the current score
             representation:     the representation of the state
+            "formatted_representation": formatted_r
         '''
         pygame.init()
         pygame.font.init()
@@ -278,6 +282,7 @@ class Tetris(object):
             # check if the game is over
             if(not self.valid_state()):
                 print("State is not valid, returning false")
+                self.blk_list.remove(self.active_block)
                 return False
             states = self.generate_all_states()
             self.update_representation(self.representation)

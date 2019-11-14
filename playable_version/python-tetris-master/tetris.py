@@ -341,4 +341,4 @@ class Tetris(object):
         pygame.display.flip()
 
 if __name__ == "__main__":
-    Tetris(16,30).run()
+    Tetris(10,30).run()

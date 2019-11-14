@@ -33,6 +33,9 @@ class Representation(object):
 		for rect in block.shape:
 			x = int((rect.x - 8) / 20)
 			y = int(constants.VERTBLOCKS-2-((rect.y - 49) / 20))
+			if(x < 0 or x > constants.HORZBLOCKS -1):
+				print("Error: x = {}, length of arr = {}".format(x, len(arr)))
+				print(rect)
 			if(self.arr[x] < y):
 				self.arr[x] = y
 
