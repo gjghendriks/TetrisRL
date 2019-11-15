@@ -76,7 +76,7 @@ SCORE_LEVEL_RATIO  = 2
 
 # Configuration of score
 # Number of points for one building block
-POINT_VALUE       = 0.3
+POINT_VALUE       = 1
 # Margin of the SCORE string
 POINT_MARGIN      = 10
 

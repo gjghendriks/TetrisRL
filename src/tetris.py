@@ -282,7 +282,8 @@ class Tetris(object):
             # check if the game is over
             if(not self.valid_state()):
                 print("State is not valid, returning false")
-                self.blk_list.remove(self.active_block)
+                if self.active_block in self.blk_list:
+                    self.blk_list.remove(self.active_block)
                 return False
             states = self.generate_all_states()
             self.update_representation(self.representation)
