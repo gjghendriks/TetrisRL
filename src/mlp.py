@@ -34,7 +34,7 @@ def train():
 
 	#create model
 	model.compile(optimizer=tf.keras.optimizers.Adam(lr=learning_rate),
-		loss='sparse_categorical_crossentropy',
+		loss='mean_squared_error',
 		metrics=['accuracy'])
 
 
@@ -105,7 +105,7 @@ def train():
 			# only able to back propagate when t > 0 (after one state)
 			if prev_prediction:
 				print("now backproping")
-				value = prev_prediction + state["score"]- prev_score + constants.DISCOUNT_RATE * (max_value - prev_prediction)
+				value = state["score"]- prev_score + constants.DISCOUNT_RATE * max_value
 				print("value to be backpropagated: {}".format(value))
 				print("Components: prev = {} score = {} score_diff = {} discount_rate = {}, max_value = {} max - prev = {}".format(prev_prediction, state['score'], state["score"] - prev_score, constants.DISCOUNT_RATE, max_value, max_value - prev_prediction))
 
@@ -113,6 +113,7 @@ def train():
 				model.fit(x=prev_input,
 					y=value,
 					verbose=2)
+				#mean squared error
 
 
 
