@@ -6,11 +6,12 @@ import constants
 import representation as rep
 import pygame
 import csv
+import datetime
 #use for v1 : tf.compat.v1.
 
 # defining params
 learning_rate = 0.01
-training_epochs = 300
+training_epochs = 1000
 batch_size = 1
 display_step = 1
 regularizer_rate = 0.1
@@ -26,7 +27,12 @@ tf.get_logger().setLevel('ERROR')
 def train():
 
 	#init writer
-	with open('output_scores.txt', mode='w') as csv_file:
+
+	filename = "output_scores_MLP_" 
+	filename += datetime.datetime.now().strftime('%c')
+	filename += ".txt"
+	with open(filename, mode='w') as csv_file:
+		print("Writing to file: " + filename)
 		csv_writer = csv.writer(csv_file, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
 
 		# init model
