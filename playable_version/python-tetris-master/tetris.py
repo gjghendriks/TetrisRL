@@ -2,7 +2,6 @@
 
 # File: tetris.py 
 # Description: Main file with tetris game.
-# Author: Pavel Benáček <pavel.benacek@gmail.com>
 
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -321,7 +320,9 @@ class Tetris(object):
         """
         if self.new_block:
             # Get the block and add it into the block list(static for now)
-            tmp = random.randint(0,len(self.block_data)-1)
+            #tmp = random.randint(0,len(self.block_data)-1)
+            # instead of random generate the same block always
+            tmp = 0;
             data = self.block_data[tmp]
             self.active_block = block.Block(data[0],self.start_x,self.start_y,self.screen,data[1],data[2])
             self.blk_list.append(self.active_block)

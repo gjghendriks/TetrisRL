@@ -9,8 +9,9 @@ epochs = 1000
 
 def play():
 
-	filename = "output_scores_random_" 
+	filename = "outputs/randomagent/"
 	filename += datetime.datetime.now().strftime('%c')
+	filename += "_output_scores_random" 
 	filename += ".txt"
 	with open(filename, mode='w') as csv_file:
 		print("Writing to " + filename)
@@ -22,11 +23,10 @@ def play():
 
 			board = tetris.Tetris(constants.HORZBLOCKS,constants.VERTBLOCKS)
 
-
 			final_score = 0
 			while True:
 
-				states = board.nextStates()
+				states = board.run()
 
 				# nextStates() returns False if the state is invalid (Game over)
 				if(not states):
@@ -38,11 +38,15 @@ def play():
 				state = random.choice(states)
 				board.setState(state)
 				board.draw_board()
+				#breakpoint()
+				board.detect_line()
 
-				prev_score = state["score"]
+
+				prev_score = board.score
 
 			#print("done with one step")
 			csv_writer.writerow([final_score])
+			print("Final score = {}".format(final_score))
 
 
 

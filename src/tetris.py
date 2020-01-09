@@ -94,124 +94,34 @@ class Tetris(object):
         self.done = False
         self.game_over = False
         self.new_block = True
+        pygame.font.init()
+        self.myfont = pygame.font.SysFont(pygame.font.get_default_font(),constants.FONT_SIZE)
+        self.screen = pygame.display.set_mode((self.resx,self.resy))
+        pygame.display.set_caption("Tetris")
 
-
- 
-
-    def generate_all_states(self):
+    def available_rotations(self, letter):
         """
-        Generates all states that can come from the current one.
-        Returns a list of states with each state containing:
-            "blk_list" : new_block_list,
-            "score" : self.score,
-            "representation": r,
-            "formatted_representation": formatted_r
+        returns the availble number of rotations
         """
+        
+        rot = 0
 
-        #initalize list to store states in
-        states = []
-        # make a copy of the active block
-        self.backup_active_block()
-     
-        if(self.active_block.letter == "O"):
+        if(letter == "O"):
             # 1 rotation available
             rot = 1
-        elif (self.active_block.letter == "Z" 
-            or self.active_block.letter == "S" 
-            or self.active_block.letter == "I"):
+        elif (letter == "Z" 
+            or letter == "S" 
+            or letter == "I"):
             #two rotataions available 
             rot = 2
         else:
             # four unique rotations
             rot = 4
 
-        log(self.active_block.letter + " block generated, going to rotate " + str(rot) + " times.")
-        log("Width of block = " + str(self.active_block.get_width()))
-        log("number of expected loops = " + str(rot * (constants.HORZBLOCKS - self.active_block.get_width())))
-        #for every rotation
-        for r in range(rot):
-
-            log("Starting new rotation")
-            # for every x position
-            log("+++++++++++++++++++++")
-            log("{} width = {}".format(range(constants.HORZBLOCKS - self.active_block.get_width() + 1), self.active_block.get_width() +1 ))
-
-            for x in range(constants.HORZBLOCKS - self.active_block.get_width()):
-
-
-                # first move the block all the way to the left
-                while(self.try_action("LEFT")):
-                    self.draw_game()
-                
-                # move the block to the right x amount of times
-                for right in range(x):
-                    self.try_action("RIGHT")
-                    self.draw_game()
-
-                # try to move the block all the way down
-                while(self.try_action("DOWN")):
-                    self.draw_game()
-                    
- 
-                # final position is found
-                # save the state and reset
-
-                new_block_list = []
-                for blk in self.blk_list:
-                    # copy block
-                    b = block.Block(copy.deepcopy(blk.shape), blk.x, blk.y, blk.screen,blk.color,blk.rotate_en,blk.letter,True)
-                    log(b.shape)
-                    # add copy to list
-                    new_block_list.append(b)
-
-                # append state to list
-                r = representation.Representation()
-                for blk in new_block_list:
-                    r.add(blk)
-                formatted_r = r.format()
-                gen_state = {
-                    "blk_list" : new_block_list,
-                    "score" : self.score,
-                    "representation": r,
-                    "formatted_representation": formatted_r
-                }
-                states.append(gen_state)
-
-                # reset to the initial state
-                self.restore_active_block()
-                log("Stage finished and saved")
-                log("blocks in list : " + str(len(self.blk_list)))
-                log("states found so far: " + str(len(states)))
-                #draw the game
-                self.draw_game()
-                if constants.DEBUG:
-                    pygame.time.wait(200)
-
-
-            # try rotate the block
-            # if it fails, break from the loop, this won't result in another state
-            log(self.active_block.shape)
-            log("trying to rotate")
-            if not self.try_action("ROTATE"):
-                log("breaking bc rotate failed")
-                break
-
-            # back up active block, or it doesnt retain rotation
-            self.backup_active_block()
-            log(self.active_block.shape)
-            log("rotate succesfull")
-
-
-        #return all possible options
-        return states
-
-        #choice = random.choice(states)
-        #self.blk_list.clear()
-        #for blk in choice:
-        #    self.blk_list.append(block.Block(copy.deepcopy(blk.shape),blk.x,blk.y,blk.screen,blk.color,blk.rotate_en,blk.letter, True))
-        #log("finished random state selection")
+        return rot;
 
     def setState(self, state):
+        # sets the state of the board to the argument
         self.representation = state['representation']
         self.score = state['score']
         self.blk_list.clear()
@@ -219,13 +129,17 @@ class Tetris(object):
             self.blk_list.append(block.Block(copy.deepcopy(blk.shape), blk.x,blk.y,blk.screen,blk.color,blk.rotate_en,blk.letter, True))
 
     def update_representation(self, r):
+        # updates the representation of the board
         for blk in self.blk_list:
                 if blk != self.active_block:
                     r.add(blk)
         return
 
-
     def try_action(self, action):
+        """
+        Try an action return True if succesful
+        If unsuccesful: restore previous state and return False
+        """
         # make backup
         self.active_block.backup()
         
@@ -250,51 +164,15 @@ class Tetris(object):
             self.draw_game
             if constants.DEBUG:
                 pygame.time.wait(10)
-            #log(self.active_block.shape)
             return False
 
         return True
 
-    def nextStates(self):
-        '''
-        returns all possible states following from the previous
-        returns a dict with:
-            blk_list:           list of all the block
-            score:              the current score
-            representation:     the representation of the state
-            "formatted_representation": formatted_r
-        '''
-        pygame.init()
-        pygame.font.init()
-        self.myfont = pygame.font.SysFont(pygame.font.get_default_font(),constants.FONT_SIZE)
-        self.screen = pygame.display.set_mode((self.resx,self.resy))
-        pygame.display.set_caption("Tetris")
-        # Setup the time to fire the move event every given time
 
-        # Print the initial score
-        self.print_status_line()
-        if not(self.done) and not(self.game_over):
-            # Get the block and run the game logic
-            log("Getting new block")
-            self.new_block = True
-            self.get_block()
-            self.draw_game()
-            # check if the game is over
-            if(not self.valid_state()):
-                print("State is not valid, returning false")
-                if self.active_block in self.blk_list:
-                    self.blk_list.remove(self.active_block)
-                return False
-            states = self.generate_all_states()
-            self.update_representation(self.representation)
-        # Display the game_over and wait for a keypress
-        return states
-
-
-
+    
+    def valid_state(self):
     # Returns false if invalid state
     # Returns true otherwise
-    def valid_state(self):
         down_board  = self.active_block.check_collision([self.board_down])
         any_border  = self.active_block.check_collision([self.board_left,self.board_right])
         top_border  = self.active_block.check_collision([self.board_up])
@@ -307,7 +185,7 @@ class Tetris(object):
                 log("Found a collision with border")
             if block_any:
                 log("Found a collision with other block")
-                self.detect_line()
+                #self.detect_line()
             return False
         # So far so good, sample the previous state and try to move down (to detect the colision with other block). 
         # After that, detect the the insertion of new block. The block new block is inserted if we reached the boarder
@@ -321,12 +199,162 @@ class Tetris(object):
             #self.game_over = True
             log("Game over? Cant move down and collision with top")
             return False
-        self.detect_line()
+        #self.detect_line()
         return True
 
+    def gen_state(self, states):
+        # generate the current state as a useable dictonary
+        # and save it in the list of states
+
+        # generate current block list
+        new_block_list = []
+        for blk in self.blk_list:
+            # copy block
+            b = block.Block(copy.deepcopy(blk.shape), blk.x, blk.y, blk.screen,blk.color,blk.rotate_en,blk.letter,True)
+            log(b.shape)
+            # add copy to list
+            new_block_list.append(b)
+
+        r = representation.Representation()
+        for blk in new_block_list:
+            r.add(blk)
+        formatted_r = r.format()
+        gen_state = {
+            "blk_list" : new_block_list,
+            "score" : self.score,
+            "representation": r,
+            "formatted_representation": formatted_r
+        }
+        states.append(gen_state)
+        
+        #draw the game
+        self.draw_game()
+        if constants.DEBUG:
+            pygame.time.wait(100)
+
+        
+        log("Stage finished and saved")
+        log("blocks in list : " + str(len(self.blk_list)))
+        log("states found so far: " + str(len(states)))
+
+        return
 
 
-####################
+    def generate_all_states(self):
+        """
+        Generates all states that can come from the current one.
+        Returns a list of states with each state containing:
+            "blk_list" : new_block_list,
+            "score" : self.score,
+            "representation": r,
+            "formatted_representation": formatted_r
+        """
+
+
+        #initalize list to store states in
+        states = []
+        # make a copy of the active block
+        self.backup_active_block()
+        
+        rot = self.available_rotations(self.active_block.letter)
+        
+        log(self.active_block.letter + " block generated, going to rotate " + str(rot) + " times.")
+        log("Width of block = " + str(self.active_block.get_width()))
+        log("number of expected loops = " + str(rot * (constants.HORZBLOCKS - self.active_block.get_width())))
+        
+
+        #for every rotation
+        for r in range(rot):
+
+            log("Starting new rotation")
+            log("+++++++++++++++++++++")
+            log("{} width = {}".format(range(constants.HORZBLOCKS - self.active_block.get_width() + 1), self.active_block.get_width() + 1))
+
+            # for every x position 
+            # amount of columns - the width
+            for x in range(constants.HORZBLOCKS - self.active_block.get_width() + 1):
+
+
+                # first move the block all the way to the left
+                while(self.try_action("LEFT")):
+                    self.draw_game()
+                
+                # move the block to the right x amount of times
+                for right in range(x):
+                    self.try_action("RIGHT")
+                    self.draw_game()
+
+                # try to move the block all the way down
+                while(self.try_action("DOWN")):
+                    self.draw_game()
+                    
+                # final position is found
+                # save the state and reset
+                gen_state = self.gen_state(states)
+
+                # restore to original position
+                # reset to the initial state
+                self.restore_active_block()
+                
+
+            # try rotate the block
+            # if it fails, break from the loop, this won't result in another state
+            log(self.active_block.shape)
+            log("trying to rotate")
+            if not self.try_action("ROTATE"):
+                log("breaking bc rotate failed")
+                break
+
+            # back up active block, or it doesnt retain rotation
+            self.backup_active_block()
+            log(self.active_block.shape)
+            log("rotate succesfull")
+
+
+        #return all possible options
+        return states
+
+
+
+
+    def run(self):
+        '''
+        This function makes the board progress one turn or one block.
+
+        returns a list of dicts containing the next possible states from this state
+        with:
+            blk_list:           list of all the block
+            score:              the current score
+            representation:     the representation of the state
+            "formatted_representation": formatted_r
+        '''
+
+
+        # Generate a new block
+        log("Getting new block")
+        self.new_block = True
+        self.get_block()
+        self.draw_game()
+
+        # check if the game is over
+        if(not self.valid_state()):
+            print("State is not valid, returning false")
+            # the game is over, reset the state
+            # remove active block from state
+            if self.active_block in self.blk_list:
+                self.blk_list.remove(self.active_block)
+            return False
+
+
+        states = self.generate_all_states()
+        self.update_representation(self.representation)
+        
+        #return the possibilities
+        return states
+
+#########################
+# Random helper functions
+#########################
 
     def set_move_timer(self):
         """
@@ -410,7 +438,6 @@ class Tetris(object):
             if(blk.check_collision(self.active_block.shape)):
                 return True
         return False
-
 
 
     def detect_line(self):
@@ -500,4 +527,5 @@ class Tetris(object):
         pygame.display.flip()
 
 if __name__ == "__main__":
-    Tetris(constants.HORZBLOCKS,constants.VERTBLOCKS).run()
+    board = Tetris(constants.HORZBLOCKS,constants.VERTBLOCKS)
+    board.run()

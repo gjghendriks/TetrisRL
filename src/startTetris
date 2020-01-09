@@ -1,0 +1,11 @@
+#!/bin/bash
+# My first script
+
+echo "Starting a new tetris in this terminal"
+echo "==============================="
+
+cd ../..
+source bin/activate
+cd TetrisRL/src
+python mlp.py
+

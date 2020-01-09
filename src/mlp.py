@@ -10,11 +10,10 @@ import datetime
 #use for v1 : tf.compat.v1.
 
 # defining params
-learning_rate = 0.01
+learning_rate = 0.1
 training_epochs = 1000
 batch_size = 1
 display_step = 1
-regularizer_rate = 0.1
 #MLP params
 num_input = 10
 num_hidden_1 = 10
@@ -28,8 +27,9 @@ def train():
 
 	#init writer
 
-	filename = "output_scores_MLP_" 
+	filename = "outputs/mlp/"
 	filename += datetime.datetime.now().strftime('%c')
+	filename += "_output_scores_MLP" 
 	filename += ".txt"
 	with open(filename, mode='w') as csv_file:
 		print("Writing to file: " + filename)
@@ -38,8 +38,10 @@ def train():
 		# init model
 		model = tf.keras.Sequential([
 			tf.keras.layers.Dense(10, input_shape=[constants.HORZBLOCKS,], activation='relu'),
-			#tf.keras.layers.Dense(10, activation='relu'),
-			tf.keras.layers.Dense(1, activation='linear', kernel_initializer= tf.keras.initializers.RandomNormal(mean=-0.1, stddev=0.05, seed=None))
+			tf.keras.layers.Dense(10, activation='relu'),
+			tf.keras.layers.Dense(1, activation='linear', 
+				kernel_initializer= tf.keras.initializers.RandomNormal(mean=-0.1, stddev=0.05, seed=None)
+				)
 		])
 		#print summary of model
 		model.summary()
@@ -53,7 +55,9 @@ def train():
 
 
 		for i in range(training_epochs):
-			print("Training epoch #: {}".format(i))
+			print("Training epoch #:\t{}".format(i))
+			weights = model.get_weights()
+			#print(weights)
 			#init previous prediction
 			prev_prediction = None
 			# init a new board
@@ -72,10 +76,12 @@ def train():
 				    representation:     		the representation of the state
 				    formatted_representation: 	the representation that is formatted (normilized and put in an tf.Variable) 
 				'''
-				states = board.nextStates()
+				states = board.run()
 
 				# nextStates() returns False if the state is invalid (Game over)
 				if(not states):
+					pygame.time.wait(100)
+					print("Final score :\t\t{}".format(final_score))
 					final_score = prev_score
 					break
 
@@ -103,6 +109,7 @@ def train():
 
 				#set the boardstate to the best predicted next state
 				board.setState(states[max_index[0]])
+				board.detect_line()
 				board.draw_board()
 
 
@@ -113,7 +120,7 @@ def train():
 					V(St): 		prediction of the previous state 						: prev_prediction
 					alpha:		constant step-size parameter (always 1 in our case)
 					Rt+1:		Reward of the current state (current score)				: prev_score - state["score"]
-					gamma:		Learning rate 											: discount_rate
+					gamma:		Learning rate 											: constants.DISCOUNT_RATE
 					V(St+1):	Prediction of the current state 						: max_value
 				'''
 
@@ -134,7 +141,7 @@ def train():
 				#update previous prediction
 				prev_prediction = max_value
 				#update previous score
-				prev_score = state["score"]
+				prev_score = board.score
 				#update previous input
 				for i in range(len(states)):
 					if i == max_index[0]:
