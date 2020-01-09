@@ -34,6 +34,7 @@ class Representation(object):
 			x = int((rect.x - 8) / 20)
 			y = int(constants.VERTBLOCKS-2-((rect.y - 49) / 20))
 			if(x < 0 or x > constants.HORZBLOCKS -1):
+				breakpoint()
 				print("Error: x = {}, length of arr = {}".format(x, len(self.arr)))
 				print(rect)
 			if(x < 10 and self.arr[x] < y):

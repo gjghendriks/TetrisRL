@@ -53,7 +53,8 @@ class Tetris(object):
         log(self.board_up)
         self.board_down  = pygame.Rect(0,self.resy-constants.BOARD_HEIGHT,self.resx,constants.BOARD_HEIGHT)
         self.board_left  = pygame.Rect(0,constants.BOARD_UP_MARGIN,constants.BOARD_HEIGHT,self.resy)
-        self.board_right = pygame.Rect(self.resx-constants.BOARD_HEIGHT,constants.BOARD_UP_MARGIN,constants.BOARD_HEIGHT,self.resy)
+        self.board_right = pygame.Rect(self.resx-constants.BOARD_HEIGHT,constants.BOARD_UP_MARGIN-0.5*self.resy,constants.BOARD_HEIGHT,self.resy+ self.resy )
+        #breakpoint()
         # List of used blocks
         self.blk_list    = []
         # Compute start indexes for tetris blocks
@@ -161,7 +162,7 @@ class Tetris(object):
         if(not self.valid_state()):
             self.active_block.restore()
             log("Block restored")
-            self.draw_game
+            #self.draw_game
             if constants.DEBUG:
                 pygame.time.wait(10)
             return False
@@ -187,6 +188,9 @@ class Tetris(object):
                 log("Found a collision with other block")
                 #self.detect_line()
             return False
+        
+
+        '''
         # So far so good, sample the previous state and try to move down (to detect the colision with other block). 
         # After that, detect the the insertion of new block. The block new block is inserted if we reached the boarder
         # or we cannot move down.
@@ -197,9 +201,11 @@ class Tetris(object):
         # We end the game if we are on the respawn and we cannot move --> bang!
         if not can_move_down and top_border:
             #self.game_over = True
+            breakpoint()
             log("Game over? Cant move down and collision with top")
             return False
         #self.detect_line()
+        '''
         return True
 
     def gen_state(self, states):
@@ -240,6 +246,13 @@ class Tetris(object):
         return
 
 
+    def limitToMoveRight(self):
+        """
+        Helper function to see how much a block can move to the right
+        """
+
+        return True
+
     def generate_all_states(self):
         """
         Generates all states that can come from the current one.
@@ -272,22 +285,31 @@ class Tetris(object):
 
             # for every x position 
             # amount of columns - the width
-            for x in range(constants.HORZBLOCKS - self.active_block.get_width() + 1):
+            nmbCols = constants.HORZBLOCKS - self.active_block.get_width() + 1
+            for x in range(nmbCols):
 
+                #if(self.active_block.letter == "J" and r > 2):
+                    #breakpoint()
 
                 # first move the block all the way to the left
                 while(self.try_action("LEFT")):
-                    self.draw_game()
-                
-                # move the block to the right x amount of times
-                for right in range(x):
-                    self.try_action("RIGHT")
-                    self.draw_game()
+                    #self.draw_game()
+                    pass
 
+                # move the block to the right x amount of times
+                # TODO: fix this to check for out of bounds.
+                # 
+                for right in range(x):
+                    if not self.try_action("RIGHT"):
+                        #self.draw_game()
+                        #breakpoint()
+                        break
+                    #self.draw_game()
                 # try to move the block all the way down
                 while(self.try_action("DOWN")):
-                    self.draw_game()
-                    
+                    #self.draw_game()
+                    pass
+
                 # final position is found
                 # save the state and reset
                 gen_state = self.gen_state(states)
@@ -338,7 +360,7 @@ class Tetris(object):
 
         # check if the game is over
         if(not self.valid_state()):
-            print("State is not valid, returning false")
+            #print("State is not valid, returning false")
             # the game is over, reset the state
             # remove active block from state
             if self.active_block in self.blk_list:

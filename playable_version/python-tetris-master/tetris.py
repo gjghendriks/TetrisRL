@@ -322,9 +322,10 @@ class Tetris(object):
             # Get the block and add it into the block list(static for now)
             #tmp = random.randint(0,len(self.block_data)-1)
             # instead of random generate the same block always
-            tmp = 0;
+            tmp = 2;
             data = self.block_data[tmp]
             self.active_block = block.Block(data[0],self.start_x,self.start_y,self.screen,data[1],data[2])
+            ##self.active_block.rotate()
             self.blk_list.append(self.active_block)
             self.new_block = False
 
