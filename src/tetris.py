@@ -539,6 +539,10 @@ class Tetris(object):
         """
         Draw the game screen.
         """
+
+        if constants.DISABLE_DRAW:
+            return
+            
         # Clean the screen, draw the board and draw
         # all tetris blocks
         self.screen.fill(constants.BLACK)

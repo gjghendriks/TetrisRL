@@ -23,7 +23,8 @@ from pygame.locals import *
 # Hyper parameters
 DISCOUNT_RATE = 0.9
 
-
+#Disale the draw function to speed up the training
+DISABLE_DRAW = False
 
 
 # number of blocks that the game can fit vertically
