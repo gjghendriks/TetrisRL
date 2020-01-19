@@ -131,6 +131,7 @@ class Tetris(object):
 
     def update_representation(self, r):
         # updates the representation of the board
+        r.clear()
         for blk in self.blk_list:
                 if blk != self.active_block:
                     r.add(blk)
@@ -172,8 +173,7 @@ class Tetris(object):
 
     
     def valid_state(self):
-    # Returns false if invalid state
-    # Returns true otherwise
+    '''Returns false if invalid state, returns true otherwise. '''
         down_board  = self.active_block.check_collision([self.board_down])
         any_border  = self.active_block.check_collision([self.board_left,self.board_right])
         top_border  = self.active_block.check_collision([self.board_up])
@@ -188,24 +188,6 @@ class Tetris(object):
                 log("Found a collision with other block")
                 #self.detect_line()
             return False
-        
-
-        '''
-        # So far so good, sample the previous state and try to move down (to detect the colision with other block). 
-        # After that, detect the the insertion of new block. The block new block is inserted if we reached the boarder
-        # or we cannot move down.
-        self.active_block.backup()
-        self.active_block.move(0,constants.BHEIGHT)
-        can_move_down = not self.block_colides()  
-        self.active_block.restore()
-        # We end the game if we are on the respawn and we cannot move --> bang!
-        if not can_move_down and top_border:
-            #self.game_over = True
-            breakpoint()
-            log("Game over? Cant move down and collision with top")
-            return False
-        #self.detect_line()
-        '''
         return True
 
     def gen_state(self, states):
@@ -339,10 +321,10 @@ class Tetris(object):
 
         returns a list of dicts containing the next possible states from this state
         with:
-            blk_list:           list of all the block
-            score:              the current score
-            representation:     the representation of the state
-            "formatted_representation": formatted_r
+            blk_list                    : list of all the block
+            score                       : the current score
+            representation              : the representation of the state
+            "formatted_representation"  : the formatted representation
         '''
 
 
@@ -373,14 +355,6 @@ class Tetris(object):
 # Random helper functions
 #########################
 
-    def set_move_timer(self):
-        """
-        Setup the move timer to the 
-        """
-        # Setup the time to fire the move event. Minimal allowed value is 1
-        speed = math.floor(constants.MOVE_TICK / self.speed)
-        speed = max(1,speed)
-        pygame.time.set_timer(constants.TIMER_MOVE_EVENT,speed)
 
     def restore_active_block(self):
         self.active_block.shape = copy.deepcopy(self.shape_copy)
@@ -391,55 +365,6 @@ class Tetris(object):
         self.shape_copy = copy.deepcopy(self.active_block.shape)
         self.org_x_copy = self.active_block.x
         self.org_y_copy = self.active_block.y
-
-
-   
-    def print_status_line(self):
-        """
-        Print the current state line
-        """
-        string = ["SCORE: {0}   SPEED: {1}x".format(self.score,self.speed)]
-        self.print_text(string,constants.POINT_MARGIN,constants.POINT_MARGIN)        
-
-    def print_game_over(self):
-        """
-        Print the game over string.
-        """
-        # Print the game over text
-        self.print_center(["Game Over","Press \"q\" to exit"])
-        # Draw the string
-        pygame.display.flip()
-        # Wait untill the space is pressed
-        while True: 
-            for ev in pygame.event.get():
-                if ev.type == pygame.QUIT or (ev.type == pygame.KEYDOWN and ev.unicode == 'q'):
-                    return
-
-    def print_text(self,str_lst,x,y):
-        """
-        Print the text on the X,Y coordinates. 
-
-        Parameters:
-            - str_lst - list of strings to print. Each string is printed on new line.
-            - x - X coordinate of the first string
-            - y - Y coordinate of the first string
-        """
-        prev_y = 0
-        for string in str_lst:
-            size_x,size_y = self.myfont.size(string)
-            txt_surf = self.myfont.render(string,False,(255,255,255))
-            self.screen.blit(txt_surf,(x,y+prev_y))
-            prev_y += size_y 
-
-    def print_center(self,str_list):
-        """
-        Print the string in the center of the screen.
-        
-        Parameters:
-            - str_lst - list of strings to print. Each string is printed on new line.
-        """
-        max_xsize = max([tmp[0] for tmp in map(self.myfont.size,str_list)])
-        self.print_text(str_list,self.resx/2-max_xsize/2,self.resy/2)
 
     def block_colides(self):
         """
