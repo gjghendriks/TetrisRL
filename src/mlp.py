@@ -31,9 +31,7 @@ def compile_model():
 	model = tf.keras.Sequential([
 		tf.keras.layers.Dense(10, input_shape=[constants.HORZBLOCKS,], activation='sigmoid', use_bias=True, kernel_initializer = 'uniform'),
 		#tf.keras.layers.Dense(10, activation='sigmoid', use_bias=True),
-		tf.keras.layers.Dense(1, activation='linear', use_bias=True,
-			#kernel_initializer= tf.keras.initializers.RandomNormal(mean=-0.1, stddev=0.05, seed=None)
-			kernel_initializer='uniform'
+		tf.keras.layers.Dense(1, activation='linear', use_bias=True, kernel_initializer='uniform'
 			)
 	])
 	#print summary of model
@@ -81,8 +79,6 @@ def train():
 
 
 	for epoch in range(training_epochs):
-		weights = model.get_weights()
-		#print(weights)
 		#init previous prediction
 		prev_prediction = None
 		# init a new board
@@ -93,11 +89,11 @@ def train():
 		#generate 1000 next states, the model will probably die before that
 		for block in range(1000):
 
+			#generate next states
 			states = board.run()
 
 			# board.run() returns False if the state is invalid (Game over)
 			if(not states):
-				#pygame.time.wait(100)
 				print("Training epoch #:{}\tFinal score :\t\t{}".format(epoch,final_score))
 				final_score = prev_score
 				break
@@ -108,9 +104,10 @@ def train():
 			for state in states:
 				# for each state predict the expected score
 				p = model.predict(state["formatted_representation"])
-				#save that prediction
 				predictions.append(p)
-			# explore
+
+
+			# explore, choose random next state
 			if random.random() < exploration_rate:
 				choice = random.choice(states)
 				board.setState(choice)
@@ -118,14 +115,12 @@ def train():
 				max_value = model.predict(choice['formatted_representation'])[0]
 				explored = True
 				print("explore")
-			#normal
+
+			# not exploring, choose expected best reward
 			else:
 				explored = False
 				max_value, max_index = find_max_index(predictions)
 				board.setState(states[max_index[0]])
-
-			#print("max = {} index = {}".format(max_value, max_index))
-			#print(predictions[max_index[0]][max_index[1]])
 
 
 			#set the boardstate to the best predicted next state
@@ -163,9 +158,7 @@ def train():
 			if explored:
 				prev_input = choice['formatted_representation']
 			else:
-				for j in range(len(states)):
-					if j == max_index[0]:
-						prev_input = states[j]["formatted_representation"]
+				prev_input = states[max_index[0]]["formatted_representation"]
 
 
 
