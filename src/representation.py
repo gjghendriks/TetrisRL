@@ -5,9 +5,15 @@ import constants
 import tensorflow as tf
 
 if __name__ == "__main__":
-    tetris.Tetris(constants.HORZBLOCKS,constants.VERTBLOCKS).run()
+    print("This file is not ment to be run")
 
 class Representation(object):
+	"""
+	Simple representation of the state of a Tetris board
+
+	Has an array arr with the length equal to the width of the board.
+	Each element represents the heigt of each colomn.
+	"""
 
 	def __init__(self):
 		self.arr = []
@@ -48,8 +54,9 @@ class Representation(object):
 
 	def format(self):
 		"""
-		returns the formatted version
-		to be used by tensorflow
+		Returns the formatted version of the representation. So it can be used by tensorflow
+		This means that the array is cast to a tf Variable 
+		and scaled to a floating point between 0-1
 		"""
 		new = []
 		for x in range(len(self.arr)):

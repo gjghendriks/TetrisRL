@@ -12,10 +12,11 @@ import random
 
 # defining params
 learning_rate = 0.1
-training_epochs = 10
+training_epochs = 1000
 batch_size = 1
 display_step = 1
 exploration_rate = 0.1
+q_learning_rate = 0.1
 #MLP params
 num_input = 10
 num_hidden_1 = 10
@@ -28,10 +29,11 @@ tf.get_logger().setLevel('ERROR')
 def compile_model():
 	# init model
 	model = tf.keras.Sequential([
-		tf.keras.layers.Dense(10, input_shape=[constants.HORZBLOCKS,], activation=None, use_bias=True),
-		tf.keras.layers.Dense(10, activation='sigmoid', use_bias=True),
+		tf.keras.layers.Dense(10, input_shape=[constants.HORZBLOCKS,], activation='sigmoid', use_bias=True, kernel_initializer = 'uniform'),
+		#tf.keras.layers.Dense(10, activation='sigmoid', use_bias=True),
 		tf.keras.layers.Dense(1, activation='linear', use_bias=True,
 			#kernel_initializer= tf.keras.initializers.RandomNormal(mean=-0.1, stddev=0.05, seed=None)
+			kernel_initializer='uniform'
 			)
 	])
 	#print summary of model
@@ -114,7 +116,7 @@ def train():
 				board.setState(choice)
 				#breakpoint()
 				max_value = model.predict(choice['formatted_representation'])[0]
-				eplored = True
+				explored = True
 				print("explore")
 			#normal
 			else:
@@ -128,22 +130,24 @@ def train():
 
 			#set the boardstate to the best predicted next state
 			board.detect_line()
-			board.draw_board()
+			board.draw_game()
 
 
 			'''
 			back prop the new prediction
 				V(St) = V(St) + alpha*[Rt+1 + gamma * V(St+1) - V(St)]
+			which can be rewitten if alpha = 1:
+				V(St) = Rt+1 + gamma * V(St+1)
 			Where:
 				V(St): 		prediction of the previous state 						: prev_prediction
-				alpha:		constant step-size parameter (always 1 in our case)
+				alpha:		constant step-size parameter/ learning rate 			: q_learning_rate
 				Rt+1:		Reward of the current state (current score)				: prev_score - state["score"]
-				gamma:		Learning rate 											: constants.DISCOUNT_RATE
+				gamma:		discount rate 											: constants.DISCOUNT_RATE
 				V(St+1):	Prediction of the current state 						: max_value
 			'''
 			# only able to back propagate when t > 0 (after one state)
 			if prev_prediction:
-				value = state["score"]- prev_score + constants.DISCOUNT_RATE * max_value
+				value = (1/q_learning_rate) * prev_prediction + q_learning_rate * (state["score"]- prev_score + constants.DISCOUNT_RATE * max_value - prev_prediction)
 
 				model.fit(x=prev_input,
 					y=value,
@@ -165,6 +169,8 @@ def train():
 
 
 
+		# the model has chosen poorly by dying, back prop negative reward.
+		model.fit(x=prev_input, y = [-10], verbose = 0)
 		csv_writer.writerow([final_score])
 
 	#breakpoint()

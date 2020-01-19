@@ -234,7 +234,7 @@ class Tetris(object):
         states.append(gen_state)
         
         #draw the game
-        self.draw_game()
+        #self.draw_game()
         if constants.DEBUG:
             pygame.time.wait(100)
 
@@ -246,12 +246,6 @@ class Tetris(object):
         return
 
 
-    def limitToMoveRight(self):
-        """
-        Helper function to see how much a block can move to the right
-        """
-
-        return True
 
     def generate_all_states(self):
         """
@@ -312,7 +306,7 @@ class Tetris(object):
 
                 # final position is found
                 # save the state and reset
-                gen_state = self.gen_state(states)
+                self.gen_state(states)
 
                 # restore to original position
                 # reset to the initial state
@@ -356,7 +350,8 @@ class Tetris(object):
         log("Getting new block")
         self.new_block = True
         self.get_block()
-        self.draw_game()
+
+        #self.draw_game()
 
         # check if the game is over
         if(not self.valid_state()):
@@ -464,19 +459,20 @@ class Tetris(object):
 
     def detect_line(self):
         """
-        Detect if the line is filled. If yes, remove the line and
+        Detect if the line is filled. If true, remove the line and
         move with remaining bulding blocks to new positions.
         """
         # Get each shape block of the non-moving tetris block and try
         # to detect the filled line. The number of bulding blocks is passed to the class
         # in the init function.
-        for shape_block in self.active_block.shape:
+        last_block = self.blk_list[len(self.blk_list)-1]
+        for shape_block in last_block.shape:
             tmp_y = shape_block.y
             tmp_cnt = self.get_blocks_in_line(tmp_y)
             # Detect if the line contains the given number of blocks
             if tmp_cnt != self.blocks_in_line:
                 continue 
-            # Ok, the full line is detected!     
+            # Ok, the full line is detected!
             self.remove_line(tmp_y)
             # Update the score.
             self.score += constants.POINT_VALUE
@@ -498,7 +494,7 @@ class Tetris(object):
 
     def get_blocks_in_line(self,y):
         """
-        Get the number of shape blocks on the Y coordinate.
+        Get the number of shape blocks on the Y coordiate.
 
         Parameters:
             - y - Y coordinate to scan.
