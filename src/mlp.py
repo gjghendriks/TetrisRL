@@ -94,8 +94,8 @@ def train():
 
 			# board.run() returns False if the state is invalid (Game over)
 			if(not states):
-				print("Training epoch #:{}\tFinal score :\t\t{}".format(epoch,final_score))
 				final_score = prev_score
+				print("Training epoch #:{}\tFinal score :\t\t{}".format(epoch,final_score))
 				break
 
 
@@ -114,8 +114,7 @@ def train():
 				#breakpoint()
 				max_value = model.predict(choice['formatted_representation'])[0]
 				explored = True
-				print("explore")
-
+				
 			# not exploring, choose expected best reward
 			else:
 				explored = False
@@ -135,13 +134,13 @@ def train():
 			Where:
 				V(St): 		prediction of the previous state 						: prev_prediction
 				alpha:		constant step-size parameter/ learning rate 			: q_learning_rate
-				Rt+1:		Reward of the current state (current score)				: prev_score - state["score"]
+				Rt+1:		Reward of the current state (current score)				: board.score - prev_score
 				gamma:		discount rate 											: constants.DISCOUNT_RATE
 				V(St+1):	Prediction of the current state 						: max_value
 			'''
 			# only able to back propagate when t > 0 (after one state)
 			if prev_prediction:
-				value = (1/q_learning_rate) * prev_prediction + q_learning_rate * (state["score"]- prev_score + constants.DISCOUNT_RATE * max_value - prev_prediction)
+				value = (1/q_learning_rate) * prev_prediction + q_learning_rate * (board.score - prev_score + constants.DISCOUNT_RATE * max_value - prev_prediction)
 
 				model.fit(x=prev_input,
 					y=value,

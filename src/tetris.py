@@ -348,8 +348,12 @@ class Tetris(object):
         for blk in self.blk_list_cpy:
             restored_block = block.Block(copy.deepcopy(blk.shape),blk.x,blk.y,blk.screen,blk.color,blk.rotate_en,blk.letter, True)
             self.blk_list.append(restored_block)
-        self.score = self.score_cpy
-        self.active_block = self.blk_list[len(self.blk_list) -1]
+        self.score = self.
+        if(not self.blk_list[len(self.blk_list) -1]):
+            breakpoint()
+            self.active_block = None
+        else:
+            self.active_block = self.blk_list[len(self.blk_list) -1]
 
     def backup_board(self):
         self.blk_list_cpy = []

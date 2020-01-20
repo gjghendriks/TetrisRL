@@ -36,7 +36,6 @@ def play():
 
 			# board.run() returns False if the state is invalid (Game over)
 			if(not states):
-				final_score = prev_score
 				break
 				
 
@@ -46,7 +45,7 @@ def play():
 			board.draw_game()
 
 
-			prev_score = board.score
+			final_score = board.score
 
 		#print("done with one step")
 		csv_writer.writerow([final_score])
