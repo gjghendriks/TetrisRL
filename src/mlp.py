@@ -124,7 +124,6 @@ def train():
 
 
 			#set the boardstate to the best predicted next state
-			board.detect_line()
 			board.draw_game()
 
 

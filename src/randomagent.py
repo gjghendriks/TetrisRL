@@ -43,7 +43,6 @@ def play():
 
 			state = random.choice(states)
 			board.setState(state)
-			board.detect_line()
 			board.draw_game()
 
 

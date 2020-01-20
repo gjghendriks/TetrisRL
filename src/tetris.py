@@ -173,7 +173,7 @@ class Tetris(object):
 
     
     def valid_state(self):
-    '''Returns false if invalid state, returns true otherwise. '''
+        '''Returns false if invalid state, returns true otherwise. '''
         down_board  = self.active_block.check_collision([self.board_down])
         any_border  = self.active_block.check_collision([self.board_left,self.board_right])
         top_border  = self.active_block.check_collision([self.board_up])
@@ -186,7 +186,7 @@ class Tetris(object):
                 log("Found a collision with border")
             if block_any:
                 log("Found a collision with other block")
-                #self.detect_line()
+                self.detect_line()
             return False
         return True
 
@@ -232,71 +232,50 @@ class Tetris(object):
     def generate_all_states(self):
         """
         Generates all states that can come from the current one.
-        Returns a list of states with each state containing:
-            "blk_list" : new_block_list,
-            "score" : self.score,
-            "representation": r,
-            "formatted_representation": formatted_r
         """
-
 
         #initalize list to store states in
         states = []
         # make a copy of the active block
-        self.backup_active_block()
+        self.backup_board()
         
+        # how many rotation are needed?
         rot = self.available_rotations(self.active_block.letter)
-        
-        log(self.active_block.letter + " block generated, going to rotate " + str(rot) + " times.")
-        log("Width of block = " + str(self.active_block.get_width()))
-        log("number of expected loops = " + str(rot * (constants.HORZBLOCKS - self.active_block.get_width())))
-        
 
         #for every rotation
         for r in range(rot):
-
-            log("Starting new rotation")
-            log("+++++++++++++++++++++")
-            log("{} width = {}".format(range(constants.HORZBLOCKS - self.active_block.get_width() + 1), self.active_block.get_width() + 1))
 
             # for every x position 
             # amount of columns - the width
             nmbCols = constants.HORZBLOCKS - self.active_block.get_width() + 1
             for x in range(nmbCols):
 
-                #if(self.active_block.letter == "J" and r > 2):
-                    #breakpoint()
-
                 # first move the block all the way to the left
                 while(self.try_action("LEFT")):
-                    #self.draw_game()
                     pass
 
                 # move the block to the right x amount of times
-                # TODO: fix this to check for out of bounds.
-                # 
                 for right in range(x):
                     if not self.try_action("RIGHT"):
-                        #self.draw_game()
-                        #breakpoint()
                         break
-                    #self.draw_game()
+
                 # try to move the block all the way down
                 while(self.try_action("DOWN")):
-                    #self.draw_game()
                     pass
 
                 # final position is found
+                # check if a point was scored
+                self.detect_line()
                 # save the state and reset
                 self.gen_state(states)
 
                 # restore to original position
                 # reset to the initial state
-                self.restore_active_block()
+                self.restore_board()
                 
 
             # try rotate the block
-            # if it fails, break from the loop, this won't result in another state
+            # if it fails, break from the loop, this won't result in new states
             log(self.active_block.shape)
             log("trying to rotate")
             if not self.try_action("ROTATE"):
@@ -304,7 +283,7 @@ class Tetris(object):
                 break
 
             # back up active block, or it doesnt retain rotation
-            self.backup_active_block()
+            self.backup_board()
             log(self.active_block.shape)
             log("rotate succesfull")
 
@@ -335,9 +314,8 @@ class Tetris(object):
 
         #self.draw_game()
 
-        # check if the game is over
+        # If the new block spawns in an illegal place, the game is over
         if(not self.valid_state()):
-            #print("State is not valid, returning false")
             # the game is over, reset the state
             # remove active block from state
             if self.active_block in self.blk_list:
@@ -355,16 +333,77 @@ class Tetris(object):
 # Random helper functions
 #########################
 
+    def set_move_timer(self):
+        """
+        Setup the move timer to the 
+        """
+        # Setup the time to fire the move event. Minimal allowed value is 1
+        speed = math.floor(constants.MOVE_TICK / self.speed)
+        speed = max(1,speed)
+        pygame.time.set_timer(constants.TIMER_MOVE_EVENT,speed)
 
-    def restore_active_block(self):
-        self.active_block.shape = copy.deepcopy(self.shape_copy)
-        self.active_block.x = self.org_x_copy
-        self.active_block.y = self.org_y_copy
 
-    def backup_active_block(self):
-        self.shape_copy = copy.deepcopy(self.active_block.shape)
-        self.org_x_copy = self.active_block.x
-        self.org_y_copy = self.active_block.y
+    def restore_board(self):
+        self.blk_list.clear()
+        for blk in self.blk_list_cpy:
+            restored_block = block.Block(copy.deepcopy(blk.shape),blk.x,blk.y,blk.screen,blk.color,blk.rotate_en,blk.letter, True)
+            self.blk_list.append(restored_block)
+        self.score = self.score_cpy
+        self.active_block = self.blk_list[len(self.blk_list) -1]
+
+    def backup_board(self):
+        self.blk_list_cpy = []
+        for blk in self.blk_list:
+            block_copy = block.Block(copy.deepcopy(blk.shape),blk.x,blk.y,blk.screen,blk.color,blk.rotate_en,blk.letter, True)
+            self.blk_list_cpy.append(block_copy)
+        self.score_cpy = self.score
+   
+    def print_status_line(self):
+        """
+        Print the current state line
+        """
+        string = ["SCORE: {0}   SPEED: {1}x".format(self.score,self.speed)]
+        self.print_text(string,constants.POINT_MARGIN,constants.POINT_MARGIN)        
+
+    def print_game_over(self):
+        """
+        Print the game over string.
+        """
+        # Print the game over text
+        self.print_center(["Game Over","Press \"q\" to exit"])
+        # Draw the string
+        pygame.display.flip()
+        # Wait untill the space is pressed
+        while True: 
+            for ev in pygame.event.get():
+                if ev.type == pygame.QUIT or (ev.type == pygame.KEYDOWN and ev.unicode == 'q'):
+                    return
+
+    def print_text(self,str_lst,x,y):
+        """
+        Print the text on the X,Y coordinates. 
+
+        Parameters:
+            - str_lst - list of strings to print. Each string is printed on new line.
+            - x - X coordinate of the first string
+            - y - Y coordinate of the first string
+        """
+        prev_y = 0
+        for string in str_lst:
+            size_x,size_y = self.myfont.size(string)
+            txt_surf = self.myfont.render(string,False,(255,255,255))
+            self.screen.blit(txt_surf,(x,y+prev_y))
+            prev_y += size_y 
+
+    def print_center(self,str_list):
+        """
+        Print the string in the center of the screen.
+        
+        Parameters:
+            - str_lst - list of strings to print. Each string is printed on new line.
+        """
+        max_xsize = max([tmp[0] for tmp in map(self.myfont.size,str_list)])
+        self.print_text(str_list,self.resx/2-max_xsize/2,self.resy/2)
 
     def block_colides(self):
         """
@@ -384,8 +423,7 @@ class Tetris(object):
 
     def detect_line(self):
         """
-        Detect if the line is filled. If true, remove the line and
-        move with remaining bulding blocks to new positions.
+        Detect if the line is filled. If true, returns that line number.
         """
         # Get each shape block of the non-moving tetris block and try
         # to detect the filled line. The number of bulding blocks is passed to the class
@@ -398,8 +436,8 @@ class Tetris(object):
             if tmp_cnt != self.blocks_in_line:
                 continue 
             # Ok, the full line is detected!
-            self.remove_line(tmp_y)
             # Update the score.
+            self.remove_line(tmp_y)
             self.score += constants.POINT_VALUE
 
 

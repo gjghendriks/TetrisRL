@@ -27,7 +27,7 @@ class Representation(object):
 		"""
 		Resets the representation
 		"""
-		for x in self.arr:
+		for x in range(len(self.arr)):
 			self.arr[x] = 0
 
 
