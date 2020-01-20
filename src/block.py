@@ -34,13 +34,14 @@ class Block(object):
         Initialize the tetris block class
 
         Parameters:
-            - shape - list of block data. The list contains [X,Y] coordinates of
-                      building blocks.
-            - x - X coordinate of first tetris shape block
-            - y - Y coordinate of first tetris shape block
-            - screen  - screen to draw on
-            - color - the color of each shape block in RGB notation
-            - rotate_en - enable or disable the rotation
+            - shape         - list of block data. The list contains [X,Y] coordinates of
+                                building blocks.
+            - x             - X coordinate of first tetris shape block
+            - y             - Y coordinate of first tetris shape block
+            - screen        - screen to draw on
+            - color         - the color of each shape block in RGB notation
+            - rotate_en     - enable or disable the rotation
+            - absolute      - if the coordinates are absolute or not
         """
         # The initial shape (convert all to Rect objects)
         self.shape = []
