@@ -1,5 +1,5 @@
 TODO:
 
 
-How to scale reward?
-fix out of bounds array error
+Export date/ parameters in file and handle them automaticly in the R script/plot
+Add more complex representation
