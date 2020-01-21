@@ -24,8 +24,10 @@ import copy
 
 import block
 import constants
-import representation
-
+if constants.REPRESENTATION_COMPLEX:
+    import RepresentationComplex
+else:
+    import representation
 
 def log(string):
     if constants.DEBUG:
@@ -79,12 +81,8 @@ class Tetris(object):
         self.blocks_in_pile = by
         # Score settings
         self.score = 0
-        # Remember the current speed 
-        self.speed = 1
         # The score level threshold
         self.score_level = constants.SCORE_LEVEL
-        # make new repesentation
-        self.representation = representation.Representation()
         self.shape_copy = 0
         self.org_x_copy = 0
         self.org_y_copy = 0
@@ -123,19 +121,11 @@ class Tetris(object):
 
     def setState(self, state):
         # sets the state of the board to the argument
-        self.representation = state['representation']
         self.score = state['score']
         self.blk_list.clear()
         for blk in state['blk_list']:
             self.blk_list.append(block.Block(copy.deepcopy(blk.shape), blk.x,blk.y,blk.screen,blk.color,blk.rotate_en,blk.letter, True))
 
-    def update_representation(self, r):
-        # updates the representation of the board
-        r.clear()
-        for blk in self.blk_list:
-                if blk != self.active_block:
-                    r.add(blk)
-        return
 
     def try_action(self, action):
         """
@@ -191,21 +181,23 @@ class Tetris(object):
         return True
 
     def gen_state(self, states):
-        # generate the current state as a useable dictonary
-        # and save it in the list of states
+        """
+        Generate the current state as a useable dictonary and save it in the list of states.
+        """
 
         # generate current block list
         new_block_list = []
         for blk in self.blk_list:
             # copy block
             b = block.Block(copy.deepcopy(blk.shape), blk.x, blk.y, blk.screen,blk.color,blk.rotate_en,blk.letter,True)
-            log(b.shape)
-            # add copy to list
             new_block_list.append(b)
 
-        r = representation.Representation()
-        for blk in new_block_list:
-            r.add(blk)
+        #depending on the representation, update it
+        if(constants.REPRESENTATION_COMPLEX):
+            r = RepresentationComplex.RepresentationComplex()
+        else:
+            r = representation.Representation()
+        r.update(self.blk_list)
         formatted_r = r.format()
         gen_state = {
             "blk_list" : new_block_list,
@@ -214,19 +206,6 @@ class Tetris(object):
             "formatted_representation": formatted_r
         }
         states.append(gen_state)
-        
-        #draw the game
-        #self.draw_game()
-        if constants.DEBUG:
-            pygame.time.wait(100)
-
-        
-        log("Stage finished and saved")
-        log("blocks in list : " + str(len(self.blk_list)))
-        log("states found so far: " + str(len(states)))
-
-        return
-
 
 
     def generate_all_states(self):
@@ -237,7 +216,9 @@ class Tetris(object):
         #initalize list to store states in
         states = []
         # make a copy of the active block
+        temp = len(self.blk_list)
         self.backup_board()
+        assert(len(self.blk_list)==temp)
         
         # how many rotation are needed?
         rot = self.available_rotations(self.active_block.letter)
@@ -265,6 +246,8 @@ class Tetris(object):
 
                 # final position is found
                 # check if a point was scored
+                if(not len(self.blk_list)):
+                    breakpoint()
                 self.detect_line()
                 # save the state and reset
                 self.gen_state(states)
@@ -324,7 +307,6 @@ class Tetris(object):
 
 
         states = self.generate_all_states()
-        self.update_representation(self.representation)
         
         #return the possibilities
         return states
@@ -333,14 +315,6 @@ class Tetris(object):
 # Random helper functions
 #########################
 
-    def set_move_timer(self):
-        """
-        Setup the move timer to the 
-        """
-        # Setup the time to fire the move event. Minimal allowed value is 1
-        speed = math.floor(constants.MOVE_TICK / self.speed)
-        speed = max(1,speed)
-        pygame.time.set_timer(constants.TIMER_MOVE_EVENT,speed)
 
 
     def restore_board(self):
@@ -348,7 +322,7 @@ class Tetris(object):
         for blk in self.blk_list_cpy:
             restored_block = block.Block(copy.deepcopy(blk.shape),blk.x,blk.y,blk.screen,blk.color,blk.rotate_en,blk.letter, True)
             self.blk_list.append(restored_block)
-        self.score = self.
+        self.score = self.score_cpy
         if(not self.blk_list[len(self.blk_list) -1]):
             breakpoint()
             self.active_block = None
@@ -366,7 +340,7 @@ class Tetris(object):
         """
         Print the current state line
         """
-        string = ["SCORE: {0}   SPEED: {1}x".format(self.score,self.speed)]
+        string = ["SCORE: {0}".format(self.score)]
         self.print_text(string,constants.POINT_MARGIN,constants.POINT_MARGIN)        
 
     def print_game_over(self):
@@ -432,6 +406,9 @@ class Tetris(object):
         # Get each shape block of the non-moving tetris block and try
         # to detect the filled line. The number of bulding blocks is passed to the class
         # in the init function.
+        #TODO fix this bug whe leng is 0
+        if(not len(self.blk_list)):
+            breakpoint()
         last_block = self.blk_list[len(self.blk_list)-1]
         for shape_block in last_block.shape:
             tmp_y = shape_block.y

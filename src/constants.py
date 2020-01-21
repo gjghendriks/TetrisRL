@@ -23,6 +23,9 @@ from pygame.locals import *
 # Hyper parameters
 DISCOUNT_RATE = 0.5
 
+# representation complex or simple
+REPRESENTATION_COMPLEX = True
+
 #Disale the draw function to speed up the training
 DISABLE_DRAW = False
 

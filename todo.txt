@@ -4,3 +4,4 @@ TODO:
 Export date/ parameters in file and handle them automaticly in the R script/plot
 Add more complex representation
 parameters as command line arguments?
+change holes to be holes instead of open blocks

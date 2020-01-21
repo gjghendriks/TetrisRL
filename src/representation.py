@@ -31,20 +31,21 @@ class Representation(object):
 			self.arr[x] = 0
 
 
-	def add(self, block):
+	def update(self, blk_list):
 		"""
 		add the given block to the representation
 		"""
 		#print(block.shape)
-		for rect in block.shape:
-			x = int((rect.x - 8) / 20)
-			y = int(constants.VERTBLOCKS-2-((rect.y - 49) / 20))
-			if(x < 0 or x > constants.HORZBLOCKS -1):
-				breakpoint()
-				print("Error: x = {}, length of arr = {}".format(x, len(self.arr)))
-				print(rect)
-			if(x < 10 and self.arr[x] < y):
-				self.arr[x] = y
+		for block in blk_list:
+			for rect in block.shape:
+				x = int((rect.x - 8) / 20)
+				y = int(constants.VERTBLOCKS-2-((rect.y - 49) / 20))
+				if(x < 0 or x > constants.HORZBLOCKS -1):
+					breakpoint()
+					print("Error: x = {}, length of arr = {}".format(x, len(self.arr)))
+					print(rect)
+				if(x < 10 and self.arr[x] < y):
+					self.arr[x] = y
 
 
 	def print(self):
