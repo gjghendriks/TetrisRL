@@ -1,14 +1,11 @@
-import numpy as np
 import tensorflow as tf
-from sklearn.metrics import roc_auc_score, accuracy_score
 import tetris
 import constants
-import representation as rep
 import pygame
 import csv
 import datetime
 import random
-#use for v1 : tf.compat.v1.
+
 
 # defining params
 learning_rate = 0.1
@@ -28,20 +25,28 @@ tf.get_logger().setLevel('ERROR')
 
 def compile_model():
 	# init model
-	model = tf.keras.Sequential([
-		tf.keras.layers.Dense(10, input_shape=[constants.HORZBLOCKS,], activation='sigmoid', use_bias=True, kernel_initializer = 'uniform'),
-		#tf.keras.layers.Dense(10, activation='sigmoid', use_bias=True),
-		tf.keras.layers.Dense(1, activation='linear', use_bias=True, kernel_initializer='uniform'
-			)
-	])
-	#print summary of model
-	model.summary()
+	if(constants.REPRESENTATION_COMPLEX):
+		inputshape = constants.HORZBLOCKS + constants.HORZBLOCKS-1 + 1 + 1
+		model = model = tf.keras.Sequential([
+				tf.keras.layers.Dense(inputshape, input_shape=[inputshape,], activation='sigmoid', use_bias=True, kernel_initializer = 'uniform'),
+				#tf.keras.layers.Dense(10, activation='sigmoid', use_bias=True),
+				tf.keras.layers.Dense(1, activation='linear', use_bias=True, kernel_initializer='uniform'
+				)
+		])
+	else:
+		model = tf.keras.Sequential([
+				tf.keras.layers.Dense(constants.HORZBLOCKS, input_shape=[constants.HORZBLOCKS,], activation='sigmoid', use_bias=True, kernel_initializer = 'uniform'),
+				#tf.keras.layers.Dense(10, activation='sigmoid', use_bias=True),
+				tf.keras.layers.Dense(1, activation='linear', use_bias=True, kernel_initializer='uniform'
+				)
+		])
 
+	model.summary()
 	#create model
 	model.compile(optimizer=tf.keras.optimizers.Adam(lr=learning_rate),
 		loss='mean_squared_error',
 		metrics=['accuracy'])
-
+	tf.keras.utils.plot_model(model, to_file="model.png", show_shapes=True)
 	return model
 
 
@@ -111,10 +116,9 @@ def train():
 			if random.random() < exploration_rate:
 				choice = random.choice(states)
 				board.setState(choice)
-				#breakpoint()
 				max_value = model.predict(choice['formatted_representation'])[0]
 				explored = True
-				
+
 			# not exploring, choose expected best reward
 			else:
 				explored = False
@@ -122,7 +126,6 @@ def train():
 				board.setState(states[max_index[0]])
 
 
-			#set the boardstate to the best predicted next state
 			board.draw_game()
 
 
@@ -141,18 +144,13 @@ def train():
 			# only able to back propagate when t > 0 (after one state)
 			if prev_prediction:
 				value = (1/q_learning_rate) * prev_prediction + q_learning_rate * (board.score - prev_score + constants.DISCOUNT_RATE * max_value - prev_prediction)
-
-				model.fit(x=prev_input,
-					y=value,
-					verbose=0)
+				model.fit(x=prev_input,y=value,verbose=0)
 
 
 
-			#update previous prediction
+			#update previous prediction, score and input
 			prev_prediction = max_value
-			#update previous score
 			prev_score = board.score
-			#update previous input
 			if explored:
 				prev_input = choice['formatted_representation']
 			else:
