@@ -63,15 +63,24 @@ def find_max_index(predictions):
 	return max_value, max_index
 
 def initialize_writer():
-	#init writer
+	"""
+	init writer
 
+	The header consists of:
+		MLP/RANDOM
+		a boolean rep_complex?
+		date
+	"""
 	filename = "outputs/mlp/"
-	filename += datetime.datetime.now().strftime('%c')
+	date = datetime.datetime.now().strftime('%c')
+	filename += date
 	filename += "_output_scores_MLP" 
 	filename += ".txt"
 	csv_file = open(filename, mode='w')
 	print("Writing to file: " + filename)
 	csv_writer = csv.writer(csv_file, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
+	header = "MLP" + "_" + str(constants.REPRESENTATION_COMPLEX) + "_" + str(date)
+	csv_writer.writerow([header])
 	return csv_file, csv_writer
 
 
