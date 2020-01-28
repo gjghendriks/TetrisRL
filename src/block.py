@@ -120,17 +120,16 @@ class Block(object):
             - y - Y coordinate to work with.
         """
         new_shape = []
-        for shape_i in range(len(self.shape)):
-            tmp_shape = self.shape[shape_i]
-            if tmp_shape.y < y:
+        for shape in self.shape:
+            if shape.y < y:
                 # Block is above the y, move down and add it to the list of active shape
                 # blocks.
-                new_shape.append(tmp_shape)  
-                tmp_shape.move_ip(0,constants.BHEIGHT)
-            elif tmp_shape.y > y:
+                new_shape.append(shape)  
+                shape.move_ip(0,constants.BHEIGHT)
+            elif shape.y > y:
                 # Block is below the y, add it to the list. The block doesn't need to be moved because
                 # the removed line is above it.
-                new_shape.append(tmp_shape)
+                new_shape.append(shape)
         # Setup the new list of block shapes.
         self.shape = new_shape
 

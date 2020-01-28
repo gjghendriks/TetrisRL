@@ -56,7 +56,6 @@ class Tetris(object):
         self.board_down  = pygame.Rect(0,self.resy-constants.BOARD_HEIGHT,self.resx,constants.BOARD_HEIGHT)
         self.board_left  = pygame.Rect(0,constants.BOARD_UP_MARGIN,constants.BOARD_HEIGHT,self.resy)
         self.board_right = pygame.Rect(self.resx-constants.BOARD_HEIGHT,constants.BOARD_UP_MARGIN-0.5*self.resy,constants.BOARD_HEIGHT,self.resy+ self.resy )
-        #breakpoint()
         # List of used blocks
         self.blk_list    = []
         # Compute start indexes for tetris blocks
@@ -126,7 +125,6 @@ class Tetris(object):
         for blk in state['blk_list']:
             self.blk_list.append(block.Block(copy.deepcopy(blk.shape), blk.x,blk.y,blk.screen,blk.color,blk.rotate_en,blk.letter, True))
 
-
     def try_action(self, action):
         """
         Try an action return True if succesful
@@ -160,8 +158,6 @@ class Tetris(object):
 
         return True
 
-
-    
     def valid_state(self):
         '''Returns false if invalid state, returns true otherwise. '''
         down_board  = self.active_block.check_collision([self.board_down])
@@ -176,7 +172,6 @@ class Tetris(object):
                 log("Found a collision with border")
             if block_any:
                 log("Found a collision with other block")
-                self.detect_line()
             return False
         return True
 
@@ -215,10 +210,8 @@ class Tetris(object):
 
         #initalize list to store states in
         states = []
-        # make a copy of the active block
-        temp = len(self.blk_list)
+        # make a copy of the board
         self.backup_board()
-        assert(len(self.blk_list)==temp)
         
         # how many rotation are needed?
         rot = self.available_rotations(self.active_block.letter)
@@ -244,11 +237,11 @@ class Tetris(object):
                 while(self.try_action("DOWN")):
                     pass
 
+
                 # final position is found
                 # check if a point was scored
-                if(not len(self.blk_list)):
-                    breakpoint()
                 self.detect_line()
+
                 # save the state and reset
                 self.gen_state(states)
 
@@ -259,23 +252,15 @@ class Tetris(object):
 
             # try rotate the block
             # if it fails, break from the loop, this won't result in new states
-            log(self.active_block.shape)
-            log("trying to rotate")
             if not self.try_action("ROTATE"):
-                log("breaking bc rotate failed")
                 break
 
             # back up active block, or it doesnt retain rotation
             self.backup_board()
-            log(self.active_block.shape)
-            log("rotate succesfull")
 
 
         #return all possible options
         return states
-
-
-
 
     def run(self):
         '''
@@ -324,6 +309,7 @@ class Tetris(object):
             self.blk_list.append(restored_block)
         self.score = self.score_cpy
         if(not self.blk_list[len(self.blk_list) -1]):
+            print("blklsit is empty second breakpoint")
             breakpoint()
             self.active_block = None
         else:
@@ -406,20 +392,25 @@ class Tetris(object):
         # Get each shape block of the non-moving tetris block and try
         # to detect the filled line. The number of bulding blocks is passed to the class
         # in the init function.
-        #TODO fix this bug whe leng is 0
+
+        #TODO fix this bug whe length is 0
+        #could also be when the board is just empty
         if(not len(self.blk_list)):
-            breakpoint()
-        last_block = self.blk_list[len(self.blk_list)-1]
-        for shape_block in last_block.shape:
-            tmp_y = shape_block.y
-            tmp_cnt = self.get_blocks_in_line(tmp_y)
-            # Detect if the line contains the given number of blocks
-            if tmp_cnt != self.blocks_in_line:
-                continue 
-            # Ok, the full line is detected!
-            # Update the score.
-            self.remove_line(tmp_y)
-            self.score += constants.POINT_VALUE
+            print("blklist is empty, is the board empty?")
+            pygame.time.wait(1000)
+            return
+
+        for block in self.blk_list:
+            for shape_block in block.shape:
+                tmp_y = shape_block.y
+                tmp_cnt = self.get_blocks_in_line(tmp_y)
+                assert(tmp_cnt >= 0 and tmp_cnt <= constants.HORZBLOCKS, "tmp_cnt is out of range")
+                # Detect if the line contains the given number of blocks
+                if tmp_cnt == constants.HORZBLOCKS:
+                    # Ok, the full line is detected!
+                    # Update the score.
+                    self.remove_line(tmp_y)
+                    self.score += constants.POINT_VALUE
 
 
     def remove_line(self,y):
@@ -443,7 +434,7 @@ class Tetris(object):
         Parameters:
             - y - Y coordinate to scan.
         """
-        # Iteraveovel all block's shape list and increment the counter
+        # Iterate over all block's shape list and increment the counter
         # if the shape block equals to the Y coordinate.
         tmp_cnt = 0
         for block in self.blk_list:
