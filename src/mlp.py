@@ -5,14 +5,13 @@ import pygame
 import csv
 import datetime
 import random
-
+import math
 
 # defining params
 learning_rate = 0.001
 training_epochs = 1000
 batch_size = 1
 display_step = 1
-exploration_rate = 0.1
 q_learning_rate = 1
 num_hidden_nodes = 50
 #MLP params
@@ -85,6 +84,14 @@ def initialize_writer():
 	return csv_file, csv_writer
 
 
+def find_exploration(epoch):
+	"""
+	Returns the exploration rate for the current epoch.
+
+	The logarithm of base 10 is used. The function maps an input of [0, 1000] to [0.289, 0.031].
+	"""
+	return ((1/ math.log(epoch + 50, 10)) - 0.3)
+
 
 def train():
 
@@ -102,7 +109,7 @@ def train():
 		final_score = 0
 
 		#generate 1000 next states, the model will probably die before that
-		for block in range(1000):
+		for block_number in range(1000):
 
 			#generate next states
 			states = board.run()
@@ -123,7 +130,7 @@ def train():
 
 
 			# explore, choose random next state
-			if random.random() < exploration_rate:
+			if random.random() < find_exploration(epoch):
 				choice = random.choice(states)
 				board.setState(choice)
 				max_value = model.predict(choice['formatted_representation'])[0]
