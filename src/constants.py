@@ -21,7 +21,7 @@ from pygame.locals import *
 
 
 # Hyper parameters
-DISCOUNT_RATE = 0.5
+DISCOUNT_RATE = 0.95
 
 # representation complex or simple
 REPRESENTATION_COMPLEX = True

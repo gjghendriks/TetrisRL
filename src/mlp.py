@@ -8,12 +8,12 @@ import random
 
 
 # defining params
-learning_rate = 0.1
+learning_rate = 0.001
 training_epochs = 1000
 batch_size = 1
 display_step = 1
 exploration_rate = 0.1
-q_learning_rate = 0.1
+q_learning_rate = 1
 #MLP params
 num_input = 10
 num_hidden_1 = 10
@@ -29,7 +29,7 @@ def compile_model():
 		inputshape = constants.HORZBLOCKS + constants.HORZBLOCKS-1 + 1 + 1
 		model = model = tf.keras.Sequential([
 				tf.keras.layers.Dense(inputshape, input_shape=[inputshape,], activation='sigmoid', use_bias=True, kernel_initializer = 'uniform'),
-				#tf.keras.layers.Dense(10, activation='sigmoid', use_bias=True),
+				
 				tf.keras.layers.Dense(1, activation='linear', use_bias=True, kernel_initializer='uniform'
 				)
 		])
@@ -152,7 +152,7 @@ def train():
 			'''
 			# only able to back propagate when t > 0 (after one state)
 			if prev_prediction:
-				value = (1/q_learning_rate) * prev_prediction + q_learning_rate * (board.score - prev_score + constants.DISCOUNT_RATE * max_value - prev_prediction)
+				value = (1 - q_learning_rate) * prev_prediction + q_learning_rate * (board.score - prev_score + constants.DISCOUNT_RATE * max_value)
 				model.fit(x=prev_input,y=value,verbose=0)
 
 
