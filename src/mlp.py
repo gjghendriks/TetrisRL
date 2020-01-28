@@ -14,6 +14,7 @@ batch_size = 1
 display_step = 1
 exploration_rate = 0.1
 q_learning_rate = 1
+num_hidden_nodes = 50
 #MLP params
 num_input = 10
 num_hidden_1 = 10
@@ -28,14 +29,14 @@ def compile_model():
 	if(constants.REPRESENTATION_COMPLEX):
 		inputshape = constants.HORZBLOCKS + constants.HORZBLOCKS-1 + 1 + 1
 		model = model = tf.keras.Sequential([
-				tf.keras.layers.Dense(inputshape, input_shape=[inputshape,], activation='sigmoid', use_bias=True, kernel_initializer = 'uniform'),
+				tf.keras.layers.Dense(num_hidden_nodes, input_shape=[inputshape,], activation='sigmoid', use_bias=True, kernel_initializer = 'uniform'),
 				
 				tf.keras.layers.Dense(1, activation='linear', use_bias=True, kernel_initializer='uniform'
 				)
 		])
 	else:
 		model = tf.keras.Sequential([
-				tf.keras.layers.Dense(constants.HORZBLOCKS, input_shape=[constants.HORZBLOCKS,], activation='sigmoid', use_bias=True, kernel_initializer = 'uniform'),
+				tf.keras.layers.Dense(num_hidden_nodes, input_shape=[constants.HORZBLOCKS,], activation='sigmoid', use_bias=True, kernel_initializer = 'uniform'),
 				#tf.keras.layers.Dense(10, activation='sigmoid', use_bias=True),
 				tf.keras.layers.Dense(1, activation='linear', use_bias=True, kernel_initializer='uniform'
 				)
