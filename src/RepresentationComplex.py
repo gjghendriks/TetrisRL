@@ -5,7 +5,7 @@ import constants
 import representation
 import tensorflow as tf
 from representation import Representation
-
+import math
 
 class RepresentationComplex(Representation):
 	"""
@@ -48,7 +48,10 @@ class RepresentationComplex(Representation):
 		"""
 		update the representation according to the given block list
 		"""
+		# set number of holes to be equal to max
+
 		self.holes = constants.VERTBLOCKS * constants.HORZBLOCKS
+
 		for block in blk_list:
 			for rect in block.shape:
 				x = int((rect.x - 8) / 20)
@@ -77,6 +80,12 @@ class RepresentationComplex(Representation):
 				# update number of holes
 				self.holes -= 1
 
+		space_above = constants.VERTBLOCKS * constants.HORZBLOCKS
+		for col in self.col_height:
+			space_above -= col
+
+		self.holes -= space_above
+		assert(self.holes >= 0 and self.holes <= constants.VERTBLOCKS * constants.HORZBLOCKS)
 
 
 
@@ -89,15 +98,18 @@ class RepresentationComplex(Representation):
 		"""
 		new = []
 		for x in range(len(self.col_height)):
-			new.append(self.col_height[x] / float(constants.VERTBLOCKS))
+			new.append(self.col_height[x] / constants.VERTBLOCKS)
 
 		for x in range(len(self.diff_col_height)):
-			new.append(self.diff_col_height[x] / float(constants.VERTBLOCKS))
+			new.append(self.diff_col_height[x] / constants.VERTBLOCKS)
 
-		new.append(self.max / float(constants.VERTBLOCKS))
+		new.append(self.max / constants.VERTBLOCKS)
 
-		new.append(self.holes / float(constants.VERTBLOCKS * constants.HORZBLOCKS))
+		holes_formatted = math.log(self.holes + 1) / math.log(constants.VERTBLOCKS * constants.HORZBLOCKS + 1)
+		new.append(holes_formatted)
 
+		for x in new:
+			assert(x >= 0 and x <= 1, str(x))
 		return tf.Variable([new])
 
 
