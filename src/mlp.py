@@ -19,6 +19,7 @@ num_input = 10
 num_hidden_1 = 10
 num_classes = 1
 
+
 # suppress warnings
 tf.get_logger().setLevel('ERROR')
 
@@ -98,6 +99,14 @@ def train():
 	csv_file, csv_writer = initialize_writer()
 
 	model = compile_model()
+	if(constants.ENABLE_CAPTURE):
+		image_counter = 0
+		print("CAPTURE ENABLED")
+	if(constants.REPRESENTATION_COMPLEX):
+		print("REPRESENTATION_COMPLEX")
+	else:
+		print("REPRESENTATION_SIMPLE")
+
 
 
 	for epoch in range(training_epochs):
@@ -144,6 +153,9 @@ def train():
 
 
 			board.draw_game()
+			if(constants.ENABLE_CAPTURE and image_counter <= 2000):
+				image_counter += 1
+				pygame.image.save(board.screen, "outputs/screenshots/" + str(image_counter) + ".png")
 
 
 			'''
