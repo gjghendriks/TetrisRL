@@ -68,7 +68,7 @@ x <- seq(1,length(data))
 
 
 ### MOVING AVG
-mov_avg <- movingAverage(data, 20)
+mov_avg <- movingAverage(data, 100)
 
 
 
@@ -94,6 +94,7 @@ plottitle = paste(plottitle, "avg =", mean(data))
 
 
 ## PLOT
-plot(x,data, ylab="Points scored", xlab = "Game number", main = plottitle)
-lines(mov_avg, lty = 2 )
-legend(320, 2, legend = "Moving average", lty = 2)
+#plot(x,data, ylab="Points scored", xlab = "Game number", main = plottitle)
+
+plot(x, mov_avg, lty = 1 ,ylab="Points scored", xlab = "Game number", main = plottitle, type = "line")
+#legend(320, 2, legend = "Moving average", lty = 2)
