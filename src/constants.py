@@ -29,6 +29,8 @@ REPRESENTATION_COMPLEX = True
 #Disale the draw function to speed up the training
 DISABLE_DRAW = False
 
+# Enable/disable the capuring of screenshot for every step of a game.
+ENABLE_CAPTURE = False
 
 # number of blocks that the game can fit vertically
 VERTBLOCKS = 20
