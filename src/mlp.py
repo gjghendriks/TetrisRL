@@ -8,7 +8,7 @@ import random
 import math
 
 # defining params
-learning_rate = 0.001
+learning_rate = 0.0001
 training_epochs = 1000
 batch_size = 1
 display_step = 1
