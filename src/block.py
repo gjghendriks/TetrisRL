@@ -93,9 +93,6 @@ class Block(object):
         rads = self.diff_rotation * (math.pi / 180.0)
         newx = x*math.cos(rads) - y*math.sin(rads)
         newy = y*math.cos(rads) + x*math.sin(rads)
-        #if rads:
-        #    print("Get rotated called with x " + str(x) + " y " + str(y))
-        #    print("new : " + str(newx) + " " + str(newy))
         return (newx,newy)
 
     def move(self,x,y):
