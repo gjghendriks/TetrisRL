@@ -160,7 +160,7 @@ def train():
 
 
 			board.draw_game()
-			if(constants.ENABLE_CAPTURE and image_counter <= 2000):
+			if(constants.ENABLE_CAPTURE and epoch > 2980 and image_counter <= 2000):
 				image_counter += 1
 				pygame.image.save(board.screen, "outputs/screenshots/" + str(image_counter) + ".png")
 
@@ -194,7 +194,7 @@ def train():
 
 
 
-		# the model has chosen poorly by dying, back prop negative reward.
+		# the model has chosen poorly by dying, (DIE MODEL!) back prop negative reward.
 		model.fit(x=prev_input, y = [-10], verbose = 0)
 		csv_writer.writerow([final_score])
 

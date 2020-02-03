@@ -30,7 +30,7 @@ REPRESENTATION_COMPLEX = True
 DISABLE_DRAW = False
 
 # Enable/disable the capuring of screenshot for every step of a game.
-ENABLE_CAPTURE = False
+ENABLE_CAPTURE = True
 
 # number of blocks that the game can fit vertically
 VERTBLOCKS = 20
