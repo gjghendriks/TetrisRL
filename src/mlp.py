@@ -9,7 +9,7 @@ import math
 
 # defining params
 learning_rate = 0.0001
-training_epochs = 1000
+training_epochs = 3000
 batch_size = 1
 display_step = 1
 q_learning_rate = 1
@@ -27,7 +27,14 @@ tf.get_logger().setLevel('ERROR')
 def compile_model():
 	# init model
 	if(constants.REPRESENTATION_COMPLEX):
-		inputshape = constants.HORZBLOCKS + constants.HORZBLOCKS-1 + 1 + 1
+		# input shape consist of an array containing:
+		#	column height
+		#	differences in column height
+		#	max column height
+		#	number of holes
+		#	Well depthW
+
+		inputshape = constants.HORZBLOCKS + constants.HORZBLOCKS - 1 + 1 + 1 + constants.HORZBLOCKS
 		model = model = tf.keras.Sequential([
 				tf.keras.layers.Dense(num_hidden_nodes, input_shape=[inputshape,], activation='sigmoid', use_bias=True, kernel_initializer = 'uniform'),
 				
@@ -118,7 +125,7 @@ def train():
 		final_score = 0
 
 		#generate 1000 next states, the model will probably die before that
-		for block_number in range(1000):
+		for block_number in range(10000):
 
 			#generate next states
 			states = board.run()
