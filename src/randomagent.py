@@ -57,7 +57,6 @@ def play():
 
 			final_score = board.score
 
-		#print("done with one step")
 		csv_writer.writerow([final_score])
 		print("Training epoch #: {}\t\t Final score = {}".format(epoch, final_score))
 

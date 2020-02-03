@@ -7,18 +7,6 @@ import datetime
 import random
 import math
 
-# defining params
-learning_rate = 0.0001
-training_epochs = 3000
-batch_size = 1
-display_step = 1
-q_learning_rate = 1
-num_hidden_nodes = 50
-#MLP params
-num_input = 10
-num_hidden_1 = 10
-num_classes = 1
-
 
 # suppress warnings
 tf.get_logger().setLevel('ERROR')
@@ -27,31 +15,22 @@ tf.get_logger().setLevel('ERROR')
 def compile_model():
 	# init model
 	if(constants.REPRESENTATION_COMPLEX):
-		# input shape consist of an array containing:
-		#	column height
-		#	differences in column height
-		#	max column height
-		#	number of holes
-		#	Well depthW
-
-		inputshape = constants.HORZBLOCKS + constants.HORZBLOCKS - 1 + 1 + 1 + constants.HORZBLOCKS
+		inputshape = constants.INPUTSHAPE
 		model = model = tf.keras.Sequential([
-				tf.keras.layers.Dense(num_hidden_nodes, input_shape=[inputshape,], activation='sigmoid', use_bias=True, kernel_initializer = 'uniform'),
-				
-				tf.keras.layers.Dense(1, activation='linear', use_bias=True, kernel_initializer='uniform'
+				tf.keras.layers.Dense(constants.NUM_HIDDEN_NODES, input_shape=[inputshape,], activation='sigmoid', use_bias=True, kernel_initializer = 'uniform'),
+				tf.keras.layers.Dense(constants.NUM_OUTPUT_NODES, activation='linear', use_bias=True, kernel_initializer='uniform'
 				)
 		])
 	else:
 		model = tf.keras.Sequential([
-				tf.keras.layers.Dense(num_hidden_nodes, input_shape=[constants.HORZBLOCKS,], activation='sigmoid', use_bias=True, kernel_initializer = 'uniform'),
-				#tf.keras.layers.Dense(10, activation='sigmoid', use_bias=True),
-				tf.keras.layers.Dense(1, activation='linear', use_bias=True, kernel_initializer='uniform'
+				tf.keras.layers.Dense(constants.NUM_HIDDEN_NODES, input_shape=[constants.HORZBLOCKS,], activation='sigmoid', use_bias=True, kernel_initializer = 'uniform'),
+				tf.keras.layers.Dense(constants.NUM_OUTPUT_NODES, activation='linear', use_bias=True, kernel_initializer='uniform'
 				)
 		])
 
 	model.summary()
 	#create model
-	model.compile(optimizer=tf.keras.optimizers.Adam(lr=learning_rate),
+	model.compile(optimizer=tf.keras.optimizers.Adam(lr=constants.LEARNING_RATE),
 		loss='mean_squared_error',
 		metrics=['accuracy'])
 	tf.keras.utils.plot_model(model, to_file="model.png", show_shapes=True)
@@ -116,7 +95,7 @@ def train():
 
 
 
-	for epoch in range(training_epochs):
+	for epoch in range(constants.TRAINING_EPOCHS):
 		#init previous prediction
 		prev_prediction = None
 		# init a new board
@@ -172,14 +151,14 @@ def train():
 				V(St) = Rt+1 + gamma * V(St+1)
 			Where:
 				V(St): 		prediction of the previous state 						: prev_prediction
-				alpha:		constant step-size parameter/ learning rate 			: q_learning_rate
+				alpha:		constant step-size parameter/ learning rate 			: constants.Q_LEARNING_RATE
 				Rt+1:		Reward of the current state (current score)				: board.score - prev_score
 				gamma:		discount rate 											: constants.DISCOUNT_RATE
 				V(St+1):	Prediction of the current state 						: max_value
 			'''
 			# only able to back propagate when t > 0 (after one state)
 			if prev_prediction:
-				value = (1 - q_learning_rate) * prev_prediction + q_learning_rate * (board.score - prev_score + constants.DISCOUNT_RATE * max_value)
+				value = (1 - constants.Q_LEARNING_RATE) * prev_prediction + constants.Q_LEARNING_RATE * (board.score - prev_score + constants.DISCOUNT_RATE * max_value)
 				model.fit(x=prev_input,y=value,verbose=0)
 
 
@@ -198,7 +177,6 @@ def train():
 		model.fit(x=prev_input, y = [-10], verbose = 0)
 		csv_writer.writerow([final_score])
 
-	#breakpoint()
 	csv_file.close()
 	print("Closing")
 	raise SystemExit

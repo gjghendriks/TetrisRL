@@ -151,7 +151,6 @@ class Tetris(object):
         if(not self.valid_state()):
             self.active_block.restore()
             log("Block restored")
-            #self.draw_game
             if constants.DEBUG:
                 pygame.time.wait(10)
             return False
@@ -309,8 +308,6 @@ class Tetris(object):
             self.blk_list.append(restored_block)
         self.score = self.score_cpy
         if(not self.blk_list[len(self.blk_list) -1]):
-            print("blklsit is empty second breakpoint")
-            breakpoint()
             self.active_block = None
         else:
             self.active_block = self.blk_list[len(self.blk_list) -1]

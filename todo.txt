@@ -1,6 +1,4 @@
 TODO:
 
 parameters as command line arguments?
-change holes to be holes instead of open blocks
-Add wells to representation?
-exploration rate further down?
+Run representation as seperate components.

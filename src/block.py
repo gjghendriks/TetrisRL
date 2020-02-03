@@ -145,8 +145,6 @@ class Block(object):
         """
         # Setup the rotation and update coordinates of all shape blocks.
         # The block is rotated iff the rotation is enabled
-        #print("Inside rotate shape is ")
-        #print(self.shape)
         if self.rotate_en:
             self.diff_rotation = 90
             self._update()
@@ -215,16 +213,11 @@ class Block(object):
         min_x = self.shape[0].x
         max_x = self.shape[0].x
         
-        #print(self.shape)
         for bl in self.shape:
             if bl.x < min_x:
                 min_x = bl.x
             elif bl.x > max_x:
                 max_x = bl.x
 
-
-        #print("max_x = " + str(max_x))
-        #print("min = " + str(min_x))
         width = int(((max_x - min_x)/constants.BWIDTH) + 1)
-        #print("width = " + str(width))
         return width

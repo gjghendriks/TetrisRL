@@ -62,10 +62,7 @@ class RepresentationComplex(Representation):
 			for rect in block.shape:
 				x = int((rect.x - 8) / 20)
 				y = int(constants.VERTBLOCKS-2-((rect.y - 49) / 20))
-				if(x < 0 or x > constants.HORZBLOCKS -1):
-					#this should never be reached
-					print("Error: x = {}, length of arr = {}".format(x, len(self.col_height)))
-					breakpoint()
+				assert(x >= 0 and x <= constants.HORZBLOCKS -1, "Error: x = {}, length of arr = {}".format(x, len(self.col_height)))
 				
 				#update col_height
 				if(x < constants.HORZBLOCKS and self.col_height[x] < y):
@@ -145,6 +142,4 @@ class RepresentationComplex(Representation):
 
 
 if __name__ == "__main__":
-    rep = RepresentationComplex()
-    print(rep)
-    #print("This file is not ment to be run")
+    print("This file is not ment to be ran.\nTry running mlp.py")

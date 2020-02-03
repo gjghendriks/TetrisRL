@@ -21,7 +21,12 @@ from pygame.locals import *
 
 
 # Hyper parameters
+NUM_HIDDEN_NODES = 50
+NUM_OUTPUT_NODES = 1
+TRAINING_EPOCHS = 3000
 DISCOUNT_RATE = 0.95
+LEARNING_RATE = 0.0001
+Q_LEARNING_RATE = 1
 
 # representation complex or simple
 REPRESENTATION_COMPLEX = True
@@ -30,15 +35,28 @@ REPRESENTATION_COMPLEX = True
 DISABLE_DRAW = False
 
 # Enable/disable the capuring of screenshot for every step of a game.
+# Can't be true if disable draw is true
 ENABLE_CAPTURE = True
+assert((not ENABLE_CAPTURE) or (not DISABLE_DRAW))
 
 # number of blocks that the game can fit vertically
 VERTBLOCKS = 20
 # number of block that the game can fit horizontally
 HORZBLOCKS = 10
 
+# input shape consist of an array containing:
+		#	column height
+		#	differences in column height
+		#	max column height
+		#	number of holes
+		#	Well depth
+INPUTSHAPE = HORZBLOCKS + HORZBLOCKS - 1 + 1 + 1 + HORZBLOCKS
+
 DEBUG = False
 
+
+
+#####################
 #### DONT CHANGE ####
 
 # Configuration of building shape block
