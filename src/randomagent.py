@@ -18,8 +18,8 @@ def initialize_writer():
 
 	filename = "outputs/randomagent/"
 	date = datetime.datetime.now().strftime('%c')
+	filename += "RANDOM_" 
 	filename += date
-	filename += "_output_scores_MLP" 
 	filename += ".txt"
 	csv_file = open(filename, mode='w')
 	print("Writing to file: " + filename)

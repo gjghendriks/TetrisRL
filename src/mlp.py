@@ -6,6 +6,7 @@ import csv
 import datetime
 import random
 import math
+import os
 
 
 # suppress warnings
@@ -15,9 +16,8 @@ tf.get_logger().setLevel('ERROR')
 def compile_model():
 	# init model
 	if(constants.REPRESENTATION_COMPLEX):
-		inputshape = constants.INPUTSHAPE
-		model = model = tf.keras.Sequential([
-				tf.keras.layers.Dense(constants.NUM_HIDDEN_NODES, input_shape=[inputshape,], activation='sigmoid', use_bias=True, kernel_initializer = 'uniform'),
+		model = tf.keras.Sequential([
+				tf.keras.layers.Dense(constants.NUM_HIDDEN_NODES, input_shape=[constants.INPUTSHAPE,], activation='sigmoid', use_bias=True, kernel_initializer = 'uniform'),
 				tf.keras.layers.Dense(constants.NUM_OUTPUT_NODES, activation='linear', use_bias=True, kernel_initializer='uniform'
 				)
 		])
@@ -58,10 +58,29 @@ def initialize_writer():
 		a boolean rep_complex?
 		date
 	"""
-	filename = "outputs/mlp/"
+	filename = "outputs/"
+	extradir = ""
+	if(constants.REPRESENTATION['diff_col_height']):
+		extradir += "diff_"
+	if(constants.REPRESENTATION['max']):
+		extradir += "max_"
+	if(constants.REPRESENTATION['holes']):
+		extradir += "holes_"
+	if(constants.REPRESENTATION['wells']):
+		extradir += "wells_"
+	if extradir:
+		extradir += "/"
+	else:
+		extradir += "col_height/"
+	try:
+		os.mkdir("outputs/" + extradir)
+	except FileExistsError:
+		print("Directory ", extradir, " already exists.")
+	filename += extradir
+
 	date = datetime.datetime.now().strftime('%c')
+	filename += "MLP_" 
 	filename += date
-	filename += "_output_scores_MLP" 
 	filename += ".txt"
 	csv_file = open(filename, mode='w')
 	print("Writing to file: " + filename)
@@ -85,6 +104,7 @@ def train():
 	csv_file, csv_writer = initialize_writer()
 
 	model = compile_model()
+	
 	if(constants.ENABLE_CAPTURE):
 		image_counter = 0
 		print("CAPTURE ENABLED")
@@ -183,5 +203,27 @@ def train():
 
 
 
+
+def run():
+	print("Starting run")
+	calc()
+	train()
+	
+
+def calc():
+	constants.INPUTSHAPE = constants.HORZBLOCKS 
+	if(constants.REPRESENTATION["diff_col_height"]):
+		constants.INPUTSHAPE += constants.HORZBLOCKS - 1
+	if(constants.REPRESENTATION["max"]):
+		constants.INPUTSHAPE += 1
+	if(constants.REPRESENTATION["holes"]):
+		constants.INPUTSHAPE += 1
+	if(constants.REPRESENTATION["wells"]):
+		constants.INPUTSHAPE += constants.HORZBLOCKS
+	print(constants.REPRESENTATION)
+	print("calculated the inputshape to be:")
+	print(constants.INPUTSHAPE)
+
+
 if __name__ == "__main__":
-    train()
+    run()

@@ -31,12 +31,20 @@ Q_LEARNING_RATE = 1
 # representation complex or simple
 REPRESENTATION_COMPLEX = True
 
+REPRESENTATION = {
+	"col_height" : True,
+	"diff_col_height" : True,
+	"max" : True,
+	"holes" : True,
+	"wells": True
+}
+
 #Disale the draw function to speed up the training
 DISABLE_DRAW = False
 
 # Enable/disable the capuring of screenshot for every step of a game.
 # Can't be true if disable draw is true
-ENABLE_CAPTURE = True
+ENABLE_CAPTURE = False
 assert((not ENABLE_CAPTURE) or (not DISABLE_DRAW))
 
 # number of blocks that the game can fit vertically
@@ -50,11 +58,20 @@ HORZBLOCKS = 10
 		#	max column height
 		#	number of holes
 		#	Well depth
-INPUTSHAPE = HORZBLOCKS + HORZBLOCKS - 1 + 1 + 1 + HORZBLOCKS
+
 
 DEBUG = False
 
 
+INPUTSHAPE = HORZBLOCKS 
+if(REPRESENTATION["diff_col_height"]):
+	INPUTSHAPE += HORZBLOCKS - 1
+if(REPRESENTATION["max"]):
+	INPUTSHAPE += 1
+if(REPRESENTATION["holes"]):
+	INPUTSHAPE += 1
+if(REPRESENTATION["wells"]):
+	INPUTSHAPE += HORZBLOCKS
 
 #####################
 #### DONT CHANGE ####
