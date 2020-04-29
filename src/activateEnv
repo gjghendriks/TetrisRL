@@ -1,0 +1,6 @@
+#!/bin/bash
+# My first script
+
+echo "Starting a new env in this terminal"
+
+source /home/gijs/thesis/bin/activate
